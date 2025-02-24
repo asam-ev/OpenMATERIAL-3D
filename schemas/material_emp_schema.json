@@ -103,28 +103,28 @@
                             "number",
                             "null"
                         ],
-                        "description": "Real part of complex permeability of material."
+                        "description": "Real part of complex relative permeability of material."
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Imaginary part of complex permeability of material."
+                        "description": "Imaginary part of complex relative permeability of material."
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Real part of complex permittivity of material."
+                        "description": "Real part of complex relative permittivity of material."
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Imaginary part of complex permittivity of material."
+                        "description": "Imaginary part of complex relative permittivity of material."
                     }
                 ],
                 "minItems": 7,
