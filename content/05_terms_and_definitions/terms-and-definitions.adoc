@@ -28,9 +28,8 @@ co-simulation platform handles the timing, synchronization, and data transfer be
 individual models.
 
 [[sec-Electromagnetic-property]] Electromagnetic property::
-Denotes a characteristic of an object or material when interacting with electric and magnetic fields.
-+
-Examples: conduction, magnetization, polarization.
+Denotes a characteristic of an object or material when interacting with electric and magnetic fields. +
+*Examples*: conduction, magnetization, polarization.
 
 [[sec-Ground-truth]] Ground truth::
 Defines true static and dynamic states of objects. The true states are either
@@ -40,9 +39,8 @@ example, a simulation platform.
 [[sec-Machine-perception]] Machine perception::
 The ability of systems to interpret sensory data and to reliably detect objects
 and other road users relevant to the operation of automated driving. The data is
-used to generate situational awareness of the vehicle environment.
-+
-Source: Klaus Dietmayer, Predicting of Machine Perception for Automated Driving, 2016
+used to generate situational awareness of the vehicle environment. +
+*Source*: Klaus Dietmayer, Predicting of Machine Perception for Automated Driving, 2016
 
 [[sec-Material]] Material::
 A collection of material properties belonging to one entity.
@@ -63,22 +61,19 @@ A file in JSON format containing defined material properties according to the
 Denotes a physical, chemical, or geometric property of a material.
 
 [[sec-Multispectral_hyperspectral-material]] Multispectral or hyperspectral material::
-Material with wavelength-specific properties that are defined for multiple spectra. 
-+
-Multispectral material shows up in imagery as 3-10 wider bands.
-+
+Material with wavelength-specific properties that are defined for multiple spectra. +
+Multispectral material shows up in imagery as 3-10 wider bands. +
 Hyperspectral material shows hundreds of narrow bands. 
 
 [[sec-Object]] Object::
 A tangible thing with defined 3D boundaries and discrete meshes. An object ID can be assigned.
 In the JSON schemas, the term _object_ also refers to the JSON data type.
-This is not to be confused with a 3D object, but it is clearly marked as "Type: `object`" in the schemas.
+This is not to be confused with a 3D object, but it is clearly marked as type: `object` in the schemas.
 
 [[sec-Object-part]] Object part::
 A segment of an object that has distinct characteristics, for example, material,
-shape, or function.
-+
-Example: A car door differs from the rest of the vehicle due to its function
+shape, or function. +
+*Example*: A car door differs from the rest of the vehicle due to its function
 to open and close.
 
 [[sec-Object-type]] Object type::
@@ -86,9 +81,8 @@ Class of objects with the same set of properties. Each instance of the class is
 described by the same properties, but has individual property values.
 
 [[sec-Physical-property]] Physical property::
-Denotes a characteristic of an object or material that can be measured.
-+
-Examples: permittivity, density, index of refraction.
+Denotes a characteristic of an object or material that can be measured. +
+*Examples*: permittivity, density, index of refraction.
 
 [[sec-Post-rendering-effect]] Post rendering effect::
 Visual modification applied to graphics after initial rendering, enhancing
@@ -98,15 +92,13 @@ appearance or realism without impairing performance.
 A description of the behavior or temporal evolution of physical objects and
 environmental conditions on the driving infrastructure over an interval of time,
 including the movement of traffic participants or the change of environmental
-conditions.
-+
-Source: ASAM OpenSCENARIO XML v1.3.0 standard, 2024
+conditions. +
+*Source*: ASAM OpenSCENARIO XML v1.3.0 standard, 2024
 
 [[sec-Signal-energy-propagation]] Signal energy propagation::
 The act of a signal traveling through the environment and potentially
-interacting with objects and particles.
-+
-Source: Linnhoff et al., Towards Serious Perception Sensor Simulation for Safety Validation of Automated Driving - A Collaborative Method to Specify Sensor Models, 2021
+interacting with objects and particles. +
+*Source*: Linnhoff et al., Towards Serious Perception Sensor Simulation for Safety Validation of Automated Driving - A Collaborative Method to Specify Sensor Models, 2021
 
 [[sec-Simulation-platform]] Simulation platform::
 Application that orchestrates and runs the simulations. It can be either an

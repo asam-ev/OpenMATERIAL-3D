@@ -15,11 +15,17 @@ Standards referenced in this section shall be cited normatively in the text.
 
 * {GLO_VAR_STA_ASAM_OpenCRG} cite:[ocr]
 * ASAM OpenSCENARIO XML cite:[osc]
+* ASAM OpenLABEL cite:[ola]
+* ASAM OpenDRIVE cite:[odr]
+* ASAM OSI cite:[osi]
+* FMI cite:[fmi]
 * ISO 3166-1 cite:[iso3166-1]
 * ISO 3166-2 cite:[iso3166-2]
 * ISO 8855 cite:[iso8855]
 * ISO 8601 cite:[iso8601]
 * ISO 19111 cite:[iso19111]
+* OGC CDB cite:[ogc]
 * OMG® UML 2.5.1 cite:[omguml]
 * W3C XML cite:[w3cxml]
 * W3C XML Schema cite:[w3cxmlschema]
+

@@ -30,8 +30,8 @@ Unless stated otherwise, all numeric values within {THIS_STANDARD} are in SI uni
 
 {THIS_STANDARD} uses the following types of coordinate systems:
 
-* World coordinate system, see <<World coordinate system>>
-* Local coordinate system, see <<Local coordinate system>>
+* World coordinate system, see section <<World coordinate system, World coordinate system>>
+* Local coordinate system, see section <<Local coordinate system, Local coordinate system>>
 
 Both coordinate systems consist of three orthogonal directions associated with
 x-, y-, and z-axes, and a coordinate origin where axes meet. The coordinate
@@ -103,7 +103,7 @@ By static transformations, these coordinate frames may be synchronized with refe
 |===
 
 
-Besides reference coordinate frames, _3D assets_ may incorporate other local coordinate frames, see xref:../07_geometry/object-classes-introduction.adoc[Object classes].
+Besides reference coordinate frames, _3D assets_ may incorporate other local coordinate frames, see section xref:../07_geometry/object-classes-introduction.adoc[Object classes introduction].
 
 == Naming conventions
 

@@ -19,7 +19,7 @@ Both delivery options are supported in {THIS_STANDARD}.
 +
 The glTF coordinate system is right-handed, with +Y as the up axis, +Z as forward, and -X as right. The front of a glTF asset faces +Z. 
 +
-This setup differs from how coordinate systems are defined in {THIS_STANDARD}, see xref:07_geometry/general.adoc#_coordinate_systems[Coordinate systems].
+This setup differs from how coordinate systems are defined in {THIS_STANDARD}, see section xref:07_geometry/general.adoc#_coordinate_systems[Coordinate systems].
 While modeling, the {THIS_STANDARD} coordinate definitions shall be used.
 During export to and import from glTF, a coordinate transformation shall be applied to conform with the glTF specification.
 Common modeling tools like Blender handle this conversion automatically.

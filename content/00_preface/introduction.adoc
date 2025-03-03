@@ -38,7 +38,7 @@ Standardization efforts have been made for scenarios and road data using ASAM Op
 
 For a full exchange of simulation-ready _3D assets_ however, both chapters must be supported. Systems or tools providing full support for both material and geometric data can be described as follows: “This tool supports {THIS_STANDARD}”.
 
-A list of use cases examples can be found in the xref:06_use_cases/use-cases.adoc[Use Cases] chapter, each highlighting its relevance to the material chapter, the geometry chapter, or both.
+A list of use cases examples can be found in xref:06_use_cases/use-cases.adoc[], each highlighting its relevance to the material chapter, the geometry chapter, or both.
 
 === Structure and file formats
 
@@ -70,7 +70,7 @@ Multiple formats can exist in parallel, so one asset file can have multiple _3D 
 However, to be compliant with {THIS_STANDARD}, a simulation environment must support at least one of the named 3D data formats.
 3D data files may contain conventional materials, supporting visual rendering.
 These materials are unaffected by {THIS_STANDARD} and may still be used in parallel.
-In the overview image above, the 3D Data File has the exemplary materials "asphalt", "concrete" and "texture".
+<<fig-openmaterial-overview>> shows that the 3D data file has the exemplary materials "asphalt", "concrete", and "texture".
 The "texture" material has the visual texture of a stop sign.
 All these materials are purely visual materials embedded in the 3D data file.
 They may be used by conventional rendering systems.
@@ -87,9 +87,9 @@ The table also includes a human-readable description of the material.
 This setup therefore allows for two mapping possibilities:
 
 * Mapping one _material property_ file per _material_ name in the _3D model_.
-  In the overview image above, the material "asphalt" is mapped to a _material property_ file "asphalt.xomp".
+  In <<fig-openmaterial-overview>>, the material "asphalt" is mapped to a _material property_ file "asphalt.xomp".
 * Mapping an RGB color code from a dedicated {THIS_STANDARD} assignment texture to a _material property_ file, enabling detailed differentiation between _material properties_.
-  In the overview image above, the material "texture" belonging to the "Road sign" has a visual texture of a stop sign.
+  In <<fig-openmaterial-overview>>, the material "texture" belonging to the "Road sign" has a visual texture of a stop sign.
   The asset file of the 3D asset allows to define dedicated assignment textures for each material.
   They use the same uv-map as the visual textures.
   The RGB values of the texels in the assignment texture can be mapped to _material property_ files.
@@ -105,17 +105,17 @@ Some material properties depend on other simulation quantities, such as waveleng
 To avoid overloading one material file with large look-up tables, these are placed in auxiliary look-up table files linked with URIs in the main _material property_ file. 
 The defined look-up tables include:
 
-* xref:08_material/material-emp-schema.adoc[Electromagnetic properties]
-* xref:08_material/material-optical-schema.adoc[Optical properties]
-* xref:08_material/material-brdf-schema.adoc[Bidirectional reflectance distribution functions (BRDFs)]
-* xref:08_material/material-reflectance-schema.adoc[Reflectance table]
+* Electromagnetic properties, see xref:08_material/material-emp-schema.adoc[]
+* Optical properties, see xref:08_material/material-optical-schema.adoc[]
+* Bidirectional reflectance distribution functions (BRDFs), xref:08_material/material-brdf-schema.adoc[]
+* Reflectance table, xref:08_material/material-reflectance-schema.adoc[]
 
 Examples for _material property_ files and look-up table files are provided in the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/[examples folder] of the repository.
 
 == Interaction with other ASAM standards
 
 ASAM OpenX standards strive to provide comprehensive, realistic, and exchangeable simulation data for the development and testing of autonomous systems.
-{THIS_STANDARD} asset files and 3D objects defined in the xref:07_geometry/introduction.adoc[Geometry] chapter act as a connecting link between {THIS_STANDARD} and the ASAM OpenX ecosystem.
+{THIS_STANDARD} asset files and 3D objects, as defined in xref:07_geometry/introduction.adoc[], act as a connecting link between {THIS_STANDARD} and the ASAM OpenX ecosystem.
 Specifically, asset files are referenced from other ASAM OpenX standards to integrate and use 3D objects, their metadata and materials:
 
 * ASAM OpenDRIVE standardizes the description of road networks, including geometric definitions of the road, but primarily focuses on the semantic description of the road. 
@@ -129,7 +129,7 @@ Specifically, asset files are referenced from other ASAM OpenX standards to inte
   The paths to 3D assets specified in the _scenario_ definition shall serve as single source of truth and be used consistently in simulation environments.
   In the case of distributed simulation environments, the paths shall be synchronized between all relevant simulation components.
   Synchronization may be implemented using ASAM Open Simulation Interface (OSI).
-* ASAM Open Simulation Interface is a specification for interfaces between models and components in a distributed simulation.
+* ASAM OSI (Open Simulation Interface) is a specification for interfaces between models and components in a distributed simulation.
   ASAM OSI primarily focuses on the environmental perception of automated driving functions, but it also covers interfaces for models of traffic participants.
   So called *model_references* in OSI enable enrichment of the object-list based environment representations by referencing 3D objects defined by {THIS_STANDARD}:
   The asset file (.xoma) of a _3D environment_ shall be linked in ASAM OSI using the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/current/gen/structosi3_1_1GroundTruth.html#a83042861723a4a9e890a53aa98d88858[GroundTruth::model_reference].
@@ -139,7 +139,7 @@ Specifically, asset files are referenced from other ASAM OpenX standards to inte
   As ASAM OSI transfers the data between tools and simulation models, the root path that a relative model reference path is relative to, has to be given or known to all tools and models in the tool chain.
   This can be done with tool settings, configs, or model parameters, for example, an functional mock-up interface (FMI) parameter.
 
-The transformation of reference frames between these ASAM standards is described in xref:07_geometry/general.adoc#_local_coordinate_system[Geometry - Local coordinate system].
+The transformation of reference frames between these ASAM standards is described in the section xref:07_geometry/general.adoc#_local_coordinate_system[Geometry - Local coordinate system].
 
 Examples for all interactions are provided in the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/scenario_example[scenario_example folder].
 

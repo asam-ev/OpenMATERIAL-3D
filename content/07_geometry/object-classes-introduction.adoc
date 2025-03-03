@@ -7,10 +7,10 @@ individual property values.
 
 The {THIS_STANDARD} standard supports the following object classes:
 
-* xref:../07_geometry/object-vehicle/vehicle-index.adoc[Vehicle]
-* xref:../07_geometry/object-human/human-index.adoc[Human]
-* xref:../07_geometry/object-environment/environment-index.adoc[Environment]
-* xref:../07_geometry/object-other/other-index.adoc[Other]
+* Vehicle (see xref:../07_geometry/object-vehicle/vehicle-index.adoc[])
+* Human (see xref:../07_geometry/object-human/human-index.adoc[])
+* Environment (see xref:../07_geometry/object-environment/environment-index.adoc[])
+* Other (see xref:../07_geometry/object-other/other-index.adoc[])
 
 If a human is clearly distinguishable from a vehicle, then both the
 human and the vehicle are represented by two different objects respectively.

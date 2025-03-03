@@ -10,7 +10,7 @@ The vehicle's 3D geometry is structured according to the node structure defined 
 The structure begins with a Root node, which is the parent of all other nodes. 
 The origin of the Root node is the center of the vehicle's bounding box projected to the ground, including all vehicle parts in their default positions, meaning the vehicle is under neutral load conditions, the wheels are running straight, the doors are closed and the lights are off.
 This origin can easily be transformed to coordinate frames from other ASAM standards, such as ASAM OpenSCENARIO XML vehicle coordinates as well as ASAM OSI object coordinates and host vehicle coordinates,
-see xref:../07_geometry/general.adoc#_local_coordinate_system[Geometry General section].
+see section xref:../07_geometry/general.adoc#_local_coordinate_system[Geometry General section].
 
 Separating vehicle elements into different groups allows for the movement or animation of parts, such as wheels and doors, positioning external light sources in a simulation, and many other use cases.
 Group nodes are empty nodes representing the coordinate origin of the contained geometry.

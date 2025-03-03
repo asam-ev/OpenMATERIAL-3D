@@ -28,7 +28,7 @@ This clear organization helps users understand the practical applications of {TH
 |===
 |*Description*                      |As a content creator, I want to create _3D assets_ for perception sensor simulation in a standardized format. The assets shall be linked to _material properties_.
 |*Relevant OpenMATERIAL 3D chapters*|Geometry and Material
-|*Influencing standards*            |OGC CDB
+|*Influencing standards*            |OGC CDB cite:[ogc]
 |*Influencing technologies*         |3D Modeling (for example, 3dsMax and Maya), 3D Engine (for example, Unreal Engine)
 |*Relevant user*                    |Content creator
 |===
@@ -69,7 +69,7 @@ To distribute material data and _3D assets_ efficiently, it shall be possible to
 |===
 |*Description*                      |As a sensor model developer, I want to import _3D assets_ that are packaged as FMUs into sensor models.
 |*Relevant OpenMATERIAL 3D chapters*|Geometry and Material
-|*Influencing standards*            |FMI, ASAM OSI (OSMP), ASAM OpenLABEL, ASAM OpenDRIVE, ASAM OpenSCENARIO
+|*Influencing standards*            |FMI cite:[fmi], ASAM OSI (OSMP) cite:[osi], ASAM OpenLABEL cite:[ola], ASAM OpenDRIVE cite:[odr], ASAM OpenSCENARIO cite:[osc]
 |*Influencing technologies*         |Unreal Engine, Unity, OptiX, CUDA
 |*Relevant user*                    |Sensor model developer
 |===
@@ -89,7 +89,7 @@ To distribute material data and _3D assets_ efficiently, it shall be possible to
 |===
 |*Description*                      |As a simulation platform developer, I want to be able to add or change _material properties_ independently of _3D assets_ geometries in a _simulation platform_.
 |*Relevant OpenMATERIAL 3D chapters*|Material
-|*Influencing standards*            |ASAM OpenLABEL
+|*Influencing standards*            |ASAM OpenLABEL cite:[ola]
 |*Influencing technologies*         |Unreal Engine, Unity, OptiX, CUDA
 |*Relevant user*                    |Simulation platform developer
 |===
@@ -99,7 +99,7 @@ To distribute material data and _3D assets_ efficiently, it shall be possible to
 |===
 |*Description*                      |As a _simulation platform_ or sensor model developer, I want to move _objects_ as well as individual parts of the _objects_ during simulation runtime. These can be parts of a vehicle, for example, wheels and doors or the skeleton bones of a pedestrian. One option to manipulate the imported _3D assets_ during simulation runtime is using ASAM OSI. In the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1GroundTruth.html[osi3::GroundTruth] message, information about moving and stationary _objects_ is provided from the _scenario_ engine to the sensor model. This entails _object_ positions, orientations, velocities and so on for every simulation time step, but also a so-called model reference. This reference is the path to a _3D asset_ associated with the _object_ or the stationary environment. Using the pose information together with the 3D mesh data, a _3D environment_ is constructed and updated for every simulation time step. Further attributes, such as https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1MovingObject_1_1VehicleAttributes_1_1WheelData.html[wheel positions] for vehicles or https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1MovingObject_1_1PedestrianAttributes_1_1Bone.html[bone poses] for pedestrians, enable a more refined movement of traffic participants in the _3D environment_.
 |*Relevant OpenMATERIAL 3D chapters*|Geometry
-|*Influencing standards*            |ASAM OSI
+|*Influencing standards*            |ASAM OSI cite:[osi]
 |*Influencing technologies*         |-
 |*Relevant user*                    |Simulation platform developer
 |===
@@ -120,7 +120,7 @@ The simulation shall be able to cope with different real-time requirements, for 
 |===
 |*Description*                      |As a perception algorithm developer, I want to use simulated environments for model training and testing, as real-world information collection is too expensive and inconvenient.
 |*Relevant OpenMATERIAL 3D chapters*|Geometry and Material
-|*Influencing standards*            |ASAM OSI, ASAM OpenSCENARIO, ASAM OpenDRIVE
+|*Influencing standards*            |ASAM OSI cite:[osi], ASAM OpenSCENARIO cite:[osc], ASAM OpenDRIVE cite:[odr]
 |*Influencing technologies*         |Unity, OptiX, Regeneration AI
 |*Relevant user*                    |End user
 |===
