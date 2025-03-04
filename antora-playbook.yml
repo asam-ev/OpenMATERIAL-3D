@@ -24,7 +24,7 @@ ui:
   bundle:
     url: https://code.asam.net/common/antora-ui/-/jobs/artifacts/main/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
-  supplemental_files: ./supplemental_ui # Activate this if you need to make local UI changes. Check the official Antora documentation for more information.
+# supplemental_files: ./supplemental_ui # Activate this if you need to make local UI changes. Check the official Antora documentation for more information.
 
 output:
   clean: true
