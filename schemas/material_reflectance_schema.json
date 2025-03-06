@@ -79,9 +79,11 @@
             "properties": {
                 "wavelengths": {
                     "type": "array",
-                    "description": "List of all wavelengths in meters contained in the lookup table.",
+                    "description": "List of all wavelengths in meters contained in the lookup table. The wavelength values shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
                     "items": {
-                        "type": "number"
+                        "type": "number",
+                        "minimum": 1e-09,
+                        "maximum": 17.16e-03
                     }
                 },
                 "lookupTable": {
@@ -95,49 +97,63 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Wavelength of radiation in free-space in meters (m)."
+                                "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                                "minimum": 1e-09,
+                                "maximum": 17.16e-03
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Incident elevation angle (= zenith angle) relative to the surface normal in rad."
+                                "description": "Incident elevation angle (= zenith angle) relative to the surface normal in rad. It shall be within a range of \\(-\\pi/2\\) to \\(\\pi/2\\).",
+                                "minimum": -1.570796,
+                                "maximum": 1.570796
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit elevation angle (= zenith angle) relative to the surface normal in rad."
+                                "description": "Exit elevation angle (= zenith angle) relative to the surface normal in rad. It shall be within a range of \\(-\\pi/2\\) to \\(\\pi/2\\).",
+                                "minimum": -1.570796,
+                                "maximum": 1.570796
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit azimuth angle in rad. For reflectance with incident and exit vectors on the same plane as the normal, exit azimuth angle is 0."
+                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). For BRDFs with incident and exit vectors on the same plane as the normal, exit azimuth angle is 0.",
+                                "minimum": 0,
+                                "maximum": 6.283185
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Polarized plane angle in rad. This is the angle between the plane containing the incident, exit, and normal vector, and the plane of polarization."
+                                "description": "Polarized plane angle in rad. This is the angle between the plane containing the incident, exit, and normal vector, and the plane of polarization. The value shall be within a range of \\(0\\) to \\(\\pi\\).",
+                                "minimum": 0,
+                                "maximum": 3.141593
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Amplitude within the linearly polarized plane. The amplitude is given as a relative value compared to an ideal reflector."
+                                "description": "Amplitude within the linearly polarized plane. The amplitude is given as a relative value compared to an ideal reflector. The value shall be between 0 and 1",
+                                "minimum": 0,
+                                "maximum": 1
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Phase within the linearly polarized plane. If the phase is not taken into account, it is null."
+                                "description": "Phase within the linearly polarized plane. It shall be within a range of \\(-\\pi\\) to \\(\\pi\\). If the phase is not taken into account, it is null.",
+                                "minimum": -3.141592,
+                                "maximum": 3.141592
                             }
                         ],
                         "minItems": 7,

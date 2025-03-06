@@ -81,9 +81,11 @@
             "properties": {
                 "wavelengths": {
                     "type": "array",
-                    "description": "List of all wavelengths in meters contained in the lookup table.",
+                    "description": "List of all wavelengths in meters contained in the lookup table. The wavelength values shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
                     "items": {
-                        "type": "number"
+                        "type": "number",
+                        "minimum": 1e-09,
+                        "maximum": 17.16e-03
                     }
                 },
                 "lookupTable": {
@@ -97,35 +99,44 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Wavelength of radiation in free-space in meters (m)."
+                                "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                                "minimum": 1e-09,
+                                "maximum": 17.16e-03
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Incident elevation angle (= zenith angle) relative to the surface normal in rad."
+                                "description": "Incident elevation angle (= zenith angle) relative to the surface normal in rad. It shall be within a range of \\(-\\pi/2\\) to \\(\\pi/2\\).",
+                                "minimum": -1.570796,
+                                "maximum": 1.570796
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit elevation angle (= zenith angle) relative to the surface normal in rad."
+                                "description": "Exit elevation angle (= zenith angle) relative to the surface normal in rad. It shall be within a range of \\(-\\pi/2\\) to \\(\\pi/2\\).",
+                                "minimum": -1.570796,
+                                "maximum": 1.570796
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit azimuth angle in rad. For BRDFs with incident and exit vectors on the same plane as the normal, exit azimuth angle is 0."
+                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). For BRDFs with incident and exit vectors on the same plane as the normal, exit azimuth angle is 0.",
+                                "minimum": 0,
+                                "maximum": 6.283185
                             },
                             {
                                 "type": [
                                     "number",
                                     "null"
                                 ],
-                                "description": "BRDF value in 1/sr."
+                                "description": "BRDF value in 1/sr. The minimum values is 0.",
+                                "minimum": 0
                             }
                         ],
                         "minItems": 5,

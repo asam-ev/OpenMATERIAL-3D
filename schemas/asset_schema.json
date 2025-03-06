@@ -9,27 +9,28 @@
             "properties": {
                 "maxSteering": {
                     "type": "number",
-                    "description": "Maximum steering angle which can be performed by the wheels on this axle. Unit: rad; Range: [0;PI], symmetrical.",
+                    "description": "Maximum steering angle which can be performed by the wheels on this axle. Unit: rad; Range: [0, \\(\\pi\\)], symmetrical.",
                     "minimum": 0,
                     "maximum": 3.14159
                 },
                 "wheelDiameter": {
                     "type": "number",
-                    "description": "Diameter of the wheels on this axle. Unit: meter; Range: ]0..inf[.",
+                    "description": "Diameter of the wheels on this axle. Unit: meter; Range: ]0, inf[.",
                     "exclusiveMinimum": 0
                 },
                 "trackWidth": {
                     "type": "number",
-                    "description": "Distance of the wheels center lines at zero steering. Unit: meter; Range: [0..inf[.",
+                    "description": "Distance of the wheels center lines at zero steering. Unit: meter; Range: [0, inf[.",
                     "minimum": 0
                 },
                 "positionX": {
                     "type": "number",
-                    "description": "Longitudinal position of the axle with respect to the vehicles center of the bounding box projected to the ground. Unit: meter; Range: [0..inf[."
+                    "description": "Longitudinal position of the axle with respect to the vehicles center of the bounding box projected to the ground. Unit: meter; Range: [0, inf[.",
+                    "minimum": 0
                 },
                 "positionZ": {
                     "type": "number",
-                    "description": "The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit:meter; Range:[0..inf[.",
+                    "description": "The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit:meter; Range:[0, inf[.",
                     "minimum": 0
                 }
             },
@@ -155,12 +156,12 @@
                                 },
                                 "maxAcceleration": {
                                     "type": "number",
-                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2. Range: [0..inf[.",
+                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2. Range: [0, inf[.",
                                     "minimum": 0
                                 },
                                 "maxDeceleration": {
                                     "type": "number",
-                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2. Range: [0..inf[.",
+                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2. Range: [0, inf[.",
                                     "minimum": 0
                                 }
                             },
@@ -228,11 +229,13 @@
                 },
                 "triangleCount": {
                     "type": "integer",
-                    "description": "The total number of triangles in the model. A quad polygon counts as two triangles."
+                    "description": "The total number of triangles in the model. A quad polygon counts as two triangles.",
+                    "minimum": 1
                 },
                 "meshCount": {
                     "type": "integer",
-                    "description": "The total number of meshes in the 3D model file. A model geometry typically consists of several sub-meshes."
+                    "description": "The total number of meshes in the 3D model file. A model geometry typically consists of several sub-meshes.",
+                    "minimum": 1
                 },
                 "textureResolutions": {
                     "type": "array",

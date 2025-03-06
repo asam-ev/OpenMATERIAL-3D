@@ -91,6 +91,12 @@ def generate_asciidoc_properties(properties: Dict, required_fields: List[str], l
             pattern = escape_special_chars(prop_data['pattern'])
             asciidoc_content += f"\n*Pattern:* `+{pattern}+` +"
 
+        # Add minimum and maximum values
+        if "minimum" in prop_data:
+            asciidoc_content += f"\n*Minimum value:* `+{prop_data['minimum']}+` +"
+        if "maximum" in prop_data:
+            asciidoc_content += f"\n*Maximum value:* `+{prop_data['maximum']}+` +"
+
         # Add required status
         asciidoc_content += f"\n*Required:* {'Yes' if prop_name in required_fields else 'No'}\n\n"
 

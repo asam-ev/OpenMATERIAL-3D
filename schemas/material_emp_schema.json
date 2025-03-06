@@ -82,35 +82,42 @@
                             "number",
                             "null"
                         ],
-                        "description": "Wavelength of radiation in free-space in meters (m)."
+                        "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                        "minimum": 1e-09,
+                        "maximum": 17.16e-03
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Temperature of material in Kelvin (K)."
+                        "description": "Temperature of material in Kelvin (K). The value shall not be below 0.",
+                        "minimum": 0
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Relative humidity of material in percent (%)."
+                        "description": "Relative humidity of material in percent (%). The value shall be within the range of 0 to 100.",
+                        "minimum": 0,
+                        "maximum": 100
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Real part of complex relative permeability of material, which is \\(\\mu_{\\textrm{r}}^{'}\\) in \\(\\mu_r = \\mu_{\\textrm{r}}^{'} - j \\mu_{\\textrm{r}}^{''}\\)."
+                        "description": "Real part of complex relative permeability of material, which is \\(\\mu_{\\textrm{r}}^{'}\\) in \\(\\mu_r = \\mu_{\\textrm{r}}^{'} - j \\mu_{\\textrm{r}}^{''}\\).",
+                        "minimum": 1
                     },
                     {
                         "type": [
                             "number",
                             "null"
                         ],
-                        "description": "Imaginary part of complex relative permeability of material, which is \\(\\mu_{\\textrm{r}}^{''}\\) in \\(\\mu_{\\textrm{r}} = \\mu_{\\textrm{r}}^{'} - j \\mu_{\\textrm{r}}^{''}\\)."
+                        "description": "Imaginary part of complex relative permeability of material, which is \\(\\mu_{\\textrm{r}}^{''}\\) in \\(\\mu_{\\textrm{r}} = \\mu_{\\textrm{r}}^{'} - j \\mu_{\\textrm{r}}^{''}\\).",
+                        "minimum": 0
                     },
                     {
                         "type": [
@@ -124,7 +131,8 @@
                             "number",
                             "null"
                         ],
-                        "description": "Imaginary part of complex relative permittivity of material, which is \\(\\epsilon_{\\textrm{r}}^{''}\\) in \\(\\epsilon_{\\textrm{r}} = \\epsilon_{\\textrm{r}}^{'} - j \\epsilon_{\\textrm{r}}^{''}\\)."
+                        "description": "Imaginary part of complex relative permittivity of material, which is \\(\\epsilon_{\\textrm{r}}^{''}\\) in \\(\\epsilon_{\\textrm{r}} = \\epsilon_{\\textrm{r}}^{'} - j \\epsilon_{\\textrm{r}}^{''}\\).",
+                        "minimum": 0
                     }
                 ],
                 "minItems": 7,

@@ -76,11 +76,13 @@
                     "properties": {
                         "surfaceHeightRms": {
                             "type": "number",
-                            "description": "Root mean square of surface height deviations, called RMS-Roughness, being a vertical measure of roughness and given in meters."
+                            "description": "Root mean square of surface height deviations, called RMS-Roughness, being a vertical measure of roughness and given in meters.",
+                            "minimum": 0
                         },
                         "surfaceCorrelationLength": {
                             "type": "number",
-                            "description": "Correlation length of the surface height deviations, being the distance after autocorrelation function has dropped to 1/e. Thus being a horizontal measure of roughness and given in meters."
+                            "description": "Correlation length of the surface height deviations, being the distance after autocorrelation function has dropped to 1/e. Thus being a horizontal measure of roughness and given in meters.",
+                            "minimum": 0
                         },
                         "sources": {
                             "type": "string",
@@ -99,11 +101,14 @@
                     "properties": {
                         "emissivityCoefficient": {
                             "type": "number",
-                            "description": "Emissivity describes the ability to emit energy as thermal radiation. Given as the fraction of thermal radiation emitted by a surface relative to the radiation emitted by an ideal black body at the same temperature. Here the hemispherical total emissivity is used which considers full emission over all wavelengths, directions and polarization for a given particular temperature: ε(T)."
+                            "description": "Emissivity describes the ability to emit energy as thermal radiation. Given as the fraction of thermal radiation emitted by a surface relative to the radiation emitted by an ideal black body at the same temperature. Here the hemispherical total emissivity is used which considers full emission over all wavelengths, directions and polarization for a given particular temperature: ε(T).",
+                            "minimum": 0,
+                            "maximum": 1
                         },
                         "temperature": {
                             "type": "number",
-                            "description": "Temperature of material in Kelvin [K] at which the emissivity is measured."
+                            "description": "Temperature of material in Kelvin [K] at which the emissivity is measured.",
+                            "minimum": 0
                         },
                         "sources": {
                             "type": "string",
@@ -122,11 +127,15 @@
                     "properties": {
                         "youngsModulus": {
                             "type": "number",
-                            "description": "Young's modulus of the material in Pascal (Pa)."
+                            "description": "Young's modulus of the material in Pascal (Pa). The value shall be in the range of 0 to 1.5e12 Pa (Young’s modulus of a diamond)",
+                            "minimum": 0,
+                            "maximum": 1500000000000
                         },
                         "poissonsRatio": {
                             "type": "number",
-                            "description": "Poisson's ratio of the material."
+                            "description": "Poisson's ratio of the material.",
+                            "minimum": -1,
+                            "maximum": 0.5
                         },
                         "sources": {
                             "type": "string",
@@ -145,7 +154,9 @@
                     "properties": {
                         "density": {
                             "type": "number",
-                            "description": "Density of the material in kg/m^3^."
+                            "description": "Density of the material in kg/m^3^. The value shall be in the range of 0 to 25000 (density of Osmium)",
+                            "minimum": 0,
+                            "maximum": 25000
                         },
                         "sources": {
                             "type": "string",
@@ -163,7 +174,9 @@
                     "properties": {
                         "coefficientOfRetroreflection": {
                             "type": "number",
-                            "description": "Coefficient of retro-reflection in candela per lux per square metre (cd lx^-1^ m^-2^)."
+                            "description": "Coefficient of retro-reflection in candela per lux per square metre (cd lx^-1^ m^-2^).",
+                            "minimum": 0,
+                            "maximum": 5000
                         },
                         "sources": {
                             "type": "string",
