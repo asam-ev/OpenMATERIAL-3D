@@ -1592,17 +1592,20 @@ The coordinate origin of this group is aligned with the ASAM OSI host vehicle co
 
 This group contains all parts of a wheel, which may consist of the tire, rim, brake caliper, and so on.
 
+The groups' transform shall only be used to implement translational movement of the wheel.
+Rotational movement of the wheel shall be applied simultaneously to the transforms of both the groups'
+child nodes, Grp_Wheel_Steering and Grp_Wheel_Steering_Rotating, whereby the wheels' rolling movement
+shall only be taken into account for the latter (see following chapters for details).
+
+Suspension deflection is represented by translation along the z-axis.
+Zero translation around all axles is defined under neutral load conditions.
+
 `<axle_idx>` denotes the index of the axle to which the wheel is mounted,
 counting from front to rear, starting with 0.
 
 `<wheel_idx>` denotes the index of the wheel on the specified axle, counting from right to left in positive y-direction, starting with 0.
 For example, the wheel on the front left of a standard vehicle would be labeled 'Grp_Wheel_0_1'.
 
-Wheel steering is represented by rotation around the z-axis.
-Wheel camber is defined by a rotation around the x-axis.
-Suspension deflection is represented by translation along the z-axis.
-Zero rotation and translation around all axles are defined under neutral load conditions.
-In the _3D model_, both caster and camber angles are ignored.
 
 [#fig-wheel]
 .Grp_Wheel_<axle_idx>_<wheel_idx>
@@ -1631,11 +1634,14 @@ image::Grp_Wheel.svg[,600]
 
 == Grp_Wheel_Steering_<axle_idx>_<wheel_idx> (T)
 
-This group contains all parts of a wheel that follow the steering motion but not the wheel's rotation, such as brake calipers.
+This group contains all parts of a wheel that follow the steering motion but not the wheels' rolling movement, such as brake calipers.
+Therefore, rotational movement due to wheel steering and wheel camber shall be applied to this group.
 
-The indices are the same as in the parent group.
+Wheel steering is represented by rotation around the z-axis.
+Wheel camber is defined by a rotation around the x-axis.
+Zero rotation around all axles is defined under neutral load conditions.
 
-This group typically does not move independently in the simulation, as it moves with the parent transforms.
+The indices are the same as in the parent group Grp_Wheel.
 
 [#tab-Grp-Wheel-Steering]
 .Grp_Wheel_Steering_<axle_idx>_<wheel_idx>
@@ -1660,9 +1666,15 @@ This group typically does not move independently in the simulation, as it moves 
 
 == Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> (T)
 
-This group contains all parts of a wheel that follow the steering motion as well as the rotation of the wheel, such as tire and rim.
+This group contains all parts of a wheel that follow the steering motion as well as the rolling movement of the wheel, such as tire and rim.
+Therefore, rotational movement due to wheel steering, wheel camber and the wheel rolling movement shall be applied to this group.
 
-The indices are the same as in the parent group.
+Wheel steering is represented by rotation around the z-axis.
+Wheel camber is defined by a rotation around the x-axis.
+The wheels' rolling movement is defined by a rotation around the y-axis.
+Zero rotation around all axles is defined under neutral load conditions.
+
+The indices are the same as in the parent group Grp_Wheel.
 
 [#tab-Grp-Wheel-Steering-Rotating]
 .Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx>
@@ -1675,7 +1687,7 @@ The indices are the same as in the parent group.
 | Geometric center of the wheel
 
 | *x-axis*
-| Collinear with the vehicle's longitudinal axis, pointing towards the door
+| Collinear with the vehicle's longitudinal axis, pointing forwards
 
 | *y-axis*
 | Completes the right-handed coordinate system
