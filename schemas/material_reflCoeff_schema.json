@@ -106,8 +106,8 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Incident elevation angle (= zenith angle) relative to the surface normal in rad. It shall be within a range of \\(-\\pi/2\\) to \\(\\pi/2\\).",
-                                "minimum": -1.570796,
+                                "description": "Incident zenith angle relative to the surface normal in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
+                                "minimum": 0,
                                 "maximum": 1.570796
                             },
                             {
@@ -115,8 +115,8 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit elevation angle (= zenith angle) relative to the surface normal in rad. It shall be within a range of \\(-\\pi/2\\) to \\(\\pi/2\\).",
-                                "minimum": -1.570796,
+                                "description": "Exit zenith angle relative to the surface normal in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
+                                "minimum": 0,
                                 "maximum": 1.570796
                             },
                             {
@@ -124,7 +124,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). For BRDFs with incident and exit vectors on the same plane as the normal, exit azimuth angle is 0.",
+                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0° as the incident ray is used as reference.",
                                 "minimum": 0,
                                 "maximum": 6.283185
                             },
