@@ -6,7 +6,9 @@ The project group discussions led to renaming the standard from "ASAM OpenMATERI
 ASAM OpenMATERIAL 3D is an open-source standard that welcomes contributions from everyone.
 
 ## Published version
-The standard is still under development. The published HTML reflects the status of the main branch. It can be found [here](https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/index.html).
+The published HTML specification of the standard can be found [here](https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/index.html).
+It reflects the status of the main branch when "current" is selected as a version in the upper right corner.
+Other versions can be selected by the user.
 
 ## Contribute
 If you want to contribute in this project, please read the [Contribution guidelines](https://github.com/asam-ev/.github/blob/main/profile/CONTRIBUTING.md).
