@@ -343,6 +343,98 @@
                 "maxItems": 2
             }
         },
+        "lightDefinitions": {
+            "type": "array",
+            "description": "A list of point light sources linked to the 3D asset hierarchy.",
+            "items": {
+                "type": "object",
+                "required": ["grp_node"],
+                "properties": {
+                    "grp_node": {
+                        "type": "string",
+                        "description": "Identifier of the node in the 3D model hierarchy defining the light origin."
+                    },
+                    "photometric_profile_uri": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "pattern": "\\.(ies|ldt|IES|LDT)$",
+                        "description": "Reference to an IES or ELUMDAT file defining the light profile."
+                    },
+                    "radiometric_profile_uri": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "description": "Reference to a mapping table providing radiance per wavelength. (Format to be defined.)"
+                    },
+                    "opening_angle": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 360,
+                        "description": "The horizontal and vertical spread of the light in degrees. Used if profiles are absent."
+                    },
+                    "luminous_intensity": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Luminous intensity defined in Candela (cd). Used if profiles are absent."
+                    },
+                    "color": {
+                        "type": "object",
+                        "description": "RGB color of the light.",
+                        "required": ["r", "g", "b"],
+                        "properties": {
+                            "r": {
+                                "type": "integer",
+                                "description": "Red channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "g": {
+                                "type": "integer",
+                                "description": "Green channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "b": {
+                                "type": "integer",
+                                "description": "Blue channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            }
+                        }
+                    },
+                    "temperature": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Correlated Color Temperature (CCT) in Kelvin."
+                    }
+                },
+                "oneOf": [
+                    {
+                        "required": ["color"],
+                        "not": {
+                            "required": ["temperature"]
+                        }
+                    },
+                    {
+                        "required": ["temperature"],
+                        "not": {
+                            "required": ["color"]
+                        }
+                    },
+                    {
+                        "not": {
+                            "anyOf": [
+                                {
+                                    "required": ["color"]
+                                },
+                                {
+                                    "required": ["temperature"]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
         "customProperties": {
             "type": "object",
             "description": "Non-standardized asset properties for custom tools or tool chains.",
