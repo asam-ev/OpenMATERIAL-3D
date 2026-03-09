@@ -58,6 +58,42 @@ def generate_asciidoc_array_of_arrays(items: List[Dict], description: str, requi
     return content
 
 
+def generate_asciidoc_array_of_objects(array_data: Dict, required: bool, level: int) -> str:
+    """
+    Generate AsciiDoc content for arrays whose items are objects.
+
+    The array itself is documented first (description, type, required),
+    then item object fields are rendered as nested subsections one level
+    deeper than the overlying array section.
+
+    Args:
+        array_data (dict): The schema fragment of the array field.
+        required (bool): True if the array field is required.
+        level (int): The heading level of the array field.
+
+    Returns:
+        str: The generated AsciiDoc content for the array and its object item fields.
+    """
+    content = f"{array_data.get('description', '')}\n"
+
+    if "type" in array_data:
+        property_type = escape_special_chars(array_data['type'])
+        content += f"\n*Type:* `+{property_type}+` +"
+
+    content += f"\n*Required:* {'Yes' if required else 'No'}\n\n"
+
+    items = array_data.get('items', {})
+    item_properties = items.get('properties', {}) if isinstance(items, dict) else {}
+    item_required_fields = items.get('required', []) if isinstance(items, dict) else []
+
+    if item_properties:
+        content += generate_asciidoc_properties(item_properties, item_required_fields, level + 1)
+    else:
+        content += "No fields defined\n"
+
+    return content
+
+
 def generate_asciidoc_properties(properties: Dict, required_fields: List[str], level: int = 2) -> str:
     """
     Recursively generate AsciiDoc content for a dictionary of properties.
@@ -75,6 +111,16 @@ def generate_asciidoc_properties(properties: Dict, required_fields: List[str], l
     for prop_name, prop_data in properties.items():
         heading_prefix = "=" * level  # Create heading based on level
         asciidoc_content += f"{heading_prefix} {prop_name}\n"
+
+        if (
+            prop_data.get('type') == "array"
+            and isinstance(prop_data.get('items'), dict)
+            and prop_data['items'].get('type') == 'object'
+        ):
+            asciidoc_content += generate_asciidoc_array_of_objects(prop_data, prop_name in required_fields, level)
+            asciidoc_content += "\n"
+            continue
+
         asciidoc_content += f"{prop_data.get('description', '')}\n"
 
         # Add data type of the property
@@ -146,6 +192,15 @@ def generate_asciidoc_main_field(field_name: str, schema: Dict, is_required: boo
     """
     asciidoc_content = f"== {field_name}\n\n"
     field_data = schema['properties'][field_name]
+
+    if (
+        field_data.get('type') == 'array'
+        and isinstance(field_data.get('items'), dict)
+        and field_data['items'].get('type') == 'object'
+    ):
+        asciidoc_content += generate_asciidoc_array_of_objects(field_data, is_required, level=2)
+        return asciidoc_content
+
     asciidoc_content += field_data.get("description", "") + "\n\n"
 
     if "type" in field_data:
