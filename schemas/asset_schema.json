@@ -358,12 +358,12 @@
                         "type": "string",
                         "format": "uri-reference",
                         "pattern": "\\.(ies|ldt|IES|LDT)$",
-                        "description": "Reference to an IES or ELUMDAT file defining the light profile."
+                        "description": "File path to an IES or ELUMDAT file defining the light profile."
                     },
                     "radiometric_profile_uri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Reference to a mapping table providing radiance per wavelength. (Format to be defined.)"
+                        "description": "File path to a mapping table providing radiance per wavelength. (Format to be defined.)"
                     },
                     "opening_angle": {
                         "type": "number",
@@ -444,7 +444,7 @@
                 "properties": {
                     "assoc_grp_node": {
                         "type": "string",
-                        "description": "The node in the 3D hierarchy associated with this emissive light. This is determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated."
+                        "description": "The node in the 3D hierarchy associated with this emissive light. This determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated."
                     },
                     "material_name": {
                         "type": "string",
@@ -458,12 +458,12 @@
                     "emissive_texture": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Path to an emissive texture."
+                        "description": "File path to an emissive texture. Supported texture formats are 'png' and 'jpg'."
                     },
                     "masking_texture": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present."
+                        "description": "File path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present. Supported texture formats are 'png' and 'jpg'."
                     },
                     "color": {
                         "type": "object",
@@ -472,16 +472,19 @@
                         "properties": {
                             "r": {
                                 "type": "integer",
+                                "description": "Red channel.",
                                 "minimum": 0,
                                 "maximum": 255
                             },
                             "g": {
                                 "type": "integer",
+                                "description": "Green channel.",
                                 "minimum": 0,
                                 "maximum": 255
                             },
                             "b": {
                                 "type": "integer",
+                                "description": "Blue channel.",
                                 "minimum": 0,
                                 "maximum": 255
                             }
