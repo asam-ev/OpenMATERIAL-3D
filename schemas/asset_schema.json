@@ -435,6 +435,64 @@
                 ]
             }
         },
+        "emissiveLightMapping": {
+            "type": "array",
+            "description": "Mapping of emissive properties to a specific material and an associated Grp node in the 3D model file.",
+            "items": {
+                "type": "object",
+                "required": ["assoc_grp_node", "material_name", "strength"],
+                "properties": {
+                    "assoc_grp_node": {
+                        "type": "string",
+                        "description": "The node in the 3D hierarchy associated with this emissive light. This is determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated."
+                    },
+                    "material_name": {
+                        "type": "string",
+                        "description": "The name of the material within the 3D model file to which this mapping applies."
+                    },
+                    "strength": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Luminance defined in Candela per square meter (cd/m²)."
+                    },
+                    "emissive_texture": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "description": "Path to an emissive texture."
+                    },
+                    "masking_texture": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "description": "Path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present."
+                    },
+                    "color": {
+                        "type": "object",
+                        "description": "Emissive base color or RGB multiplier when used in combination with an emissive texture.",
+                        "required": ["r", "g", "b"],
+                        "properties": {
+                            "r": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "g": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "b": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 255
+                            }
+                        }
+                    }
+                },
+                "dependentRequired": {
+                    "masking_texture": ["emissive_texture"]
+                }
+            }
+        },
         "customProperties": {
             "type": "object",
             "description": "Non-standardized asset properties for custom tools or tool chains.",
