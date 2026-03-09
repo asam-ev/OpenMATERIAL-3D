@@ -488,7 +488,7 @@
                         }
                     }
                 },
-                "dependentRequired": {
+                "dependencies": {
                     "masking_texture": ["emissive_texture"]
                 }
             }
