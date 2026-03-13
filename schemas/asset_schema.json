@@ -446,7 +446,7 @@
             "description": "Mapping of emissive properties to a specific material and an associated Grp node in the 3D model file.",
             "items": {
                 "type": "object",
-                "required": ["assoc_grp_node", "material_name", "strength"],
+                "required": ["assoc_grp_node", "material_name", "luminance", "color"],
                 "properties": {
                     "assoc_grp_node": {
                         "type": "string",
@@ -456,7 +456,7 @@
                         "type": "string",
                         "description": "The name of the material within the 3D model file to which this mapping applies."
                     },
-                    "strength": {
+                    "luminance": {
                         "type": "number",
                         "minimum": 0,
                         "description": "Luminance defined in Candela per square meter (cd/m²)."
@@ -473,7 +473,7 @@
                     },
                     "color": {
                         "type": "object",
-                        "description": "Emissive base color or RGB multiplier when used in combination with an emissive texture.",
+                        "description": "Emissive color or RGB multiplier when used in combination with an emissive texture. The final color in the renderer is calculated as color = base_color + emissive_color * emissive_texture_color * emissive_strength. The emissive_strength needs to be set by the simulator in a way that the final luminance of the emissive material matches the defined 'luminance' value.",
                         "required": ["r", "g", "b"],
                         "properties": {
                             "r": {
