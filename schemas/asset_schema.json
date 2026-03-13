@@ -348,7 +348,7 @@
             "description": "A list of point light sources linked to the 3D asset hierarchy.",
             "items": {
                 "type": "object",
-                "required": ["grp_node"],
+                "required": ["grp_node", "outer_cone_angle", "luminous_intensity"],
                 "properties": {
                     "grp_node": {
                         "type": "string",
@@ -365,16 +365,22 @@
                         "format": "uri-reference",
                         "description": "File path to a mapping table providing radiance per wavelength. (Format to be defined.)"
                     },
-                    "opening_angle": {
+                    "inner_cone_angle": {
                         "type": "number",
                         "minimum": 0,
                         "maximum": 360,
-                        "description": "The horizontal and vertical spread of the light in degrees. Used if profiles are absent."
+                        "description": "The angle, in degrees, from  the center of the conical spotlight, where the falloff begins. If not set, the default it 0. This will be overwritten, if a photometric profile is set."
+                    },
+                    "outer_cone_angle": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 360,
+                        "description": "The angle, in degrees, from  the center of the conical spotlight, where the falloff stops. Set to 360° for point lights. If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile."
                     },
                     "luminous_intensity": {
                         "type": "number",
                         "minimum": 0,
-                        "description": "Luminous intensity defined in Candela (cd). Used if profiles are absent."
+                        "description": "Luminous intensity defined in Candela (cd). If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile."
                     },
                     "color": {
                         "type": "object",

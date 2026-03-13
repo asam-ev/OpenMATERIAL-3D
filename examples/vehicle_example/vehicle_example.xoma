@@ -54,16 +54,20 @@
         {
             "grp_node": "Grp_Light_Low_Beam_Left_0",
             "photometric_profile_uri": "./lighting_profiles/low_beam_left.ies",
+            "outer_cone_angle": 30,
+            "luminous_intensity": 50000,
             "temperature": 5000
         },
         {
             "grp_node": "Grp_Light_Low_Beam_Right_0",
             "photometric_profile_uri": "./lighting_profiles/low_beam_right.ies",
+            "outer_cone_angle": 30,
+            "luminous_intensity": 50000,
             "temperature": 5000
         },
         {
             "grp_node": "Grp_Light_High_Beam_Left_0",
-            "opening_angle": 20,
+            "outer_cone_angle": 20,
             "luminous_intensity": 100000,
             "color": {
                 "r": 255,
@@ -73,7 +77,7 @@
         },
         {
             "grp_node": "Grp_Light_High_Beam_Right_0",
-            "opening_angle": 20,
+            "outer_cone_angle": 20,
             "luminous_intensity": 100000,
             "color": {
                 "r": 255,
