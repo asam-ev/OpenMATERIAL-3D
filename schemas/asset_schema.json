@@ -369,7 +369,7 @@
                         "type": "number",
                         "minimum": 0,
                         "maximum": 360,
-                        "description": "The angle, in degrees, from  the center of the conical spotlight, where the falloff begins. If not set, the default it 0. This will be overwritten, if a photometric profile is set."
+                        "description": "The angle, in degrees, from  the center of the conical spotlight, where the falloff begins. If not set, the default is 0. This will be overwritten, if a photometric profile is set."
                     },
                     "outer_cone_angle": {
                         "type": "number",
