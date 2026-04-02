@@ -352,7 +352,7 @@
                 "properties": {
                     "grp_node": {
                         "type": "string",
-                        "description": "Identifier of the node in the 3D model hierarchy defining the light origin."
+                        "description": "Identifier of the node in the 3D model hierarchy defining the light origin. This determines the function the light is mapped to. E.g. a light associated with the node Grp_Light_Low_Beam_Left_0 of a vehicle asset shall be turned on in a simulation when the low beam is activated. If a generic node name is used, for example Grp_Light_0, the simulator can decide which lighting function to map it to. In this case the behavior is not standardized."
                     },
                     "photometric_profile_uri": {
                         "type": "string",
@@ -443,14 +443,14 @@
         },
         "emissiveLightMapping": {
             "type": "array",
-            "description": "Mapping of emissive properties to a specific material and an associated Grp node in the 3D model file.",
+            "description": "Mapping of emissive properties to a specific material and an associated Grp node in the 3D model file. This concept can be used in ny type of object.",
             "items": {
                 "type": "object",
                 "required": ["assoc_grp_node", "material_name", "luminance", "color"],
                 "properties": {
                     "assoc_grp_node": {
                         "type": "string",
-                        "description": "The node in the 3D hierarchy associated with this emissive light. This determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated."
+                        "description": "The node in the 3D hierarchy associated with this emissive light. This determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated. If a generic node name is used, for example Grp_Light_0, the simulator can decide which lighting function to map it to. In this case the behavior is not standardized."
                     },
                     "material_name": {
                         "type": "string",
