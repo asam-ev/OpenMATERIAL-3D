@@ -209,6 +209,7 @@ Additional properties of spot lights, such as intensity, color and beam shape, c
 === Emissive Surfaces
 
 Emissive surfaces represent materials that visually emit light but do not act as physical light sources in the simulation.
+They are defined within the XOMA file format using the emissiveLightMapping property.
 
 Similar to spot lights, emissive surfaces are associated with Grp nodes.
 However, in this case, the node does not define spatial positioning but is used solely to determine the lighting function via its name.
