@@ -216,10 +216,7 @@
                 },
                 "customProperties": {
                     "type": "object",
-                    "description": "Non-standardized material properties for custom tools or tool chains.",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
+                    "description": "Non-standardized material properties for custom tools or tool chains."
                 }
             }
         }
