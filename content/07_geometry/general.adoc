@@ -183,3 +183,43 @@ The following is an example of a _3D model_ file in glTF format with an accompan
 * Naming of files, nodes, meshes, and materials should be meaningful.
 * Usage of multiple PBR maps is encouraged, for example, albedo, roughness, metallic, normals.
 * Smaller objects should have one _material_ per object, for example, baked traffic cone. Larger objects should contain multiple seamless repeatable materials, for example, brick building.
+
+== Lighting
+
+The lighting concept in ASAM OpenMATERIAL 3D introduces a clear distinction between discrete light sources, e.g., point lights or spotlights) and emissive materials, enabling both physically simulated light sources and visually emissive elements to be defined in a standardized way.
+
+=== Discrete light sources
+
+Discrete light sources represent active light sources that emit light into the environment.
+They are defined within the XOMA file format using the lightDefinitions property.
+
+Each discrete light source is associated with a corresponding node in the 3D model file.
+This node determines the spatial placement and orientation of the light within the asset.
+
+If the associated node follows a predefined naming convention for lighting group nodes of a specific asset class, the lighting function is implicitly defined.
+For example:
+A node named Grp_Light_Low_Beam_Left_0 in a vehicle asset indicates that the light represents the left low beam.
+In a simulation, this light is activated when the corresponding vehicle function (low beam) is enabled.
+
+If a generic node name is used, no standardized function can be derived.
+In such cases, the simulator may assign a lighting function arbitrarily, resulting in non-standardized behavior.
+
+Additional properties of discrete light sources, such as intensity, color and beam shape, can be configured in the XOMA file as defined in the corresponding schema.
+
+=== Emissive materials
+
+Emissive materials are defined in the 3D model file and mapped within the XOMA file format using the emissiveLightMapping property.
+
+Similar to discrete light sources, emissive materials are associated with nodes in the 3D model file.
+However, in this case, the node does not define spatial positioning but is used solely to determine the lighting function via its name.
+For example:
+A material associated with the node Grp_Light_Indicator_Left_0 corresponds to the left turn indicator.
+In a simulation, the emissive effect of the indicator is activated by modification of parameters or activation of textures of the corresponding material.
+
+As with discrete light sources, generic node names lead to undefined behavior, allowing the simulator to decide the mapping.
+
+The visual appearance of emissive materials is defined by materials within the 3D model file.
+These materials are referenced in the XOMA file.
+
+Additionally, emissive textures can be specified in the XOMA file.
+A masking texture may be used to selectively control emissive regions for specific lighting functions.
