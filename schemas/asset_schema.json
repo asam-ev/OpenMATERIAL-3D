@@ -335,12 +335,170 @@
                     },
                     {
                         "type": "string",
-                        "description": "File path to the ASAM OpenMATERIAL 3D assignment texture. Supported texture formats are 'png' and 'jpg'.",
-                        "pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(png|jpg|jpeg)$"
+                        "description": "File path to the ASAM OpenMATERIAL 3D assignment texture."
                     }
                 ],
                 "minItems": 2,
                 "maxItems": 2
+            }
+        },
+        "lightDefinitions": {
+            "type": "array",
+            "description": "A list of discrete light sources linked to the 3D asset hierarchy.",
+            "items": {
+                "type": "object",
+                "required": ["node", "outer_cone_angle", "luminous_intensity"],
+                "properties": {
+                    "node": {
+                        "type": "string",
+                        "description": "Identifier of the node in the 3D model hierarchy defining the light origin. This determines the function the light is mapped to. E.g. a light associated with the node Grp_Light_Low_Beam_Left_0 of a vehicle asset shall be turned on in a simulation when the low beam is activated. If a generic node name is used, for example Grp_Light_0, the simulator can decide which lighting function to map it to. In this case the behavior is not standardized."
+                    },
+                    "photometric_profile_uri": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "pattern": "\\.(ies|ldt|IES|LDT)$",
+                        "description": "File path to an IES or ELUMDAT file defining the light profile."
+                    },
+                    "radiometric_profile_uri": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "description": "File path to a mapping table providing radiance per wavelength. (Format to be defined.)"
+                    },
+                    "inner_cone_angle": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 360,
+                        "description": "The 1/2 opening angle in degree, measured from the center of the conical spotlight to the angle where the light falloff begins. If not set, the default is 0. This will be overwritten, if a photometric profile is set."
+                    },
+                    "outer_cone_angle": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 360,
+                        "description": "The 1/2 opening angle in degree, measured from the center of the conical spotlight to the angle where the falloff ends. Set to 360° for point lights. If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile."
+                    },
+                    "luminous_intensity": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Luminous intensity defined in Candela (cd). If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile."
+                    },
+                    "color": {
+                        "type": "object",
+                        "description": "RGB color of the light.",
+                        "required": ["r", "g", "b"],
+                        "properties": {
+                            "r": {
+                                "type": "integer",
+                                "description": "Red channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "g": {
+                                "type": "integer",
+                                "description": "Green channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "b": {
+                                "type": "integer",
+                                "description": "Blue channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            }
+                        }
+                    },
+                    "temperature": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Correlated Color Temperature (CCT) in Kelvin."
+                    }
+                },
+                "oneOf": [
+                    {
+                        "required": ["color"],
+                        "not": {
+                            "required": ["temperature"]
+                        }
+                    },
+                    {
+                        "required": ["temperature"],
+                        "not": {
+                            "required": ["color"]
+                        }
+                    },
+                    {
+                        "not": {
+                            "anyOf": [
+                                {
+                                    "required": ["color"]
+                                },
+                                {
+                                    "required": ["temperature"]
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "emissiveLightMapping": {
+            "type": "array",
+            "description": "Mapping of emissive properties to a specific material and an associated Grp node in the 3D model file. This concept can be used in ny type of object.",
+            "items": {
+                "type": "object",
+                "required": ["assoc_node", "material_name", "luminance", "color"],
+                "properties": {
+                    "assoc_node": {
+                        "type": "string",
+                        "description": "The node in the 3D hierarchy associated with this emissive light. This determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated. If a generic node name is used, for example Grp_Light_0, the simulator can decide which lighting function to map it to. In this case the behavior is not standardized."
+                    },
+                    "material_name": {
+                        "type": "string",
+                        "description": "The name of the material within the 3D model file to which this mapping applies."
+                    },
+                    "luminance": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Luminance defined in Candela per square meter (cd/m²)."
+                    },
+                    "emissive_texture": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "description": "File path to an emissive texture."
+                    },
+                    "masking_texture": {
+                        "type": "string",
+                        "format": "uri-reference",
+                        "description": "File path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present."
+                    },
+                    "color": {
+                        "type": "object",
+                        "description": "Emissive color or RGB multiplier when used in combination with an emissive texture. The final color in the renderer is calculated as color = base_color + emissive_color * emissive_texture_color * emissive_strength. The emissive_strength needs to be set by the simulator in a way that the final luminance of the emissive material matches the defined 'luminance' value.",
+                        "required": ["r", "g", "b"],
+                        "properties": {
+                            "r": {
+                                "type": "integer",
+                                "description": "Red channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "g": {
+                                "type": "integer",
+                                "description": "Green channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "b": {
+                                "type": "integer",
+                                "description": "Blue channel.",
+                                "minimum": 0,
+                                "maximum": 255
+                            }
+                        }
+                    }
+                },
+                "dependencies": {
+                    "masking_texture": ["emissive_texture"]
+                }
             }
         },
         "customProperties": {
