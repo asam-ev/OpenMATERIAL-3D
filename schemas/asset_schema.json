@@ -355,7 +355,7 @@
                     {
                         "type": "string",
                         "description": "File path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma).",
-                        "pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(png|jpg|jpeg)$"
+                        "pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$"
                     }
                 ],
                 "minItems": 2,
