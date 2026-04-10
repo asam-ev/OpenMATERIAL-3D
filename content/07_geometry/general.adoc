@@ -153,6 +153,22 @@ The following is an example of a _3D model_ file in glTF format with an accompan
 * `my-model.gltf`
 * `my-model.xoma`
 
+== Asset Type
+In the current specification of {THIS_STANDARD}, assets of type 'object' and 'scene' can be specified.
+ Since the concept of 'scene' has been replaced by the following concept of referencing external assets, it can be understood as deprecated.
+
+== References to external assets
+To accommodate use cases in which 3D objects are not built from single assets but from (variable) compositions of assets
+ (e.g., vehicles with roof racks and bicycles, environments built up by separate layers or enhanced with additional objects),
+  {THIS_STANDARD} allows external assets to be referenced in the _3D asset_ file.
+  
+To do this, the _3D asset_ files of external assets must be associated with a node of an overarching asset in its _3D asset_ file.
+ This node acts as parent to the external assets and determines their spatial placement and orientation.
+ The mapping is implemented as a list of key-value pairs of parent nodes and references to _3D asset_ files.
+  
+Example:
+A Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehicle asset could be a parent node for interchangeable car wheels, which are individually referenced from external assets.
+
 == Requirements
 
 * The geometry of the object shall be in real-word scale, using meters as the unit for measurement distances.
