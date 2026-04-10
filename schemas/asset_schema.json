@@ -360,6 +360,7 @@
                 ],
                 "minItems": 2,
                 "maxItems": 2
+            }
         },
         "lightDefinitions": {
             "type": "array",
