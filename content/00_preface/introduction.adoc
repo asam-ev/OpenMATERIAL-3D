@@ -112,6 +112,15 @@ The defined look-up tables include:
 
 Examples for _material property_ files and look-up table files are provided in the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/[examples folder] of the repository.
 
+All JSON-based file formats in this standard are defined with a corresponding JSON schema, which can be used for validation and implementation.
+The JSON schema files can be found in the deliverables of each version of this standard.
+Every JSON-based file shall have the url to the corresponding schema in the second line of the file as
+
+[source,JSON]
+----
+  "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v<VERSION>/schemas/<CORRESPONDING_SCHEMA>.json"
+----
+
 == Interaction with other ASAM standards
 
 ASAM OpenX standards strive to provide comprehensive, realistic, and exchangeable simulation data for the development and testing of autonomous systems.
