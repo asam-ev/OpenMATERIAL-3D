@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/material_optical_schema.json",
     "metadata": {
         "name": "aluminum",
         "description": "Index of refraction and extinction coefficient of aluminum",
