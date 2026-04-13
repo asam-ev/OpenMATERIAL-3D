@@ -503,10 +503,7 @@
         },
         "customProperties": {
             "type": "object",
-            "description": "Non-standardized asset properties for custom tools or tool chains.",
-            "additionalProperties": {
-                "type": "string"
-            }
+            "description": "Non-standardized asset properties for custom tools or tool chains."
         }
     },
     "required": [
