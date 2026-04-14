@@ -246,4 +246,5 @@ Bulb-specific https://opensimulationinterface.github.io/osi-antora-generator/asa
 Bulb-specific https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html#ac69696ede6d67777aa87b9b290778515[icons] can be implemented by emissive materials and `masking_textures` in {THIS_STANDARD}.
 Here, naming of the `masking_textures` should correspond with the naming used in ASAM OpenSimulationInterface, e.g. "ICON_ARROW_STRAIGHT_AHEAD.png".
 
-For the implementation of semantic ASAM OpenSCENARIO https://www.asam.net/static_downloads/ASAM_OpenSCENARIO_V1.2.0_Model_Documentation/modelDocumentation/content/TrafficSignalState.html[TrafficSignalStates], individual bulbs can be toggled according to their `<bulb_idx>`, e.g. "off;off;on" toggles Grp_Bulb_<0> and Grp_Bulb_<1> off, and Grp_Bulb_<2> on.
+For the implementation of ASAM OpenSCENARIO https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/10_scenario_creation/10_10_traffic_signal.html[semantic traffic light states], child nodes of bulbs can be grouped by parenting group nodes per traffic light, e.g. `Grp_Bulbs_Attention_Stop`/`Grp_Bulbs_Go`/`Grp_Bulbs_Stop`.
+
