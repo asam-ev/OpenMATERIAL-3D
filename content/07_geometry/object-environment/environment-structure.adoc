@@ -207,3 +207,43 @@ image::Grp_Traffic_Light.svg[,600]
 | *z-axis*
 | Perpendicular to the x-axis, pointing vertically upwards
 |===
+
+If the index of a traffic light (`<signal_index>`) is aligned with an ASAM OpenDRIVE map, lighting of individual bulbs can be implemented by corresponding child nodes implementing the {THIS_STANDARD} https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/07_geometry/general.html#_lighting[lighting concept].
+To enable dynamic light state control by ASAM OpenSCENARIO scenarios and ASAM Open Simulation Interface messages, naming of these child nodes should follow the scheme `Grp_Bulb_<bulb_idx> (T)`.
+Here, `<bulb_index>` should be counted from left to right (in positive y-direction) and from bottom to top (in positive z-direction) to align with https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight.html[osi3::TrafficLight].
+
+Bulb-specific https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html#ade8af99e440cdd216d8294647d473114[semantic color] defined by https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html[osi3::TrafficLight::Classification] has to be implemented by RGB light `color` in {THIS_STANDARD}:
+
+[#tab-Environment-Bulb_Color]
+.Bulb_Color
+[%header, cols="20, 80"]
+|===
+
+2+^| Bulb Color
+
+| *COLOR_UNKNOWN*
+| 0,0,0
+
+| *COLOR_OTHER*
+| 0,0,0
+
+| *COLOR_RED*
+| 255,0,0
+
+| *COLOR_YELLOW*
+| 255,255,0
+
+| *COLOR_GREEN*
+| 0,255,0
+
+| *COLOR_BLUE*
+| 0,0,255
+
+| *COLOR_WHITE*
+| 255,255,255
+|===
+
+Bulb-specific https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html#ac69696ede6d67777aa87b9b290778515[icons] can be implemented by emissive materials and `masking_textures` in {THIS_STANDARD}.
+Here, naming of the `masking_textures` should correspond with the naming used in ASAM OpenSimulationInterface, e.g. "ICON_ARROW_STRAIGHT_AHEAD.png".
+
+For the implementation of semantic ASAM OpenSCENARIO https://www.asam.net/static_downloads/ASAM_OpenSCENARIO_V1.2.0_Model_Documentation/modelDocumentation/content/TrafficSignalState.html[TrafficSignalStates], individual bulbs can be toggled according to their `<bulb_idx>`, e.g. "off;off;on" toggles Grp_Bulb_<0> and Grp_Bulb_<1> off, and Grp_Bulb_<2> on.
