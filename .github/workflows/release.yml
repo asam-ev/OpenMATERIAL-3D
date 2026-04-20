@@ -25,13 +25,16 @@ jobs:
          ssh-key: ${{ secrets.XOM_DEPLOY_KEY }}
 
     - name: Generate schema asciidoc files and push changes to deploy branch
-      working-directory: repo/scripts
+      working-directory: repo
       run: |
         git config --global user.name "AsciiDoc-Generation[bot]"
         git config --global user.email "AsciiDoc@Generation.com"
+        git fetch origin deploy
         git checkout deploy
-        git merge main
+        git merge origin/main --no-edit
+        cd scripts
         python3 generate_schema_docs.py
+        cd ..
         git add . -f
         git commit -m "Automatically commit generated AsciiDoc files"
         git push
