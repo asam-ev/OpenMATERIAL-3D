@@ -25,7 +25,6 @@ jobs:
          ssh-key: ${{ secrets.XOM_DEPLOY_KEY }}
 
     - name: Generate schema asciidoc files and push changes to deploy branch
-      working-directory: repo/scripts
       run: |
         git config --global user.name "AsciiDoc-Generation[bot]"
         git config --global user.email "AsciiDoc@Generation.com"
