@@ -501,6 +501,38 @@
                 }
             }
         },
+        "geometryProperties": {
+          "type": "array",
+          "description": "Optional array of per-node geometry properties such as physical thickness or a thickness texture.",
+          "items": {
+            "type": "object",
+            "required": ["node"],
+            "properties": {
+              "node": {
+                "type": "string",
+                "description": "Identifier of the node in the 3D model hierarchy the properties apply to."
+              },
+              "thickness": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Thickness of the geometry in meters. Use numeric values (e.g., 0.005 for 5 mm)."
+              },
+              "thickness_texture": {
+                "type": "string",
+                "format": "uri-reference",
+                "description": "Relative or absolute URI to a thickness map (grayscale height map). Values are interpreted in meters unless otherwise documented."
+              },
+              "thickness_scale": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Optional multiplier applied to sampled texture values if the thickness texture is normalized (default: 1.0).",
+                "default": 1.0
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
         "customProperties": {
             "type": "object",
             "description": "Non-standardized asset properties for custom tools or tool chains."
