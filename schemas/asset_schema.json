@@ -503,7 +503,7 @@
         },
         "geometryProperties": {
           "type": "array",
-          "description": "Optional array of per-node geometry properties such as physical thickness or a thickness texture.",
+         "description": "Array of per-node geometry properties such as physical thickness.",
           "items": {
             "type": "object",
             "required": ["node"],
@@ -515,23 +515,10 @@
               "thickness": {
                 "type": "number",
                 "minimum": 0,
-                "description": "Thickness of the geometry in meters. Use numeric values (e.g., 0.005 for 5 mm)."
-              },
-              "thickness_texture": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Relative or absolute URI to a thickness map (grayscale height map). Values are interpreted in meters unless otherwise documented."
-              },
-              "thickness_scale": {
-                "type": "number",
-                "minimum": 0,
-                "description": "Optional multiplier applied to sampled texture values if the thickness texture is normalized (default: 1.0).",
-                "default": 1.0
+                "description": "Thickness of the geometry in meters intended for meshes without an explicitly modeled volume. Half the thickness is applied equally to each side of the mesh along the surface normal direction. Use numeric values (e.g., 0.005 for 5 mm)."
               }
-            },
-            "additionalProperties": false
-          },
-          "minItems": 0
+            }
+          }
         },
         "customProperties": {
             "type": "object",

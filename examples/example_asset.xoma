@@ -47,10 +47,8 @@
     ],
     "geometryProperties": [
       {
-        "node": "Cube",
-        "thickness": 0.005,
-        "thickness_texture": "examples/textures/windshield_thickness.png",
-        "thickness_scale": 1.0
+        "node": "windshield",
+        "thickness": 0.005
       }
     ]
 }
