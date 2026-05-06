@@ -515,7 +515,7 @@
               "thickness": {
                 "type": "number",
                 "minimum": 0,
-                "description": "Thickness of the geometry in meters intended for meshes without an explicitly modeled volume. Half the thickness is applied equally to each side of the mesh along the surface normal direction. Use numeric values (e.g., 0.005 for 5 mm)."
+                "description": "Extrusion along the surface normal (applied on the side opposite the viewer, regardless of whether the surface is single- or double-sided)."
               }
             }
           }

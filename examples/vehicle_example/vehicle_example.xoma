@@ -50,5 +50,11 @@
             "y": [-0.808808, 0.808808],
             "z": [0, 1.29637]
         }
+    },
+    "geometryProperties": [
+    {
+      "node": "Window_R",
+      "thickness": 0.005
     }
+  ]
 }
