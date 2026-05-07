@@ -101,11 +101,11 @@ Details the validation process used to compare the model geometry with real-worl
 
 
 === assetType
-Specifies whether the asset represents an individual object ('object') or a collection of objects ('scene').
+Specifies whether the asset represents an individual object ('object') or a collection of objects ('scene'). With the introduction of a concept for referencing external assets, 'scene' is deprecated.
 
 *Type:* `+string+` +
 *Enum:* `+['object', 'scene']+` +
-*Required:* Yes
+*Required:* No
 
 
 === objectClass
@@ -425,6 +425,28 @@ Columns of the table:
 
 - Column 1: Name of the material in the 3D model file.
 - Column 2: File path to the ASAM OpenMATERIAL 3D assignment texture.
+
+== externalAssetReferences
+
+Optional array containing references to external 3D assets. It links parenting nodes in the 3D model file to external ASAM OpenMATERIAL 3D asset files (.xoma).
+
+*Type:* `+array+` +
+*Required:* No
+
+=== reference_node
+Name of the parent node in the 3D model file.
+
+*Type:* `+string+` +
+*Required:* Yes
+
+
+=== external_asset
+File path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma).
+
+*Type:* `+string+` +
+*Pattern:* `+^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$+` +
+*Required:* Yes
+
 
 == lightDefinitions
 
