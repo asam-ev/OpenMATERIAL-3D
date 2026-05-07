@@ -109,7 +109,7 @@
                 },
                 "assetType": {
                     "type": "string",
-                    "description": "Specifies whether the asset represents an individual object ('object') or a collection of objects ('scene').",
+                    "description": "Specifies whether the asset represents an individual object ('object') or a collection of objects ('scene'). With the introduction of a concept for referencing external assets, 'scene' is deprecated.",
                     "enum": [
                         "object",
                         "scene"
@@ -307,7 +307,6 @@
                 "copyrights",
                 "license",
                 "authors",
-                "assetType",
                 "objectClass",
                 "animated",
                 "pbrMaterialWorkflow",
@@ -346,20 +345,19 @@
             "type": "array",
             "description": "Optional array containing references to external 3D assets. It links parenting nodes in the 3D model file to external ASAM OpenMATERIAL 3D asset files (.xoma).",
             "items": {
-                "type": "array",
-                "items": [
-                    {
+                "type": "object",
+				"required": ["reference_node", "external_asset"],
+				"properties": {
+                    "reference_node": {
                         "type": "string",
                         "description": "Name of the parent node in the 3D model file."
                     },
-                    {
+                    "external_asset": {
                         "type": "string",
                         "description": "File path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma).",
-                        "pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$"
+						"pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$"
                     }
-                ],
-                "minItems": 2,
-                "maxItems": 2
+				}
             }
         },
         "lightDefinitions": {
