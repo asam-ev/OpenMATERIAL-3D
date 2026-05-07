@@ -44,5 +44,11 @@
             "Material_Cube",
             "checker_xom.png"
         ]
+    ],
+    "materialReplacement": [
+        [
+            "Material_Sphere",
+            "rgb:255;0;0"
+        ]
     ]
 }
