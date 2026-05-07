@@ -515,7 +515,7 @@
               "thickness": {
                 "type": "number",
                 "minimum": 0,
-                "description": "Extrusion along the surface normal (applied on the side opposite the viewer, regardless of whether the surface is single- or double-sided)."
+                "description": "Extrusion in meters along the surface normal (applied on the side opposite the viewer, regardless of whether the surface is single- or double-sided)."
               }
             }
           }
