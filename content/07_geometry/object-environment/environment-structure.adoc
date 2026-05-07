@@ -208,7 +208,7 @@ image::Grp_Traffic_Light.svg[,600]
 | Perpendicular to the x-axis, pointing vertically upwards
 |===
 
-If the index of a traffic light (`<signal_index>`) is aligned with an ASAM OpenDRIVE map, lighting of individual bulbs can be implemented by corresponding child nodes implementing the {THIS_STANDARD} xref:../../07_geometry/general.adoc#_lighting[lighting concept].
+If the index of a traffic light (`<signal_index>`) is aligned with an ASAM OpenDRIVE map, lighting of individual bulbs can be implemented by corresponding child nodes implementing the {THIS_STANDARD} xref:../../07_geometry/general.adoc#lighting[lighting concept].
 To enable dynamic light state control by ASAM OpenSCENARIO scenarios and ASAM Open Simulation Interface messages, naming of these child nodes should follow the scheme `Grp_Bulb_<bulb_idx> (T)`.
 Here, `<bulb_index>` should be counted from left to right (in positive y-direction) and from bottom to top (in positive z-direction) to align with https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight.html[osi3::TrafficLight].
 
