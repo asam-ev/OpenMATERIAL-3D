@@ -12,7 +12,6 @@
         "creationDate": "20240703T101728Z"
     },
     "materialMapping": [
-        ["Material_Sphere", "example_material.xomp", "white aluminum"],
         ["rgb:255;0;0", "example_material.xomp", "white aluminum"],
         ["rgb:0;11;255", "example_material_2.xomp", "black aluminum"]
     ]
