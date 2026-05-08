@@ -55,6 +55,18 @@
     {
       "node": "Window_R",
       "thickness": 0.005
+    },
+    {
+      "node": "Window_FL",
+      "thickness": 0.005
+    },
+    {
+      "node": "Window_FR",
+      "thickness": 0.005
+    },
+    {
+      "node": "Window_F",
+      "thickness": 0.005
     }
   ]
 }
