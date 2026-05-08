@@ -207,3 +207,51 @@ image::Grp_Traffic_Light.svg[,600]
 | *z-axis*
 | Perpendicular to the x-axis, pointing vertically upwards
 |===
+
+If the index of a traffic light (`<signal_index>`) is aligned with an ASAM OpenDRIVE map, lighting of individual bulbs can be implemented by corresponding child nodes implementing the {THIS_STANDARD} xref:../../07_geometry/general.adoc#lighting[lighting concept].
+To enable dynamic light state control by ASAM OpenSCENARIO scenarios and ASAM Open Simulation Interface messages, naming of these child nodes should follow the scheme `Grp_Bulb_<bulb_idx> (T)`.
+Here, `<bulb_index>` should be counted from left to right (in positive y-direction) and from bottom to top (in positive z-direction) to align with https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight.html[osi3::TrafficLight].
+
+Bulb-specific https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html#ade8af99e440cdd216d8294647d473114[semantic color] defined by https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html[osi3::TrafficLight::Classification] has to be implemented by RGB light `color` in {THIS_STANDARD}:
+
+[#tab-Environment-Bulb_Color]
+.Bulb_Color
+[%header, cols="20, 80"]
+|===
+
+2+^| Bulb Color
+
+| *COLOR_RED*
+| 255,0,0
+
+| *COLOR_YELLOW*
+| 255,255,0
+
+| *COLOR_GREEN*
+| 0,255,0
+
+| *COLOR_BLUE*
+| 0,0,255
+
+| *COLOR_WHITE*
+| 255,255,255
+|===
+
+Bulb-specific https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1TrafficLight_1_1Classification.html#ac69696ede6d67777aa87b9b290778515[icons] can be implemented by emissive materials and `masking_textures` in {THIS_STANDARD}.
+Here, naming of the `masking_textures` should correspond with the naming used in ASAM OpenSimulationInterface, e.g. "ICON_ARROW_STRAIGHT_AHEAD.png".
+Instead of masking textures, emissive textures that are already included in the 3D Data File can be used.
+
+For the implementation of ASAM OpenSCENARIO https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/10_scenario_creation/10_10_traffic_signal.html[semantic traffic light states], child nodes of bulbs can be grouped by parenting group nodes per traffic light, e.g. `Grp_Bulbs_Attention_Stop`/`Grp_Bulbs_Go`/`Grp_Bulbs_Stop`:
+
+[plantuml]
+----
+legend
+Grp_Traffic_Light_<signal_idx> (T)
+|_Grp_Bulbs_Attention_Stop
+  |_ Grp_Bulb_<bulb_idx> (T)
+|_Grp_Bulbs_Go
+  |_ Grp_Bulb_<bulb_idx> (T)
+|_Grp_Bulbs_Stop
+  |_ Grp_Bulb_<bulb_idx> (T)
+end legend
+----
