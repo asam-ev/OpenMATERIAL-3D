@@ -200,6 +200,7 @@ A Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehicle asset cou
 * Usage of multiple PBR maps is encouraged, for example, albedo, roughness, metallic, normals.
 * Smaller objects should have one _material_ per object, for example, baked traffic cone. Larger objects should contain multiple seamless repeatable materials, for example, brick building.
 
+[#lighting]
 == Lighting
 
 The lighting concept in ASAM OpenMATERIAL 3D introduces a clear distinction between discrete light sources, e.g., point lights or spotlights) and emissive materials, enabling both physically simulated light sources and visually emissive elements to be defined in a standardized way.
