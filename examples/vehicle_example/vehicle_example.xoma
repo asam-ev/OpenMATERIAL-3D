@@ -50,5 +50,83 @@
             "y": [-0.808808, 0.808808],
             "z": [0, 1.29637]
         }
-    }
+    },
+    "lightDefinitions": [
+        {
+            "grp_node": "Grp_Light_Low_Beam_Left_0",
+            "photometric_profile_uri": "./lighting_profiles/low_beam_left.ies",
+            "outer_cone_angle": 30,
+            "luminous_intensity": 50000,
+            "temperature": 5000
+        },
+        {
+            "grp_node": "Grp_Light_Low_Beam_Right_0",
+            "photometric_profile_uri": "./lighting_profiles/low_beam_right.ies",
+            "outer_cone_angle": 30,
+            "luminous_intensity": 50000,
+            "temperature": 5000
+        },
+        {
+            "grp_node": "Grp_Light_High_Beam_Left_0",
+            "outer_cone_angle": 20,
+            "luminous_intensity": 100000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "grp_node": "Grp_Light_High_Beam_Right_0",
+            "outer_cone_angle": 20,
+            "luminous_intensity": 100000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        }
+    ],
+    "emissiveLightMapping": [
+        {
+            "assoc_grp_node": "Grp_Light_Low_Beam_Left_0",
+            "material_name": "Head_Light_Left",
+            "luminance": 10000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_grp_node": "Grp_Light_Low_Beam_Right_0",
+            "material_name": "Head_Light_Right",
+            "luminance": 10000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_grp_node": "Grp_Light_High_Beam_Left_0",
+            "material_name": "Head_Light_Left",
+            "luminance": 15000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_grp_node": "Grp_Light_High_Beam_Right_0",
+            "material_name": "Head_Light_Right",
+            "luminance": 15000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        }
+    ]
 }
