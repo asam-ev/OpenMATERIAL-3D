@@ -341,6 +341,25 @@
                 "maxItems": 2
             }
         },
+        "materialReplacement": {
+            "type": "array",
+            "description": "Optional array containing material reassignments. It links material names contained in the 3D model file to RGB Codes or alternative names used as key for the ASAM OpenMATERIAL 3D material mapping file.",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "type": "string",
+                        "description": "Name of the material in the 3D model file."
+                    },
+                    {
+                        "type": "string",
+                        "description": "Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file."
+                    }
+                ],
+                "minItems": 2,
+                "maxItems": 2
+            }
+        },
         "externalAssetReferences": {
             "type": "array",
             "description": "Optional array containing references to external 3D assets. It links parenting nodes in the 3D model file to external ASAM OpenMATERIAL 3D asset files (.xoma).",
