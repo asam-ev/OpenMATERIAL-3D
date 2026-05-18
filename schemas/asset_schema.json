@@ -519,6 +519,25 @@
                 }
             }
         },
+        "geometryProperties": {
+          "type": "array",
+         "description": "Array of per-node geometry properties such as physical thickness.",
+          "items": {
+            "type": "object",
+            "required": ["node"],
+            "properties": {
+              "node": {
+                "type": "string",
+                "description": "Identifier of the node in the 3D model hierarchy the properties apply to."
+              },
+              "thickness": {
+                "type": "number",
+                "minimum": 0,
+                "description": "Extrusion in meters along the surface normal (applied on the side opposite the viewer, regardless of whether the surface is single- or double-sided)."
+              }
+            }
+          }
+        },
         "customProperties": {
             "type": "object",
             "description": "Non-standardized asset properties for custom tools or tool chains."
