@@ -622,6 +622,28 @@ Blue channel.
 *Required:* Yes
 
 
+== geometryProperties
+
+Array of per-node geometry properties such as physical thickness.
+
+*Type:* `+array+` +
+*Required:* No
+
+=== node
+Identifier of the node in the 3D model hierarchy the properties apply to.
+
+*Type:* `+string+` +
+*Required:* Yes
+
+
+=== thickness
+Extrusion in meters along the surface normal (applied on the side opposite the viewer, regardless of whether the surface is single- or double-sided).
+
+*Type:* `+number+` +
+*Minimum value:* `+0+` +
+*Required:* No
+
+
 == customProperties
 
 Non-standardized asset properties for custom tools or tool chains.
