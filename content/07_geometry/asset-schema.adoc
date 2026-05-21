@@ -426,6 +426,20 @@ Columns of the table:
 - Column 1: Name of the material in the 3D model file.
 - Column 2: File path to the ASAM OpenMATERIAL 3D assignment texture.
 
+== materialReplacement
+
+Optional array containing material reassignments. It links material names contained in the 3D model file to RGB Codes or alternative names used as key for the ASAM OpenMATERIAL 3D material mapping file. An example of the material replacement mechanism can be found in the examples folder of the ASAM OpenMATERIAL 3D GitHub repository.
+
+
+*Type:* `+array+` +
+*Required:* No
+
+
+Columns of the table:
+
+- Column 1: Name of the material in the 3D model file.
+- Column 2: Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file.
+
 == externalAssetReferences
 
 Optional array containing references to external 3D assets. It links parenting nodes in the 3D model file to external ASAM OpenMATERIAL 3D asset files (.xoma).
