@@ -82,8 +82,8 @@ The *material mapping file* is separated from the asset file to facilitate reusa
 Multiple assets can link to the same _material_ mapping, allowing simulation systems to have a unified mapping table for all assets. 
 A detailed definition of the https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/mapping_schema.json[mapping file JSON schema] is given in xref:07_geometry/mapping-schema.adoc[].
 It contains metadata, such as description, unique identifier, version information, and the _material_ mapping table.
-Each row in this table maps a _material_ name, given in the 3D data file, or an RGB value, that can be read from a dedicated assignment texture, to a _material property_ file (.xomp).
-The RGB code shall be encoded as `"rgb:<R>;<G>;<B>"`, where `<R>`, `<G>`, and `<B>` denote the red, green, and blue channel values as integers in the range 0 to 255.
+Each row in this table maps a _material_ name, given in the 3D data file or asset file, or an RGB value, given in a dedicated assignment texture or asset file, to a _material property_ file (.xomp).
+The RGB code shall be formatted as `"rgb:<R>;<G>;<B>"`, where `<R>`, `<G>`, and `<B>` denote the red, green, and blue channel values as integers in the range 0 to 255.
 The table also includes a human-readable description of the material.
 This setup therefore allows for two mapping possibilities:
 
