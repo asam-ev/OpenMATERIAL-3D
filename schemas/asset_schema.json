@@ -353,7 +353,7 @@
                     },
                     {
                         "type": "string",
-                        "description": "Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file. RGB codes are formatted as rgb:<R>;<G>;<B>, where `<R>`, `<G>`, and `<B>` are integers in the range 0 to 255."
+                        "description": "Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255]."
                     }
                 ],
                 "minItems": 2,
