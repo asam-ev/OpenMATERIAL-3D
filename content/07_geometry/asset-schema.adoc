@@ -438,7 +438,7 @@ Optional array containing material reassignments. It links material names contai
 Columns of the table:
 
 - Column 1: Name of the material in the 3D model file.
-- Column 2: Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file.
+- Column 2: Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255].
 
 == externalAssetReferences
 
