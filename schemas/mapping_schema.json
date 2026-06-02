@@ -74,7 +74,7 @@
                 "items": [
                     {
                         "type": "string",
-                        "description": "Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture."
+                        "description": "Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255]."
                     },
                     {
                         "type": "string",
