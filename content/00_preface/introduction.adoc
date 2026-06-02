@@ -56,7 +56,7 @@ The first interaction with an {THIS_STANDARD}-compliant _3D model_ is through th
 The *asset file* is a JSON file with the file extension .xoma ({THIS_STANDARD} Asset).
 A detailed definition of the https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/asset_schema.json[asset file JSON schema] is given in xref:07_geometry/asset-schema.adoc[].
 The asset file shall have the same name as a corresponding _3D data file_ in glTF, FBX, or USD format.
-To facilitate instancing, multiple asset files may be linked to a single _3D model_ file by adding an index separated by a dot (.) as a suffix to the asset file name.
+To facilitate instancing and allow implementation of variants of an asset, multiple asset files may be linked to a single _3D model_ file by adding a string separated by a dot (.) as a suffix to the asset file name.
 It contains metadata, such as description, unique identifier, version information, copyright details, and so on.
 It also includes a _material_ texture assignment table, allowing dedicated _material_ mapping textures to be assigned to materials within _3D data files_.
 This enables comprehensive _material properties_ to be mapped to the geometry at a texture level.
