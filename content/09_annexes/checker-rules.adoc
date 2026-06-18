@@ -122,6 +122,11 @@ UID:: asam.net:xom-geo:1.1.0:xoma.external_reference_nodes_exist
 
 Description:: If the property 'externalAssetReferences' is set, all nodes referenced in the 'externalAssetReferences.reference_node' fields shall exist in the corresponding 3D data file.
 
+==== geometry_property_nodes_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.geometry_property_nodes_exist
+
+Description:: If the property 'geometryProperties' is set, all nodes referenced in the 'geometryProperties.node' fields shall exist in the corresponding 3D data file.
 
 == A.2 Material
 
