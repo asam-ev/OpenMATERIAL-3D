@@ -78,7 +78,7 @@
                     },
                     {
                         "type": "string",
-                        "description": "Relative or absolute file path to the material. A relative path is indicated by a dot (.) as the first character.",
+                        "description": "Relative or absolute file path to the material.",
                         "pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.xomp$"
                     },
                     {
