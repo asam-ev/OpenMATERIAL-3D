@@ -116,6 +116,12 @@ UID:: asam.net:xom-geo:1.1.0:xoma.emissive_light_materials_exist
 
 Description:: If the property 'emissiveLightMapping' is set, all materials referenced in the 'emissiveLightMapping.material_name' fields shall exist in the corresponding 3D data file.
 
+==== external_reference_nodes_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.external_reference_nodes_exist
+
+Description:: If the property 'externalAssetReferences' is set, all nodes referenced in the 'externalAssetReferences.reference_node' fields shall exist in the corresponding 3D data file.
+
 
 == A.2 Material
 
