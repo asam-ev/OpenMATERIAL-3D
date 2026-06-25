@@ -190,17 +190,17 @@
                 },
                 "electromagneticPropertiesUri": {
                     "type": "string",
-                    "description": "Relative or absolute file path to a property lookup table file with electromagnetic material properties.",
+                    "description": "Relative or absolute file path to a property lookup table file with electromagnetic material properties. For cross-platform compatibility, Unix-style paths are recommended.",
                     "pattern": ".*_emp\\.xompt$"
                 },
                 "opticalPropertiesUri": {
                     "type": "string",
-                    "description": "Relative or absolute file path to a property lookup table file with optical material properties.",
+                    "description": "Relative or absolute file path to a property lookup table file with optical material properties. For cross-platform compatibility, Unix-style paths are recommended.",
                     "pattern": ".*_optical\\.xompt$"
                 },
                 "brdfUris": {
                     "type": "array",
-                    "description": "Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent bidirectional reflectance distribution functions.",
+                    "description": "Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent bidirectional reflectance distribution functions. For cross-platform compatibility, Unix-style paths are recommended.",
                     "items": {
                         "type": "string",
                         "pattern": ".*_brdf\\.xompt$"
@@ -208,7 +208,7 @@
                 },
                 "reflectionCoefficientUris": {
                     "type": "array",
-                    "description": "Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent reflection coefficient values.",
+                    "description": "Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent reflection coefficient values. For cross-platform compatibility, Unix-style paths are recommended.",
                     "items": {
                         "type": "string",
                         "pattern": ".*_reflCoeff\\.xompt$"
