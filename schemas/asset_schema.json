@@ -319,7 +319,7 @@
         },
         "materialMappingUri": {
             "type": "string",
-            "description": "Relative or absolute file path to a material mapping file (.xomm). In this file, material names from the 3D model file or texture color codes from textures assigned in 'materialTextureAssignment' are linked to ASAM OpenMATERIAL 3D property files.",
+            "description": "Relative or absolute file path to a material mapping file (.xomm). In this file, material names from the 3D model file or texture color codes from textures assigned in 'materialTextureAssignment' are linked to ASAM OpenMATERIAL 3D property files. For cross-platform compatibility, Unix-style paths are recommended.",
             "pattern": ".*\\.xomm$"
         },
         "materialTextureAssignment": {
@@ -334,7 +334,7 @@
                     },
                     {
                         "type": "string",
-                        "description": "Relative or absolute file path to the ASAM OpenMATERIAL 3D assignment texture."
+                        "description": "Relative or absolute file path to the ASAM OpenMATERIAL 3D assignment texture. For cross-platform compatibility, Unix-style paths are recommended."
                     }
                 ],
                 "minItems": 2,
@@ -373,7 +373,7 @@
                     },
                     "external_asset": {
                         "type": "string",
-                        "description": "Relative or absolute file path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma).",
+                        "description": "Relative or absolute file path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma). For cross-platform compatibility, Unix-style paths are recommended.",
 						"pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$"
                     }
 				}
@@ -394,12 +394,12 @@
                         "type": "string",
                         "format": "uri-reference",
                         "pattern": "\\.(ies|ldt|IES|LDT)$",
-                        "description": "Relative or absolute file path to an IES or ELUMDAT file defining the light profile."
+                        "description": "Relative or absolute file path to an IES or ELUMDAT file defining the light profile. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "radiometric_profile_uri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to a mapping table providing radiance per wavelength. (Format to be defined.)"
+                        "description": "Relative or absolute file path to a mapping table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (Format to be defined.)"
                     },
                     "inner_cone_angle": {
                         "type": "number",
@@ -500,12 +500,12 @@
                     "emissive_texture": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to an emissive texture."
+                        "description": "Relative or absolute file path to an emissive texture. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "masking_texture": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present."
+                        "description": "Relative or absolute file path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "color": {
                         "type": "object",
