@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/material_reflCoeff_schema.json",
     "metadata": {
         "name": "asphalt_reflection_coefficient_for_radar",
         "description": "Reflection coefficients of asphalt for radar sensor.",

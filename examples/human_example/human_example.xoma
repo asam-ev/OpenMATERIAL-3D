@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/asset_schema.json",
     "metadata": {
         "name": "human_example",
         "description": "This is an example human asset. It demonstrates how ASAM OpenMATERIAL 3D assets and their node structure work.",

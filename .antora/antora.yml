@@ -28,7 +28,7 @@ asciidoc: # Sets global AsciiDoc attributes that are applied for every page of t
     reusedir: reuse
     imagesoutdir: ./images/generated_images
     asamBibliography: 'specification:bibliography.bib'
-    generate-attachments: [["attachment$schemas/", "generated/schema-files.zip", "clean"], ["attachment$examples/", "generated/example-files.zip", "clean"]]
+    generate-attachments: [["schemas/", "generated/schema-files.zip", "clean"], ["examples/", "generated/example-files.zip", "clean"]]
     page-download-links: [["generated/schema-files.zip","Schema files"], ["generated/example-files.zip","Example files"]]
 
 nav:
