@@ -98,6 +98,36 @@ UID:: asam.net:xom-geo:1.0.0:xoma.all_texture_rgba_codes_defined
 
 Description:: If the property 'materialTextureAssignment' is set, all color codes of all referenced textures shall be covered by the material mapping table referenced in 'materialMappingUri'.
 
+==== light_definition_nodes_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.light_definition_nodes_exist
+
+Description:: If the property 'lightDefinition' is set, all nodes referenced in the 'lightDefinitions.node' fields shall exist in the corresponding 3D data file.
+
+==== emissive_light_nodes_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.emissive_light_nodes_exist
+
+Description:: If the property 'emissiveLightMapping' is set, all nodes referenced in the 'emissiveLightMapping.assoc_node' fields shall exist in the corresponding 3D data file.
+
+==== emissive_light_materials_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.emissive_light_materials_exist
+
+Description:: If the property 'emissiveLightMapping' is set, all materials referenced in the 'emissiveLightMapping.material_name' fields shall exist in the corresponding 3D data file.
+
+==== external_reference_nodes_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.external_reference_nodes_exist
+
+Description:: If the property 'externalAssetReferences' is set, all nodes referenced in the 'externalAssetReferences.reference_node' fields shall exist in the corresponding 3D data file.
+
+==== geometry_property_nodes_exist
+
+UID:: asam.net:xom-geo:1.1.0:xoma.geometry_property_nodes_exist
+
+Description:: If the property 'geometryProperties' is set, all nodes referenced in the 'geometryProperties.node' fields shall exist in the corresponding 3D data file.
+
 == A.2 Material
 
 === A.2.1 XOMP
