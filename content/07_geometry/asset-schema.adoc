@@ -405,7 +405,7 @@ Minimum and maximum values in meters along the z-axis.
 
 == materialMappingUri
 
-Relative path to a material mapping file (.xomm). In this file, material names from the 3D model file or texture color codes from textures assigned in 'materialTextureAssignment' are linked to ASAM OpenMATERIAL 3D property files.
+Relative or absolute file path to a material mapping file (.xomm). In this file, material names from the 3D model file or texture color codes from textures assigned in 'materialTextureAssignment' are linked to ASAM OpenMATERIAL 3D property files. For cross-platform compatibility, Unix-style paths are recommended.
 
 
 *Type:* `+string+` +
@@ -424,7 +424,7 @@ Optional array containing material texture assignments. It links material names 
 Columns of the table:
 
 - Column 1: Name of the material in the 3D model file.
-- Column 2: File path to the ASAM OpenMATERIAL 3D assignment texture.
+- Column 2: Relative or absolute file path to the ASAM OpenMATERIAL 3D assignment texture. For cross-platform compatibility, Unix-style paths are recommended.
 
 == materialReplacement
 
@@ -455,7 +455,7 @@ Name of the parent node in the 3D model file.
 
 
 === external_asset
-File path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma).
+Relative or absolute file path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma). For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+string+` +
 *Pattern:* `+^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$+` +
@@ -477,7 +477,7 @@ Identifier of the node in the 3D model hierarchy defining the light origin. This
 
 
 === photometric_profile_uri
-File path to an IES or ELUMDAT file defining the light profile.
+Relative or absolute file path to an IES or ELUMDAT file defining the light profile. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+string+` +
 *Pattern:* `+\\.(ies|ldt|IES|LDT)$+` +
@@ -485,7 +485,7 @@ File path to an IES or ELUMDAT file defining the light profile.
 
 
 === radiometric_profile_uri
-File path to a mapping table providing radiance per wavelength. (Format to be defined.)
+Relative or absolute file path to a mapping table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (Format to be defined.)
 
 *Type:* `+string+` +
 *Required:* No
@@ -589,14 +589,14 @@ Luminance defined in Candela per square meter (cd/m²).
 
 
 === emissive_texture
-File path to an emissive texture.
+Relative or absolute file path to an emissive texture. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+string+` +
 *Required:* No
 
 
 === masking_texture
-File path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present.
+Relative or absolute file path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+string+` +
 *Required:* No

@@ -91,6 +91,6 @@ Array containing material mappings.
 Columns of the table:
 
 - Column 1: Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255].
-- Column 2: File path to the material.
+- Column 2: Relative or absolute file path to the material. For cross-platform compatibility, Unix-style paths are recommended.
 - Column 3: Description of the material.
 

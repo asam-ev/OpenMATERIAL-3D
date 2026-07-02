@@ -227,7 +227,7 @@ Sources of the retro-reflectivity data. Multiple sources should be comma-separat
 
 
 === electromagneticPropertiesUri
-Relative path to a property lookup table file with electromagnetic material properties.
+Relative or absolute file path to a property lookup table file with electromagnetic material properties. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+string+` +
 *Pattern:* `+.*_emp\\.xompt$+` +
@@ -235,7 +235,7 @@ Relative path to a property lookup table file with electromagnetic material prop
 
 
 === opticalPropertiesUri
-Relative path to a property lookup table file with optical material properties.
+Relative or absolute file path to a property lookup table file with optical material properties. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+string+` +
 *Pattern:* `+.*_optical\\.xompt$+` +
@@ -243,7 +243,7 @@ Relative path to a property lookup table file with optical material properties.
 
 
 === brdfUris
-Relative paths to one or multiple property lookup table files with wavelength-dependent bidirectional reflectance distribution functions.
+Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent bidirectional reflectance distribution functions. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+array+` +
 *Required:* No
@@ -252,7 +252,7 @@ Relative paths to one or multiple property lookup table files with wavelength-de
 
 
 === reflectionCoefficientUris
-Relative paths to one or multiple property lookup table files with wavelength-dependent reflection coefficient values.
+Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent reflection coefficient values. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `+array+` +
 *Required:* No
