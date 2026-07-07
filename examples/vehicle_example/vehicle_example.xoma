@@ -91,6 +91,28 @@
             "temperature": 5000
         },
         {
+            "node": "Grp_Light_Position_Front_Left_0",
+            "inner_cone_angle": 70,
+            "outer_cone_angle": 80,
+            "luminous_intensity": 20,
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255
+            }
+        },
+        {
+            "node": "Grp_Light_Position_Front_Right_0",
+            "inner_cone_angle": 70,
+            "outer_cone_angle": 80,
+            "luminous_intensity": 20,
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255
+            }
+        },
+        {
             "node": "Grp_Light_Indicator_Left_0",
             "luminous_intensity": 20,
             "color": {
@@ -202,6 +224,26 @@
                 "r": 255,
                 "g": 245,
                 "b": 230
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Position_Front_Left_0",
+            "material_name": "Position_Light_Front_Left",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Position_Front_Right_0",
+            "material_name": "Position_Light_Front_Right",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255
             }
         },
         {
