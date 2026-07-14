@@ -91,28 +91,6 @@
             "temperature": 5000
         },
         {
-            "node": "Grp_Light_Position_Front_Left_0",
-            "inner_cone_angle": 70,
-            "outer_cone_angle": 80,
-            "luminous_intensity": 20,
-            "color": {
-                "r": 255,
-                "g": 255,
-                "b": 255
-            }
-        },
-        {
-            "node": "Grp_Light_Position_Front_Right_0",
-            "inner_cone_angle": 70,
-            "outer_cone_angle": 80,
-            "luminous_intensity": 20,
-            "color": {
-                "r": 255,
-                "g": 255,
-                "b": 255
-            }
-        },
-        {
             "node": "Grp_Light_Indicator_Left_0",
             "luminous_intensity": 20,
             "color": {
@@ -123,6 +101,24 @@
         },
         {
             "node": "Grp_Light_Indicator_Right_0",
+            "luminous_intensity": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Indicator_Left_1",
+            "luminous_intensity": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Indicator_Right_1",
             "luminous_intensity": 20,
             "color": {
                 "r": 255,
@@ -188,7 +184,27 @@
     "emissiveLightMapping": [
         {
             "assoc_node": "Grp_Light_High_Beam_Left_0",
-            "material_name": "Head_Light_Left",
+            "material_name": "Light_Head_Lens_Left",
+            "luminance": 15000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_High_Beam_Left_0",
+            "material_name": "Light_Head_Reflector_Left",
+            "luminance": 10000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_High_Beam_Right_0",
+            "material_name": "Light_Head_Lens_Right",
             "luminance": 15000,
             "color": {
                 "r": 255,
@@ -198,8 +214,8 @@
         },
         {
             "assoc_node": "Grp_Light_High_Beam_Right_0",
-            "material_name": "Head_Light_Right",
-            "luminance": 15000,
+            "material_name": "Light_Head_Reflector_Right",
+            "luminance": 10000,
             "color": {
                 "r": 255,
                 "g": 245,
@@ -208,7 +224,27 @@
         },
         {
             "assoc_node": "Grp_Light_Low_Beam_Left_0",
-            "material_name": "Head_Light_Left",
+            "material_name": "Light_Head_Lens_Left",
+            "luminance": 10000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Low_Beam_Left_0",
+            "material_name": "Light_Head_Reflector_Left",
+            "luminance": 7500,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Low_Beam_Right_0",
+            "material_name": "Light_Head_Lens_Right",
             "luminance": 10000,
             "color": {
                 "r": 255,
@@ -218,8 +254,8 @@
         },
         {
             "assoc_node": "Grp_Light_Low_Beam_Right_0",
-            "material_name": "Head_Light_Right",
-            "luminance": 10000,
+            "material_name": "Light_Head_Reflector_Right",
+            "luminance": 7500,
             "color": {
                 "r": 255,
                 "g": 245,
@@ -227,28 +263,28 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Position_Front_Left_0",
-            "material_name": "Position_Light_Front_Left",
+            "assoc_node": "Grp_Light_Indicator_Left_0",
+            "material_name": "Light_Indicator_Lens_Left",
             "luminance": 20,
             "color": {
                 "r": 255,
-                "g": 255,
-                "b": 255
-            }
-        },
-        {
-            "assoc_node": "Grp_Light_Position_Front_Right_0",
-            "material_name": "Position_Light_Front_Right",
-            "luminance": 20,
-            "color": {
-                "r": 255,
-                "g": 255,
-                "b": 255
+                "g": 140,
+                "b": 0
             }
         },
         {
             "assoc_node": "Grp_Light_Indicator_Left_0",
-            "material_name": "Indicator_Light_Left",
+            "material_name": "Light_Indicator_Reflector_Left",
+            "luminance": 15,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Indicator_Right_0",
+            "material_name": "Light_Indicator_Lens_Right",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -258,7 +294,17 @@
         },
         {
             "assoc_node": "Grp_Light_Indicator_Right_0",
-            "material_name": "Indicator_Light_Right",
+            "material_name": "Light_Indicator_Reflector_Right",
+            "luminance": 15,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Indicator_Left_1",
+            "material_name": "Light_Indicator_Lens_Left",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -267,8 +313,58 @@
             }
         },
         {
+            "assoc_node": "Grp_Light_Indicator_Left_1",
+            "material_name": "Light_Indicator_Reflector_Left",
+            "luminance": 15,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Indicator_Right_1",
+            "material_name": "Light_Indicator_Lens_Right",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Indicator_Right_1",
+            "material_name": "Light_Indicator_Reflector_Right",
+            "luminance": 15,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
             "assoc_node": "Grp_Light_Brake_Left_0",
-            "material_name": "Tail_Light_Left",
+            "material_name": "Light_Brake_Lens_Left",
+            "luminance": 60,
+            "color": {
+                "r": 255,
+                "g": 10,
+                "b": 0
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Brake_Left_0",
+            "material_name": "Light_Brake_Reflector_Left",
+            "luminance": 40,
+            "color": {
+                "r": 255,
+                "g": 10,
+                "b": 0
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Brake_Right_0",
+            "material_name": "Light_Brake_Lens_Right",
             "luminance": 60,
             "color": {
                 "r": 255,
@@ -278,8 +374,8 @@
         },
         {
             "assoc_node": "Grp_Light_Brake_Right_0",
-            "material_name": "Tail_Light_Right",
-            "luminance": 60,
+            "material_name": "Light_Brake_Reflector_Right",
+            "luminance": 40,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -288,7 +384,27 @@
         },
         {
             "assoc_node": "Grp_Light_Tail_Left_0",
-            "material_name": "Tail_Light_Left",
+            "material_name": "Light_Tail_Lens_Left",
+            "luminance": 10,
+            "color": {
+                "r": 255,
+                "g": 20,
+                "b": 5
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Tail_Left_0",
+            "material_name": "Light_Tail_Reflector_Left",
+            "luminance": 7,
+            "color": {
+                "r": 255,
+                "g": 20,
+                "b": 5
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Tail_Right_0",
+            "material_name": "Light_Tail_Lens_Right",
             "luminance": 10,
             "color": {
                 "r": 255,
@@ -298,8 +414,8 @@
         },
         {
             "assoc_node": "Grp_Light_Tail_Right_0",
-            "material_name": "Tail_Light_Right",
-            "luminance": 10,
+            "material_name": "Light_Tail_Reflector_Right",
+            "luminance": 7,
             "color": {
                 "r": 255,
                 "g": 20,
@@ -308,7 +424,27 @@
         },
         {
             "assoc_node": "Grp_Light_Fog_Left_0",
-            "material_name": "Fog_Light_Left",
+            "material_name": "Light_Head_Lens_Left",
+            "luminance": 5000,
+            "color": {
+                "r": 255,
+                "g": 235,
+                "b": 200
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Fog_Left_0",
+            "material_name": "Light_Head_Reflector_Left",
+            "luminance": 3500,
+            "color": {
+                "r": 255,
+                "g": 235,
+                "b": 200
+            }
+        },
+        {
+            "assoc_node": "Grp_Light_Fog_Right_0",
+            "material_name": "Light_Head_Lens_Right",
             "luminance": 5000,
             "color": {
                 "r": 255,
@@ -318,8 +454,8 @@
         },
         {
             "assoc_node": "Grp_Light_Fog_Right_0",
-            "material_name": "Fog_Light_Right",
-            "luminance": 5000,
+            "material_name": "Light_Head_Reflector_Right",
+            "luminance": 3500,
             "color": {
                 "r": 255,
                 "g": 235,

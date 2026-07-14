@@ -15,8 +15,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.006000041961669922,
+						0
 					],
 					"intensity":3261.0847839529356,
 					"type":"point",
@@ -25,8 +25,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.006000041961669922,
+						0
 					],
 					"intensity":3261.0847839529356,
 					"type":"point",
@@ -91,8 +91,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.17504841089248657,
+						0.0294685959815979
 					],
 					"intensity":1087.0282613176453,
 					"type":"point",
@@ -101,8 +101,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.10199999809265137,
+						0
 					],
 					"intensity":1087.0282613176453,
 					"type":"point",
@@ -111,8 +111,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.10208791494369507,
+						0
 					],
 					"intensity":1087.0282613176453,
 					"type":"point",
@@ -121,8 +121,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.10199999809265137,
+						0
 					],
 					"intensity":1087.0282613176453,
 					"type":"point",
@@ -159,36 +159,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
-					],
-					"intensity":1087.0282613176453,
-					"spot":{
-						"innerConeAngle":0.6283185113994305,
-						"outerConeAngle":0.6981316804885864
-					},
-					"type":"spot",
-					"name":"Spot.006"
-				},
-				{
-					"color":[
-						1,
-						1,
-						1
-					],
-					"intensity":1087.0282613176453,
-					"spot":{
-						"innerConeAngle":0.6283185113994305,
-						"outerConeAngle":0.6981316804885864
-					},
-					"type":"spot",
-					"name":"Spot.007"
-				},
-				{
-					"color":[
-						1,
-						1,
-						1
+						0.006000041961669922,
+						0
 					],
 					"intensity":543.5141306588226,
 					"type":"point",
@@ -197,8 +169,8 @@
 				{
 					"color":[
 						1,
-						1,
-						1
+						0.006599683314561844,
+						0
 					],
 					"intensity":543.5141306588226,
 					"type":"point",
@@ -212,7 +184,7 @@
 		{
 			"name":"Scene",
 			"nodes":[
-				138
+				132
 			]
 		}
 	],
@@ -650,7 +622,7 @@
 					"light":5
 				}
 			},
-			"name":"Spot_Light_High_Beam_Left_0.001",
+			"name":"Spot_Light_High_Beam_Right",
 			"rotation":[
 				-0.5043442249298096,
 				-0.49561774730682373,
@@ -892,84 +864,6 @@
 			]
 		},
 		{
-			"name":"Grp_Light_Park_Left_0",
-			"rotation":[
-				0,
-				-1,
-				0,
-				1.6292068494294654e-07
-			],
-			"translation":[
-				-1.8539128303527832,
-				0.5859900116920471,
-				-0.6504209637641907
-			]
-		},
-		{
-			"name":"Grp_Light_Park_Right_0",
-			"rotation":[
-				0,
-				-1,
-				0,
-				1.6292068494294654e-07
-			],
-			"translation":[
-				-1.853912591934204,
-				0.5859900116920471,
-				0.6504214406013489
-			]
-		},
-		{
-			"extensions":{
-				"KHR_lights_punctual":{
-					"light":12
-				}
-			},
-			"name":"Spot_Light_Position_Front_Left_0",
-			"rotation":[
-				-0.5129171013832092,
-				-0.4867401719093323,
-				0.4867401719093323,
-				0.512917160987854
-			]
-		},
-		{
-			"children":[
-				67
-			],
-			"name":"Grp_Light_Position_Front_Left_0",
-			"translation":[
-				1.7611651420593262,
-				0.6593009829521179,
-				-0.6364350914955139
-			]
-		},
-		{
-			"extensions":{
-				"KHR_lights_punctual":{
-					"light":13
-				}
-			},
-			"name":"Spot_Light_Position_Front_Left_0.001",
-			"rotation":[
-				-0.5129171013832092,
-				-0.4867401719093323,
-				0.4867401719093323,
-				0.512917160987854
-			]
-		},
-		{
-			"children":[
-				69
-			],
-			"name":"Grp_Light_Position_Front_Right_0",
-			"translation":[
-				1.761165738105774,
-				0.6593009829521179,
-				0.6364348530769348
-			]
-		},
-		{
 			"mesh":29,
 			"name":"Light_Tail_Lens_BL"
 		},
@@ -980,7 +874,7 @@
 		{
 			"extensions":{
 				"KHR_lights_punctual":{
-					"light":14
+					"light":12
 				}
 			},
 			"name":"Point_Light_Tail_Left_0",
@@ -993,9 +887,9 @@
 		},
 		{
 			"children":[
-				71,
-				72,
-				73
+				65,
+				66,
+				67
 			],
 			"name":"Grp_Light_Tail_Left_0",
 			"rotation":[
@@ -1021,7 +915,7 @@
 		{
 			"extensions":{
 				"KHR_lights_punctual":{
-					"light":15
+					"light":13
 				}
 			},
 			"name":"Point_Light_Tail_Right_0",
@@ -1034,9 +928,9 @@
 		},
 		{
 			"children":[
-				75,
-				76,
-				77
+				69,
+				70,
+				71
 			],
 			"name":"Grp_Light_Tail_Right_0",
 			"rotation":[
@@ -1065,7 +959,7 @@
 		},
 		{
 			"children":[
-				80
+				74
 			],
 			"name":"Grp_Wheel_Steering_0_0"
 		},
@@ -1083,16 +977,16 @@
 		},
 		{
 			"children":[
-				82,
-				83,
-				84
+				76,
+				77,
+				78
 			],
 			"name":"Grp_Wheel_Steering_Rotating_0_0"
 		},
 		{
 			"children":[
-				81,
-				85
+				75,
+				79
 			],
 			"name":"Grp_Wheel_0_0",
 			"translation":[
@@ -1107,7 +1001,7 @@
 		},
 		{
 			"children":[
-				87
+				81
 			],
 			"name":"Grp_Wheel_Steering_0_1"
 		},
@@ -1125,16 +1019,16 @@
 		},
 		{
 			"children":[
-				89,
-				90,
-				91
+				83,
+				84,
+				85
 			],
 			"name":"Grp_Wheel_Steering_Rotating_0_1"
 		},
 		{
 			"children":[
-				88,
-				92
+				82,
+				86
 			],
 			"name":"Grp_Wheel_0_1",
 			"translation":[
@@ -1154,7 +1048,7 @@
 		},
 		{
 			"children":[
-				94
+				88
 			],
 			"name":"Grp_Wheel_Steering_1_0"
 		},
@@ -1177,16 +1071,16 @@
 		},
 		{
 			"children":[
-				96,
-				97,
-				98
+				90,
+				91,
+				92
 			],
 			"name":"Grp_Wheel_Steering_Rotating_1_0"
 		},
 		{
 			"children":[
-				95,
-				99
+				89,
+				93
 			],
 			"name":"Grp_Wheel_1_0",
 			"translation":[
@@ -1201,7 +1095,7 @@
 		},
 		{
 			"children":[
-				101
+				95
 			],
 			"name":"Grp_Wheel_Steering_1_1"
 		},
@@ -1219,16 +1113,16 @@
 		},
 		{
 			"children":[
-				103,
-				104,
-				105
+				97,
+				98,
+				99
 			],
 			"name":"Grp_Wheel_Steering_Rotating_1_1"
 		},
 		{
 			"children":[
-				102,
-				106
+				96,
+				100
 			],
 			"name":"Grp_Wheel_1_1",
 			"translation":[
@@ -1257,17 +1151,13 @@
 				56,
 				60,
 				64,
-				65,
-				66,
 				68,
-				70,
-				74,
-				78,
-				79,
-				86,
-				93,
-				100,
-				107
+				72,
+				73,
+				80,
+				87,
+				94,
+				101
 			],
 			"name":"Grp_Exterior_Dynamic"
 		},
@@ -1299,16 +1189,16 @@
 		},
 		{
 			"children":[
-				109,
-				110,
-				111
+				103,
+				104,
+				105
 			],
 			"name":"Grp_Exterior_Static"
 		},
 		{
 			"children":[
-				108,
-				112
+				102,
+				106
 			],
 			"name":"Grp_Exterior"
 		},
@@ -1338,8 +1228,8 @@
 		},
 		{
 			"children":[
-				116,
-				117
+				110,
+				111
 			],
 			"name":"Grp_Mirror_Rearview_Joint_0",
 			"rotation":[
@@ -1356,8 +1246,8 @@
 		},
 		{
 			"children":[
-				115,
-				118
+				109,
+				112
 			],
 			"name":"Grp_Mirror_Rearview_Mounting_0",
 			"translation":[
@@ -1381,8 +1271,8 @@
 		},
 		{
 			"children":[
-				120,
-				121
+				114,
+				115
 			],
 			"name":"Grp_Seat_0_0",
 			"translation":[
@@ -1406,8 +1296,8 @@
 		},
 		{
 			"children":[
-				123,
-				124
+				117,
+				118
 			],
 			"name":"Grp_Seat_0_1",
 			"translation":[
@@ -1444,8 +1334,8 @@
 		},
 		{
 			"children":[
-				127,
-				128
+				121,
+				122
 			],
 			"name":"Grp_Seat_1_1",
 			"translation":[
@@ -1484,8 +1374,8 @@
 		},
 		{
 			"children":[
-				131,
-				132
+				125,
+				126
 			],
 			"name":"Grp_Steering_Wheel_0",
 			"rotation":[
@@ -1502,14 +1392,14 @@
 		},
 		{
 			"children":[
-				114,
+				108,
+				113,
+				116,
 				119,
-				122,
-				125,
-				126,
-				129,
-				130,
-				133
+				120,
+				123,
+				124,
+				127
 			],
 			"name":"Grp_Interior_Dynamic"
 		},
@@ -1524,21 +1414,21 @@
 		},
 		{
 			"children":[
-				135
+				129
 			],
 			"name":"Grp_Interior_Static"
 		},
 		{
 			"children":[
-				134,
-				136
+				128,
+				130
 			],
 			"name":"Grp_Interior"
 		},
 		{
 			"children":[
-				113,
-				137
+				107,
+				131
 			],
 			"name":"Grp_Root"
 		}
@@ -1619,7 +1509,7 @@
 				0,
 				0
 			],
-			"name":"Plastic_Red",
+			"name":"Light_Brake_Lens_Left",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1632,6 +1522,77 @@
 			}
 		},
 		{
+			"doubleSided":true,
+			"name":"Light_Brake_Reflector_Left",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.006000041961669922,
+					0,
+					1
+				],
+				"roughnessFactor":0.20000000298023224
+			}
+		},
+		{
+			"alphaMode":"BLEND",
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				0.006000041961669922,
+				0
+			],
+			"name":"Light_Tail_Lens_Left",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.006000041961669922,
+					0,
+					0.4000000059604645
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"alphaMode":"BLEND",
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				0.10199999809265137,
+				0
+			],
+			"name":"Light_Indicator_Left_Lens",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.10199999809265137,
+					0,
+					0.4000000059604645
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				0.10199999809265137,
+				0
+			],
+			"name":"Light_Indicator_Reflector_Left",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.10199999809265137,
+					0,
+					1
+				],
+				"roughnessFactor":0.20000000298023224
+			}
+		},
+		{
 			"alphaMode":"BLEND",
 			"doubleSided":true,
 			"emissiveFactor":[
@@ -1639,13 +1600,70 @@
 				0.10000000149011612,
 				0
 			],
-			"name":"Plastic_Orange",
+			"name":"Light_Indicator_Right_Lens",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
 					0.10000000149011612,
 					0,
 					0.4000000059604645
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				0.10199999809265137,
+				0
+			],
+			"name":"Light_Indicator_Reflector_Right",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.10199999809265137,
+					0,
+					1
+				],
+				"roughnessFactor":0.20000000298023224
+			}
+		},
+		{
+			"alphaMode":"BLEND",
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				1,
+				1
+			],
+			"name":"Light_Head_Lens_Left",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					0.4000000059604645
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				1,
+				1
+			],
+			"name":"Light_Head_Reflector_Left",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
 				],
 				"metallicFactor":0,
 				"roughnessFactor":0.699999988079071
@@ -1659,11 +1677,61 @@
 				1,
 				1
 			],
-			"name":"Plastic_Clear",
+			"name":"Light_Head_Lens_Right",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					0,
 					0,
+					0,
+					0.4000000059604645
+				],
+				"roughnessFactor":0.20000000298023224
+			}
+		},
+		{
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				1,
+				1
+			],
+			"name":"Light_Head_Reflector_Right",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					0,
+					0,
+					0,
+					1
+				],
+				"roughnessFactor":0.20000000298023224
+			}
+		},
+		{
+			"doubleSided":true,
+			"name":"Light_Tail_Reflector_Left",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.006000041961669922,
+					0,
+					1
+				],
+				"roughnessFactor":0.20000000298023224
+			}
+		},
+		{
+			"alphaMode":"BLEND",
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				0.006000041961669922,
+				0
+			],
+			"name":"Light_Tail_Lens_Right",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.006000041961669922,
 					0,
 					0.4000000059604645
 				],
@@ -1673,15 +1741,14 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Head_Light_Left",
+			"name":"Light_Tail_Reflector_Right",
 			"pbrMetallicRoughness":{
-				"roughnessFactor":0.20000000298023224
-			}
-		},
-		{
-			"doubleSided":true,
-			"name":"Head_Light_Right",
-			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.006000041961669922,
+					0,
+					1
+				],
 				"roughnessFactor":0.20000000298023224
 			}
 		},
@@ -1972,7 +2039,7 @@
 						"NORMAL":61
 					},
 					"indices":62,
-					"material":3
+					"material":7
 				}
 			]
 		},
@@ -1985,7 +2052,7 @@
 						"NORMAL":64
 					},
 					"indices":65,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -1998,7 +2065,7 @@
 						"NORMAL":67
 					},
 					"indices":68,
-					"material":3
+					"material":7
 				}
 			]
 		},
@@ -2011,7 +2078,7 @@
 						"NORMAL":70
 					},
 					"indices":71,
-					"material":7
+					"material":9
 				}
 			]
 		},
@@ -2024,7 +2091,7 @@
 						"NORMAL":73
 					},
 					"indices":74,
-					"material":3
+					"material":10
 				}
 			]
 		},
@@ -2037,7 +2104,7 @@
 						"NORMAL":76
 					},
 					"indices":77,
-					"material":7
+					"material":9
 				}
 			]
 		},
@@ -2050,7 +2117,7 @@
 						"NORMAL":79
 					},
 					"indices":80,
-					"material":3
+					"material":10
 				}
 			]
 		},
@@ -2063,7 +2130,7 @@
 						"NORMAL":82
 					},
 					"indices":83,
-					"material":7
+					"material":11
 				}
 			]
 		},
@@ -2076,7 +2143,7 @@
 						"NORMAL":85
 					},
 					"indices":86,
-					"material":3
+					"material":12
 				}
 			]
 		},
@@ -2089,7 +2156,7 @@
 						"NORMAL":88
 					},
 					"indices":89,
-					"material":7
+					"material":11
 				}
 			]
 		},
@@ -2102,7 +2169,7 @@
 						"NORMAL":91
 					},
 					"indices":92,
-					"material":3
+					"material":12
 				}
 			]
 		},
@@ -2116,7 +2183,7 @@
 						"TEXCOORD_0":95
 					},
 					"indices":96,
-					"material":8
+					"material":13
 				}
 			]
 		},
@@ -2130,7 +2197,7 @@
 						"TEXCOORD_0":99
 					},
 					"indices":100,
-					"material":9
+					"material":14
 				}
 			]
 		},
@@ -2144,7 +2211,7 @@
 						"TEXCOORD_0":103
 					},
 					"indices":104,
-					"material":8
+					"material":15
 				}
 			]
 		},
@@ -2158,7 +2225,7 @@
 						"TEXCOORD_0":107
 					},
 					"indices":108,
-					"material":10
+					"material":16
 				}
 			]
 		},
@@ -2171,7 +2238,7 @@
 						"NORMAL":110
 					},
 					"indices":111,
-					"material":6
+					"material":8
 				}
 			]
 		},
@@ -2184,7 +2251,7 @@
 						"NORMAL":113
 					},
 					"indices":114,
-					"material":3
+					"material":17
 				}
 			]
 		},
@@ -2197,7 +2264,7 @@
 						"NORMAL":116
 					},
 					"indices":117,
-					"material":6
+					"material":18
 				}
 			]
 		},
@@ -2210,7 +2277,7 @@
 						"NORMAL":119
 					},
 					"indices":120,
-					"material":3
+					"material":19
 				}
 			]
 		},
@@ -2224,7 +2291,7 @@
 						"TEXCOORD_0":123
 					},
 					"indices":124,
-					"material":11
+					"material":20
 				},
 				{
 					"attributes":{
@@ -2233,7 +2300,7 @@
 						"TEXCOORD_0":127
 					},
 					"indices":128,
-					"material":12
+					"material":21
 				}
 			]
 		},
@@ -2247,7 +2314,7 @@
 						"TEXCOORD_0":131
 					},
 					"indices":132,
-					"material":11
+					"material":20
 				}
 			]
 		},
@@ -2275,7 +2342,7 @@
 						"TEXCOORD_0":139
 					},
 					"indices":140,
-					"material":13
+					"material":22
 				}
 			]
 		},
@@ -2289,7 +2356,7 @@
 						"TEXCOORD_0":143
 					},
 					"indices":144,
-					"material":11
+					"material":20
 				},
 				{
 					"attributes":{
@@ -2298,7 +2365,7 @@
 						"TEXCOORD_0":147
 					},
 					"indices":148,
-					"material":12
+					"material":21
 				}
 			]
 		},
@@ -2312,7 +2379,7 @@
 						"TEXCOORD_0":151
 					},
 					"indices":152,
-					"material":11
+					"material":20
 				}
 			]
 		},
@@ -2340,7 +2407,7 @@
 						"TEXCOORD_0":159
 					},
 					"indices":160,
-					"material":13
+					"material":22
 				}
 			]
 		},
@@ -2354,7 +2421,7 @@
 						"TEXCOORD_0":163
 					},
 					"indices":164,
-					"material":11
+					"material":20
 				},
 				{
 					"attributes":{
@@ -2363,7 +2430,7 @@
 						"TEXCOORD_0":167
 					},
 					"indices":168,
-					"material":12
+					"material":21
 				}
 			]
 		},
@@ -2377,7 +2444,7 @@
 						"TEXCOORD_0":171
 					},
 					"indices":132,
-					"material":11
+					"material":20
 				}
 			]
 		},
@@ -2405,7 +2472,7 @@
 						"TEXCOORD_0":177
 					},
 					"indices":140,
-					"material":13
+					"material":22
 				}
 			]
 		},
@@ -2419,7 +2486,7 @@
 						"TEXCOORD_0":180
 					},
 					"indices":181,
-					"material":11
+					"material":20
 				},
 				{
 					"attributes":{
@@ -2428,7 +2495,7 @@
 						"TEXCOORD_0":184
 					},
 					"indices":185,
-					"material":12
+					"material":21
 				}
 			]
 		},
@@ -2442,7 +2509,7 @@
 						"TEXCOORD_0":188
 					},
 					"indices":152,
-					"material":11
+					"material":20
 				}
 			]
 		},
@@ -2470,7 +2537,7 @@
 						"TEXCOORD_0":194
 					},
 					"indices":195,
-					"material":13
+					"material":22
 				}
 			]
 		},
@@ -2549,7 +2616,7 @@
 						"TEXCOORD_0":218
 					},
 					"indices":219,
-					"material":14
+					"material":23
 				}
 			]
 		},
@@ -2563,7 +2630,7 @@
 						"TEXCOORD_0":222
 					},
 					"indices":223,
-					"material":14
+					"material":23
 				}
 			]
 		},
@@ -2577,7 +2644,7 @@
 						"TEXCOORD_0":226
 					},
 					"indices":227,
-					"material":14
+					"material":23
 				}
 			]
 		},
@@ -2591,7 +2658,7 @@
 						"TEXCOORD_0":230
 					},
 					"indices":231,
-					"material":14
+					"material":23
 				}
 			]
 		},
@@ -2605,7 +2672,7 @@
 						"TEXCOORD_0":234
 					},
 					"indices":235,
-					"material":14
+					"material":23
 				}
 			]
 		},
@@ -2619,7 +2686,7 @@
 						"TEXCOORD_0":238
 					},
 					"indices":239,
-					"material":14
+					"material":23
 				}
 			]
 		},
@@ -2647,7 +2714,7 @@
 						"TEXCOORD_0":246
 					},
 					"indices":247,
-					"material":15
+					"material":24
 				}
 			]
 		},
