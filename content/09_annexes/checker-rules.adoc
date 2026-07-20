@@ -14,10 +14,7 @@ The concepts are ordered and separated by the separation character `:`.
 The concepts for a rule UID are:
 
 * *Emanating entity*: A domain name for the entity (organization or company) that declares the rule UID. For {THIS_STANDARD}, it is `asam.net`.
-* *Standard*: A short string that represents the standard or the domain to which the rule is applied. For {THIS_STANDARD}, there are three different standard strings:
-** `xom`: General rules applicable for both parts or not categorizable because they are in-between.
-** `xom-geo`: Rules that only apply to the geometry part of {THIS_STANDARD}.
-** `xom-mat`: Rules that only apply to the material part of {THIS_STANDARD}.
+* *Standard*: A short string that represents the standard or the domain to which the rule is applied. For {THIS_STANDARD}, it is `xom`.
 * *Definition setting*: The version of the standard or the domain to which the rule appears or is applied for the first time, for example, `1.0.0`.
 * *Rule full name*: The full name of the rule, as dot-separated, snake_lower_case string. The full name of a rule is composed of the rule set and the rule name, a unique string inside the categorization. The rule set can be nested, meaning that it can be defined as an arbitrary sequence of dot-separated names. The name is the snake_case string after the last dot of the full name.
 
@@ -62,7 +59,9 @@ UID:: asam.net:xom:1.0.0:general.uris_exist
 
 Description:: If a URI property to other file is set in a JSON file, the file linked in that property shall exist.
 
-=== A.1.2 XOMA
+== A.2 Geometry
+
+=== A.2.1 XOMA
 
 ==== material_textures_exist
 
@@ -70,31 +69,27 @@ UID:: asam.net:xom:1.0.0:xoma.material_textures_exist
 
 Description:: Textures mapped to material names in the 'materialTextureAssignment' field of .xoma files shall exist.
 
-== A.2 Geometry
-
-=== A.2.1 XOMA
-
 ==== vehicle_class_data_defined
 
-UID:: asam.net:xom-geo:1.0.0:xoma.vehicle_class_data_defined
+UID:: asam.net:xom:1.0.0:xoma.vehicle_class_data_defined
 
 Description:: If an asset is of type 'vehicle', the property 'vehicleClassData' must be set in the metadata.
 
 ==== human_class_data_defined
 
-UID:: asam.net:xom-geo:1.0.0:xoma.human_class_data_defined
+UID:: asam.net:xom:1.0.0:xoma.human_class_data_defined
 
 Description:: If an asset is of type 'human', the property 'humanClassData' must be set in the metadata.
 
 ==== texture_assignment_requires_mapping
 
-UID:: asam.net:xom-geo:1.0.0:xoma.texture_assignment_requires_mapping
+UID:: asam.net:xom:1.0.0:xoma.texture_assignment_requires_mapping
 
 Description:: If the property 'materialTextureAssignment' is set, 'materialMappingUri' must also be set.
 
 ==== all_texture_rgba_codes_defined
 
-UID:: asam.net:xom-geo:1.0.0:xoma.all_texture_rgba_codes_defined
+UID:: asam.net:xom:1.0.0:xoma.all_texture_rgba_codes_defined
 
 Description:: If the property 'materialTextureAssignment' is set, all color codes of all referenced textures shall be covered by the material mapping table referenced in 'materialMappingUri'.
 
@@ -104,7 +99,7 @@ Description:: If the property 'materialTextureAssignment' is set, all color code
 
 ==== look_up_tables_unique_wavelengths
 
-UID:: asam.net:xom-mat:1.0.0:xomp.look_up_tables_unique_wavelengths
+UID:: asam.net:xom:1.0.0:xomp.look_up_tables_unique_wavelengths
 
 Description:: Look-up tables referenced in a .xomp file should not have overlapping wavelength ranges. (Warning level)
 
@@ -112,6 +107,6 @@ Description:: Look-up tables referenced in a .xomp file should not have overlapp
 
 ==== tables_sorted_correctly
 
-UID:: asam.net:xom-mat:1.0.0:xompt.tables_sorted_correctly
+UID:: asam.net:xom:1.0.0:xompt.tables_sorted_correctly
 
 Description:: Arrays in look-up tables shall be sorted based on the columns starting with the first.
