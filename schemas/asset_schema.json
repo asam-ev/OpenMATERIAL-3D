@@ -501,7 +501,7 @@
                     "emissiveTextureUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to an emissive texture. For cross-platform compatibility, Unix-style paths are recommended."
+                        "description": "Relative or absolute file path to an emissive texture. See 'color' property for an equation on how the emissive texture value is used in the lighting calculation. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "maskingTextureUri": {
                         "type": "string",
