@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import copy
 import argparse
 from typing import List, Dict
@@ -229,6 +230,117 @@ def generate_asciidoc_main_field(field_name: str, schema: Dict, is_required: boo
     return asciidoc_content
 
 
+def generate_heading_id(text: str) -> str:
+    """
+    Approximate the auto-generated AsciiDoc section ID for a heading with the given text.
+
+    Args:
+        text (str): The heading text, i.e. the property name.
+
+    Returns:
+        str: The approximated section ID, including the leading underscore.
+    """
+    slug = re.sub(r'[^a-zA-Z0-9]+', '_', text).strip('_').lower()
+    return f"_{slug}"
+
+
+def build_hierarchy_tree(schema: Dict) -> List[Dict]:
+    """
+    Build a tree mirroring the section hierarchy that will be generated for the schema,
+    so it can be rendered as an overview hierarchy diagram.
+
+    Traverses the schema properties in the same order and with the same rules used by
+    generate_asciidoc_main_field/generate_asciidoc_properties, so that section IDs assigned
+    here line up with the IDs AsciiDoc will auto-generate for the actual headings.
+
+    Args:
+        schema (dict): The (reference-resolved) JSON schema.
+
+    Returns:
+        list[dict]: The top-level nodes of the hierarchy tree. Each node has the keys
+                     'name', 'required', 'id', and 'children'.
+    """
+    id_counts: Dict[str, int] = {}
+
+    def next_id(name: str) -> str:
+        base = generate_heading_id(name)
+        count = id_counts.get(base, 0) + 1
+        id_counts[base] = count
+        return base if count == 1 else f"{base}_{count}"
+
+    def build_node(name: str, field_data: Dict, required: bool) -> Dict:
+        node = {"name": name, "required": required, "id": next_id(name), "children": []}
+
+        if (
+            field_data.get("type") == "array"
+            and isinstance(field_data.get("items"), dict)
+            and field_data["items"].get("type") == "object"
+        ):
+            item_properties = field_data["items"].get("properties", {})
+            item_required_fields = field_data["items"].get("required", [])
+            for child_name, child_data in item_properties.items():
+                node["children"].append(build_node(child_name, child_data, child_name in item_required_fields))
+        elif "properties" in field_data:
+            nested_required_fields = field_data.get("required", [])
+            for child_name, child_data in field_data["properties"].items():
+                node["children"].append(build_node(child_name, child_data, child_name in nested_required_fields))
+
+        return node
+
+    top_required_fields = schema.get("required", [])
+    return [
+        build_node(name, field_data, name in top_required_fields)
+        for name, field_data in schema["properties"].items()
+    ]
+
+
+def render_hierarchy_diagram(headline: str, tree: List[Dict]) -> str:
+    """
+    Render a hierarchy tree as a PlantUML legend diagram, similar to the vehicle structure
+    overview diagram, preceded by an explanatory sentence. Required fields are marked with "(R)".
+
+    Args:
+        headline (str): The label for the virtual root node representing the whole schema.
+        tree (list[dict]): The hierarchy tree as returned by build_hierarchy_tree.
+
+    Returns:
+        str: The AsciiDoc content for the overview section, including the heading.
+    """
+    lines = [headline]
+
+    def render_node(node: Dict, level: int) -> None:
+        entry = f"[[#{node['id']} {node['name']}]]"
+        if node["required"]:
+            entry += " (R)"
+        indent = "  " * (level - 1)
+        lines.append(f"{indent}|_ {entry}")
+        for child in node["children"]:
+            render_node(child, level + 1)
+
+    for node in tree:
+        render_node(node, 1)
+
+    diagram_body = "\n".join(lines)
+
+    description = (
+        "This diagram shows the hierarchy of the fields defined in this schema. "
+        "Fields marked with `\\(R)` are required. "
+        "A field can be optional while some of its children are required. "
+        "In that case, the required children only have to be filled in if the optional parent field is present.\n\n"
+    )
+
+    return (
+        "== Overview\n\n"
+        f"{description}"
+        "[plantuml]\n"
+        "----\n"
+        "legend\n"
+        f"{diagram_body}\n"
+        "end legend\n"
+        "----\n\n"
+    )
+
+
 def resolve_references(definitions, schema):
     """
         Resolve JSON Schema references in the provided schema using the given definitions.
@@ -289,6 +401,9 @@ def generate_asciidoc_file(json_schema_path: str, output_path: str):
     headline = format_main_headline(os.path.splitext(base_filename)[0])
     headline = headline.replace("reflcoeff", "reflection coefficient")     # This is an exception because of the abbreviation of reflection coefficient in the schema file name
     asciidoc_content = f"= {headline}\n\n"
+
+    hierarchy_tree = build_hierarchy_tree(schema)
+    asciidoc_content += render_hierarchy_diagram(headline, hierarchy_tree)
 
     for field in schema['properties']:
         is_required = field in schema.get('required', [])
