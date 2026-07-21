@@ -294,7 +294,32 @@ def build_hierarchy_tree(schema: Dict) -> List[Dict]:
     ]
 
 
-def render_hierarchy_diagram(headline: str, tree: List[Dict]) -> str:
+def compute_page_link_prefix(output_path: str) -> str:
+    """
+    Compute the relative link prefix pointing from the rendered diagram image (which lives in
+    the shared content/_images directory) to the HTML page that will be generated for this file.
+
+    PlantUML diagrams are rendered to standalone SVG images, so links embedded in them are
+    resolved relative to the SVG file itself, not the page it is displayed on. This means
+    fragment-only links (e.g. "#_metadata") do not work and the link must instead point back at
+    the compiled page explicitly, mirroring the convention used in vehicle-structure.adoc.
+
+    Args:
+        output_path (str): The directory the AsciiDoc file is written to.
+
+    Returns:
+        str: The relative path prefix, for example "../07_geometry", to prepend to the page
+             filename and anchor.
+    """
+    parts = os.path.normpath(output_path).split(os.sep)
+    if "content" in parts:
+        page_dir = "/".join(parts[parts.index("content") + 1:])
+    else:
+        page_dir = ""
+    return f"../{page_dir}" if page_dir else ".."
+
+
+def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str) -> str:
     """
     Render a hierarchy tree as a PlantUML legend diagram, similar to the vehicle structure
     overview diagram, preceded by an explanatory sentence. Required fields are marked with "(R)".
@@ -302,6 +327,9 @@ def render_hierarchy_diagram(headline: str, tree: List[Dict]) -> str:
     Args:
         headline (str): The label for the virtual root node representing the whole schema.
         tree (list[dict]): The hierarchy tree as returned by build_hierarchy_tree.
+        page_url (str): The relative URL of the HTML page this diagram will be embedded in,
+                         used as the base for the section anchor links (e.g.
+                         "../07_geometry/asset-schema.html").
 
     Returns:
         str: The AsciiDoc content for the overview section, including the heading.
@@ -309,7 +337,7 @@ def render_hierarchy_diagram(headline: str, tree: List[Dict]) -> str:
     lines = [headline]
 
     def render_node(node: Dict, level: int) -> None:
-        entry = f"[[#{node['id']} {node['name']}]]"
+        entry = f"[[{page_url}#{node['id']} {node['name']}]]"
         if node["required"]:
             entry += " (R)"
         indent = "  " * (level - 1)
@@ -402,16 +430,19 @@ def generate_asciidoc_file(json_schema_path: str, output_path: str):
     headline = headline.replace("reflcoeff", "reflection coefficient")     # This is an exception because of the abbreviation of reflection coefficient in the schema file name
     asciidoc_content = f"= {headline}\n\n"
 
+    output_filename = f"{os.path.splitext(base_filename)[0]}.adoc"
+    output_filename = output_filename.replace("reflCoeff", "reflection-coefficient")  # This is an exception because of the abbreviation of reflection coefficient in the schema file name
+    html_filename = f"{os.path.splitext(output_filename)[0]}.html"
+    page_url = f"{compute_page_link_prefix(output_path)}/{html_filename}"
+
     hierarchy_tree = build_hierarchy_tree(schema)
-    asciidoc_content += render_hierarchy_diagram(headline, hierarchy_tree)
+    asciidoc_content += render_hierarchy_diagram(headline, hierarchy_tree, page_url)
 
     for field in schema['properties']:
         is_required = field in schema.get('required', [])
         required_fields = schema['properties'][field].get('required', [])
         asciidoc_content += generate_asciidoc_main_field(field, schema, is_required, required_fields)
 
-    output_filename = f"{os.path.splitext(base_filename)[0]}.adoc"
-    output_filename = output_filename.replace("reflCoeff", "reflection-coefficient")  # This is an exception because of the abbreviation of reflection coefficient in the schema file name
     output_file = os.path.join(output_path, output_filename)
 
     with open(output_file, 'w') as file:
