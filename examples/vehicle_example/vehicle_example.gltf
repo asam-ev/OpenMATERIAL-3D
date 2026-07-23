@@ -227,9 +227,9 @@
 		{
 			"name":"Grp_Mirror_Side_View_Left_0",
 			"translation":[
-				0.03203129023313522,
-				7.459893822669983e-06,
-				9.403631338500418e-06
+				0.032031312584877014,
+				7.517635822296143e-06,
+				9.344026693725027e-06
 			]
 		},
 		{
@@ -345,9 +345,9 @@
 		{
 			"name":"Grp_Mirror_Side_View_Right_0",
 			"translation":[
-				0.03202665597200394,
-				7.448717951774597e-06,
-				0.0005487307789735496
+				0.03202669322490692,
+				7.500872015953064e-06,
+				0.0005487158778123558
 			]
 		},
 		{
@@ -478,7 +478,7 @@
 				0,
 				0.7071068286895752,
 				0.7071068286895752,
-				1.3767883899618027e-07
+				1.376788674178897e-07
 			]
 		},
 		{
@@ -519,7 +519,7 @@
 				0,
 				0.7071068286895752,
 				0.7071068286895752,
-				1.3767883899618027e-07
+				1.376788674178897e-07
 			]
 		},
 		{
@@ -549,7 +549,7 @@
 			},
 			"name":"Spot_Light_Fog_Left_0",
 			"rotation":[
-				-0.50434410572052,
+				-0.5043440461158752,
 				-0.4956178367137909,
 				0.49561789631843567,
 				0.50434410572052
@@ -574,7 +574,7 @@
 			},
 			"name":"Spot_Light_Fog_Right_0",
 			"rotation":[
-				-0.50434410572052,
+				-0.5043440461158752,
 				-0.4956178367137909,
 				0.49561789631843567,
 				0.50434410572052
@@ -599,7 +599,7 @@
 			},
 			"name":"Spot_Light_High_Beam_Left_0",
 			"rotation":[
-				-0.50434410572052,
+				-0.5043440461158752,
 				-0.4956178367137909,
 				0.49561789631843567,
 				0.50434410572052
@@ -624,7 +624,7 @@
 			},
 			"name":"Spot_Light_High_Beam_Right",
 			"rotation":[
-				-0.50434410572052,
+				-0.5043440461158752,
 				-0.4956178367137909,
 				0.49561789631843567,
 				0.50434410572052
@@ -695,7 +695,7 @@
 				0,
 				0.7071068286895752,
 				0.7071068286895752,
-				1.3767883899618027e-07
+				1.376788674178897e-07
 			]
 		},
 		{
@@ -771,7 +771,7 @@
 				0,
 				0.7071068286895752,
 				0.7071068286895752,
-				1.3767883899618027e-07
+				1.376788674178897e-07
 			]
 		},
 		{
@@ -882,7 +882,7 @@
 				0,
 				0.7071068286895752,
 				0.7071068286895752,
-				1.3767883899618027e-07
+				1.376788674178897e-07
 			]
 		},
 		{
@@ -923,7 +923,7 @@
 				0,
 				0.7071068286895752,
 				0.7071068286895752,
-				1.3767883899618027e-07
+				1.376788674178897e-07
 			]
 		},
 		{
@@ -1221,9 +1221,9 @@
 		{
 			"name":"Grp_Mirror_Rearview_View_0",
 			"translation":[
-				0.012232036329805851,
-				0.0003946514625567943,
-				7.111369632184505e-05
+				0.012232002802193165,
+				0.00039464360452257097,
+				7.111567538231611e-05
 			]
 		},
 		{
@@ -1233,9 +1233,9 @@
 			],
 			"name":"Grp_Mirror_Rearview_Joint_0",
 			"rotation":[
-				-0.05953498184680939,
+				-0.05953497812151909,
 				0.9875302314758301,
-				-0.008770192041993141,
+				-0.008770192973315716,
 				0.14547446370124817
 			],
 			"translation":[
@@ -1566,10 +1566,50 @@
 			"doubleSided":true,
 			"emissiveFactor":[
 				1,
+				0.10199999809265137,
+				0
+			],
+			"name":"Light_Indicator_Left_Lens_1",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.10199999809265137,
+					0,
+					0.4000000059604645
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"alphaMode":"BLEND",
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
 				0.10000000149011612,
 				0
 			],
 			"name":"Light_Indicator_Right_Lens",
+			"pbrMetallicRoughness":{
+				"baseColorFactor":[
+					1,
+					0.10000000149011612,
+					0,
+					0.4000000059604645
+				],
+				"metallicFactor":0,
+				"roughnessFactor":0.699999988079071
+			}
+		},
+		{
+			"alphaMode":"BLEND",
+			"doubleSided":true,
+			"emissiveFactor":[
+				1,
+				0.10000000149011612,
+				0
+			],
+			"name":"Light_Indicator_Right_Lens_1",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1993,7 +2033,7 @@
 						"NORMAL":76
 					},
 					"indices":77,
-					"material":8
+					"material":9
 				}
 			]
 		},
@@ -2019,7 +2059,7 @@
 						"NORMAL":82
 					},
 					"indices":83,
-					"material":9
+					"material":10
 				}
 			]
 		},
@@ -2045,7 +2085,7 @@
 						"NORMAL":88
 					},
 					"indices":89,
-					"material":9
+					"material":11
 				}
 			]
 		},
@@ -2072,7 +2112,7 @@
 						"TEXCOORD_0":95
 					},
 					"indices":96,
-					"material":10
+					"material":12
 				}
 			]
 		},
@@ -2100,7 +2140,7 @@
 						"TEXCOORD_0":103
 					},
 					"indices":104,
-					"material":11
+					"material":13
 				}
 			]
 		},
@@ -2153,7 +2193,7 @@
 						"NORMAL":116
 					},
 					"indices":117,
-					"material":12
+					"material":14
 				}
 			]
 		},
@@ -2180,7 +2220,7 @@
 						"TEXCOORD_0":123
 					},
 					"indices":124,
-					"material":13
+					"material":15
 				},
 				{
 					"attributes":{
@@ -2189,7 +2229,7 @@
 						"TEXCOORD_0":127
 					},
 					"indices":128,
-					"material":14
+					"material":16
 				}
 			]
 		},
@@ -2203,7 +2243,7 @@
 						"TEXCOORD_0":131
 					},
 					"indices":132,
-					"material":13
+					"material":15
 				}
 			]
 		},
@@ -2231,7 +2271,7 @@
 						"TEXCOORD_0":139
 					},
 					"indices":140,
-					"material":15
+					"material":17
 				}
 			]
 		},
@@ -2245,7 +2285,7 @@
 						"TEXCOORD_0":143
 					},
 					"indices":144,
-					"material":13
+					"material":15
 				},
 				{
 					"attributes":{
@@ -2254,7 +2294,7 @@
 						"TEXCOORD_0":147
 					},
 					"indices":148,
-					"material":14
+					"material":16
 				}
 			]
 		},
@@ -2268,7 +2308,7 @@
 						"TEXCOORD_0":151
 					},
 					"indices":152,
-					"material":13
+					"material":15
 				}
 			]
 		},
@@ -2296,7 +2336,7 @@
 						"TEXCOORD_0":159
 					},
 					"indices":160,
-					"material":15
+					"material":17
 				}
 			]
 		},
@@ -2310,7 +2350,7 @@
 						"TEXCOORD_0":163
 					},
 					"indices":164,
-					"material":13
+					"material":15
 				},
 				{
 					"attributes":{
@@ -2319,7 +2359,7 @@
 						"TEXCOORD_0":167
 					},
 					"indices":168,
-					"material":14
+					"material":16
 				}
 			]
 		},
@@ -2333,7 +2373,7 @@
 						"TEXCOORD_0":171
 					},
 					"indices":132,
-					"material":13
+					"material":15
 				}
 			]
 		},
@@ -2361,7 +2401,7 @@
 						"TEXCOORD_0":177
 					},
 					"indices":140,
-					"material":15
+					"material":17
 				}
 			]
 		},
@@ -2375,7 +2415,7 @@
 						"TEXCOORD_0":180
 					},
 					"indices":181,
-					"material":13
+					"material":15
 				},
 				{
 					"attributes":{
@@ -2384,7 +2424,7 @@
 						"TEXCOORD_0":184
 					},
 					"indices":185,
-					"material":14
+					"material":16
 				}
 			]
 		},
@@ -2398,7 +2438,7 @@
 						"TEXCOORD_0":188
 					},
 					"indices":152,
-					"material":13
+					"material":15
 				}
 			]
 		},
@@ -2426,7 +2466,7 @@
 						"TEXCOORD_0":194
 					},
 					"indices":195,
-					"material":15
+					"material":17
 				}
 			]
 		},
@@ -2505,7 +2545,7 @@
 						"TEXCOORD_0":218
 					},
 					"indices":219,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -2519,7 +2559,7 @@
 						"TEXCOORD_0":222
 					},
 					"indices":223,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -2533,7 +2573,7 @@
 						"TEXCOORD_0":226
 					},
 					"indices":227,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -2547,7 +2587,7 @@
 						"TEXCOORD_0":230
 					},
 					"indices":231,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -2561,7 +2601,7 @@
 						"TEXCOORD_0":234
 					},
 					"indices":235,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -2575,7 +2615,7 @@
 						"TEXCOORD_0":238
 					},
 					"indices":239,
-					"material":16
+					"material":18
 				}
 			]
 		},
@@ -2603,7 +2643,7 @@
 						"TEXCOORD_0":246
 					},
 					"indices":247,
-					"material":17
+					"material":19
 				}
 			]
 		},
