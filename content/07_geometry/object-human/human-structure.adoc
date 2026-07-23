@@ -332,6 +332,7 @@ The Lower_Arm_Left bone represents the lower part of the left arm, that is, the 
 == Hand_Left (T)
 
 The Hand_Left bone represents the left hand, that is, the left carpal bones of the human skeleton.
+When used with ASAM OSI, this bone corresponds to TYPE_FULL_HAND_L in the PedestrianAttributes.
 
 [#tab-human-hand-left]
 .Hand_Left bone
@@ -482,6 +483,7 @@ The Lower_Arm_Right bone represents the lower part of the right arm, that is, th
 == Hand_Right (T)
 
 The Hand_Right bone represents the right hand, that is, the right carpal bones of the human skeleton.
+When used with ASAM OSI, this bone corresponds to TYPE_FULL_HAND_R in the PedestrianAttributes.
 
 [#tab-human-hand-right]
 .Hand_Right bone
@@ -606,6 +608,7 @@ The Lower_Leg_Left bone represents the lower part of the left leg, that is, the 
 == Foot_Left (T)
 
 The Foot_Left bone represents the left foot of the human skeleton without the toes. It controls the ankle.
+When used with ASAM OSI, this bone corresponds to TYPE_FULL_Foot_L in the PedestrianAttributes.
 
 [#tab-human-foot-left]
 .Foot_Left bone
@@ -706,6 +709,7 @@ The Lower_Leg_Right bone represents the lower part of the right leg, that is, th
 == Foot_Right (T)
 
 The Foot_Right bone represents the right foot of the human skeleton without the toes. It controls the ankle.
+When used with ASAM OSI, this bone corresponds to TYPE_FULL_Foot_R in the PedestrianAttributes.
 
 [#tab-human-foot-right]
 .Foot_Right bone
