@@ -400,7 +400,7 @@
                     "radiometricProfileUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to a mapping table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (Format to be defined.)"
+                        "description": "Relative or absolute file path to a table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (The format of the referenced radiance table is not defined in this standard. It may be defined in a future version.)"
                     },
                     "innerConeAngle": {
                         "type": "number",
