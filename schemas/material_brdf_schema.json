@@ -88,6 +88,30 @@
                         "maximum": 17.16e-03
                     }
                 },
+                "receiverSolidAngles": {
+                    "type": "array",
+                    "description": "List of all receiver solid angles in steradians (sr) used to measure the BRDF data. The solid angles are given as a key-value pair mapped to the wavelengths contained in the lookup table. In case of primary receiver optics in front of the detector, an assumed solid angle defined by the optics aperture shall be given here. The necessity of this field is based on common laser measurement standards, such as SEMI ME1392-0116 (2023) and EN ISO 19986:2020.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "wavelength": {
+                                "type": "number",
+                                "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                                "minimum": 1e-09,
+                                "maximum": 17.16e-03
+                            },
+                            "solidAngle": {
+                                "type": "number",
+                                "description": "Receiver solid angle in steradians (sr). The value shall be greater than 0.",
+                                "exclusiveMinimum": 0
+                            }
+                        },
+                        "required": [
+                            "wavelength",
+                            "solidAngle"
+                        ]
+                    }
+                },
                 "lookupTable": {
                     "type": "array",
                     "description": "Array of bidirectional reflectance distribution function (BRDF) values. The array shall be sorted based on the columns starting with the first.",
