@@ -1549,7 +1549,7 @@
 				0.10199999809265137,
 				0
 			],
-			"name":"Light_Indicator_Left_Lens",
+			"name":"Light_Indicator_Lens_Left_0",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1569,7 +1569,7 @@
 				0.10199999809265137,
 				0
 			],
-			"name":"Light_Indicator_Left_Lens_1",
+			"name":"Light_Indicator_Lens_Left_1",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1589,7 +1589,7 @@
 				0.10000000149011612,
 				0
 			],
-			"name":"Light_Indicator_Right_Lens",
+			"name":"Light_Indicator_Lens_Right_0",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1609,7 +1609,7 @@
 				0.10000000149011612,
 				0
 			],
-			"name":"Light_Indicator_Right_Lens_1",
+			"name":"Light_Indicator_Lens_Right_1",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,

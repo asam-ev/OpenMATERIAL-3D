@@ -224,7 +224,7 @@
         },
         {
             "assocNode": "Grp_Light_Indicator_Left_0",
-            "materialName": "Light_Indicator_Lens_Left",
+            "materialName": "Light_Indicator_Lens_Left_0",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -234,7 +234,7 @@
         },
         {
             "assocNode": "Grp_Light_Indicator_Right_0",
-            "materialName": "Light_Indicator_Lens_Right",
+            "materialName": "Light_Indicator_Lens_Right_0",
             "luminance": 20,
             "color": {
                 "r": 255,
