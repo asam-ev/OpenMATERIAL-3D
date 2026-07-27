@@ -5,7 +5,7 @@
         "description": "This is an example vehicle asset. It demonstrates how ASAM OpenMATERIAL 3D assets and their node structure work.",
         "uuid": "cd9cc640-249e-4a1d-bc95-a713c4250f82",
         "assetVersion": "1.0.0",
-        "openMaterial3dVersion": "1.0.0",
+        "openMaterial3dVersion": "1.1.0",
         "copyrights": ["(C) 2024 BMW AG", "(C) 2024 Persival GmbH"],
         "license": "MPL-2.0",
         "authors": ["ludwig.friedmann@bmw.de", "clemens.linnhoff@persival.de"],
