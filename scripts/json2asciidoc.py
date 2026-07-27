@@ -319,7 +319,7 @@ def compute_page_link_prefix(output_path: str) -> str:
     return f"../{page_dir}" if page_dir else ".."
 
 
-def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str) -> str:
+def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str, schema_filename: str) -> str:
     """
     Render a hierarchy tree as a PlantUML legend diagram, similar to the vehicle structure
     overview diagram, preceded by an explanatory sentence. Required fields are marked with "(R)".
@@ -330,6 +330,8 @@ def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str) -> 
         page_url (str): The relative URL of the HTML page this diagram will be embedded in,
                          used as the base for the section anchor links (e.g.
                          "../07_geometry/asset-schema.html").
+        schema_filename (str): The base file name of the JSON schema (e.g. "asset_schema.json"),
+                                used to link to the actual file in the OpenMATERIAL-3D repository.
 
     Returns:
         str: The AsciiDoc content for the overview section, including the heading.
@@ -350,7 +352,10 @@ def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str) -> 
 
     diagram_body = "\n".join(lines)
 
+    schema_url = f"https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/{schema_filename}"
     description = (
+        "This is the documentation about the JSON schema file. "
+        f"The actual file is located in the ASAM OpenMATERIAL 3D link:{schema_url}[GitHub repository].\n\n"
         "This diagram shows the hierarchy of the fields defined in this schema. "
         "Fields marked with `\\(R)` are required. "
         "A field can be optional while some of its children are required. "
@@ -436,7 +441,7 @@ def generate_asciidoc_file(json_schema_path: str, output_path: str):
     page_url = f"{compute_page_link_prefix(output_path)}/{html_filename}"
 
     hierarchy_tree = build_hierarchy_tree(schema)
-    asciidoc_content += render_hierarchy_diagram(headline, hierarchy_tree, page_url)
+    asciidoc_content += render_hierarchy_diagram(headline, hierarchy_tree, page_url, os.path.basename(json_schema_path))
 
     for field in schema['properties']:
         is_required = field in schema.get('required', [])
