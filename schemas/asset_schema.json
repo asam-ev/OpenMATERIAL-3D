@@ -382,7 +382,7 @@
         },
         "lightDefinitions": {
             "type": "array",
-            "description": "A list of discrete light sources linked to the 3D asset hierarchy.",
+            "description": "A list of discrete light sources, e.g., point lights or spotlights, linked to the 3D asset hierarchy.",
             "items": {
                 "type": "object",
                 "required": ["node", "luminousIntensity"],
