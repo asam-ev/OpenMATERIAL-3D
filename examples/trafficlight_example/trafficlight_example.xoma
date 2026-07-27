@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/asset_schema.json",
+    "metadata": {
+        "name": "trafficlight_example",
+        "description": "This is an example traffic light.",
+        "uuid": "0086f0de-23e8-4d93-a266-8bb54fbad30f",
+        "assetVersion": "1.0.0",
+        "openMaterial3dVersion": "1.1.0",
+        "copyrights": ["(C) 2026 BMW AG"],
+        "license": "MPL-2.0",
+        "authors": ["ludwig.friedmann@bmw.de"],
+        "modelCreationTool": "Blender",
+        "creationDate": "20260727T100000Z",
+        "modelingMethod": "Modeled freely without real-world counterpart",
+        "validationDescription": "Since this is a fictional traffic light, the geometry was not validated. Standard compliance was verified manually.",
+        "assetType": "object",
+        "objectClass": "other",
+        "animated": false,
+        "pbrMaterialWorkflow": "metallic",
+        "triangleCount": 5244,
+        "meshCount": 12,
+        "textureResolutions": ["1K"],
+        "normalMapFormat": "OpenGL",
+        "boundingBox": {
+            "x": [-0.2, 0.248],
+            "y": [-0.13, 0.13],
+            "z": [-0.39, 0.39]
+        }
+    }
+}
