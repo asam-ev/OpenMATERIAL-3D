@@ -356,7 +356,7 @@ def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str, sch
     description = (
         "This is the documentation about the JSON schema file. "
         f"The actual file is located in the ASAM OpenMATERIAL 3D link:{schema_url}[GitHub repository].\n\n"
-        "This diagram shows the hierarchy of the fields defined in this schema. "
+        "The following diagram shows the hierarchy of the fields defined in this schema. "
         "Fields marked with `\\(R)` are required. "
         "A field can be optional while some of its children are required. "
         "In that case, the required children only have to be filled in if the optional parent field is present.\n\n"
