@@ -54,9 +54,9 @@
     "lightDefinitions": [
         {
             "node": "Grp_Light_High_Beam_Left_0",
-            "inner_cone_angle": 27,
-            "outer_cone_angle": 30,
-            "luminous_intensity": 100000,
+            "innerConeAngle": 27,
+            "outerConeAngle": 30,
+            "luminousIntensity": 100000,
             "color": {
                 "r": 255,
                 "g": 245,
@@ -65,9 +65,9 @@
         },
         {
             "node": "Grp_Light_High_Beam_Right_0",
-            "inner_cone_angle": 27,
-            "outer_cone_angle": 30,
-            "luminous_intensity": 100000,
+            "innerConeAngle": 27,
+            "outerConeAngle": 30,
+            "luminousIntensity": 100000,
             "color": {
                 "r": 255,
                 "g": 245,
@@ -77,22 +77,22 @@
         {
             "node": "Grp_Light_Low_Beam_Left_0",
             "photometric_profile_uri": "./lighting_profiles/low_beam_left.ies",
-            "inner_cone_angle": 40.5,
-            "outer_cone_angle": 45,
-            "luminous_intensity": 50000,
+            "innerConeAngle": 40.5,
+            "outerConeAngle": 45,
+            "luminousIntensity": 50000,
             "temperature": 5000
         },
         {
             "node": "Grp_Light_Low_Beam_Right_0",
             "photometric_profile_uri": "./lighting_profiles/low_beam_right.ies",
-            "inner_cone_angle": 40.5,
-            "outer_cone_angle": 45,
-            "luminous_intensity": 50000,
+            "innerConeAngle": 40.5,
+            "outerConeAngle": 45,
+            "luminousIntensity": 50000,
             "temperature": 5000
         },
         {
             "node": "Grp_Light_Indicator_Left_0",
-            "luminous_intensity": 20,
+            "luminousIntensity": 20,
             "color": {
                 "r": 255,
                 "g": 140,
@@ -101,7 +101,7 @@
         },
         {
             "node": "Grp_Light_Indicator_Right_0",
-            "luminous_intensity": 20,
+            "luminousIntensity": 20,
             "color": {
                 "r": 255,
                 "g": 140,
@@ -110,7 +110,7 @@
         },
         {
             "node": "Grp_Light_Indicator_Left_1",
-            "luminous_intensity": 20,
+            "luminousIntensity": 20,
             "color": {
                 "r": 255,
                 "g": 140,
@@ -119,7 +119,7 @@
         },
         {
             "node": "Grp_Light_Indicator_Right_1",
-            "luminous_intensity": 20,
+            "luminousIntensity": 20,
             "color": {
                 "r": 255,
                 "g": 140,
@@ -128,7 +128,7 @@
         },
         {
             "node": "Grp_Light_Brake_Left_0",
-            "luminous_intensity": 60,
+            "luminousIntensity": 60,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -137,7 +137,7 @@
         },
         {
             "node": "Grp_Light_Brake_Right_0",
-            "luminous_intensity": 60,
+            "luminousIntensity": 60,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -146,9 +146,9 @@
         },
         {
             "node": "Grp_Light_Tail_Left_0",
-            "inner_cone_angle": 70,
-            "outer_cone_angle": 80,
-            "luminous_intensity": 10,
+            "innerConeAngle": 70,
+            "outerConeAngle": 80,
+            "luminousIntensity": 10,
             "color": {
                 "r": 255,
                 "g": 20,
@@ -157,9 +157,9 @@
         },
         {
             "node": "Grp_Light_Tail_Right_0",
-            "inner_cone_angle": 70,
-            "outer_cone_angle": 80,
-            "luminous_intensity": 10,
+            "innerConeAngle": 70,
+            "outerConeAngle": 80,
+            "luminousIntensity": 10,
             "color": {
                 "r": 255,
                 "g": 20,
@@ -168,23 +168,23 @@
         },
         {
             "node": "Grp_Light_Fog_Left_0",
-            "inner_cone_angle": 51,
-            "outer_cone_angle": 60,
-            "luminous_intensity": 10000,
+            "innerConeAngle": 51,
+            "outerConeAngle": 60,
+            "luminousIntensity": 10000,
             "temperature": 4000
         },
         {
             "node": "Grp_Light_Fog_Right_0",
-            "inner_cone_angle": 51,
-            "outer_cone_angle": 60,
-            "luminous_intensity": 10000,
+            "innerConeAngle": 51,
+            "outerConeAngle": 60,
+            "luminousIntensity": 10000,
             "temperature": 4000
         }
     ],
     "emissiveLightMapping": [
         {
-            "assoc_node": "Grp_Light_High_Beam_Left_0",
-            "material_name": "Light_Head_Lens_Left",
+            "assocNode": "Grp_Light_High_Beam_Left_0",
+            "materialName": "Light_Head_Lens_Left",
             "luminance": 15000,
             "color": {
                 "r": 255,
@@ -193,8 +193,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_High_Beam_Right_0",
-            "material_name": "Light_Head_Lens_Right",
+            "assocNode": "Grp_Light_High_Beam_Right_0",
+            "materialName": "Light_Head_Lens_Right",
             "luminance": 15000,
             "color": {
                 "r": 255,
@@ -203,8 +203,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Low_Beam_Left_0",
-            "material_name": "Light_Head_Lens_Left",
+            "assocNode": "Grp_Light_Low_Beam_Left_0",
+            "materialName": "Light_Head_Lens_Left",
             "luminance": 10000,
             "color": {
                 "r": 255,
@@ -213,8 +213,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Low_Beam_Right_0",
-            "material_name": "Light_Head_Lens_Right",
+            "assocNode": "Grp_Light_Low_Beam_Right_0",
+            "materialName": "Light_Head_Lens_Right",
             "luminance": 10000,
             "color": {
                 "r": 255,
@@ -223,8 +223,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Indicator_Left_0",
-            "material_name": "Light_Indicator_Lens_Left",
+            "assocNode": "Grp_Light_Indicator_Left_0",
+            "materialName": "Light_Indicator_Lens_Left",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -233,8 +233,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Indicator_Right_0",
-            "material_name": "Light_Indicator_Lens_Right",
+            "assocNode": "Grp_Light_Indicator_Right_0",
+            "materialName": "Light_Indicator_Lens_Right",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -243,8 +243,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Indicator_Left_1",
-            "material_name": "Light_Indicator_Lens_Left_1",
+            "assocNode": "Grp_Light_Indicator_Left_1",
+            "materialName": "Light_Indicator_Lens_Left_1",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -253,8 +253,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Indicator_Right_1",
-            "material_name": "Light_Indicator_Lens_Right_1",
+            "assocNode": "Grp_Light_Indicator_Right_1",
+            "materialName": "Light_Indicator_Lens_Right_1",
             "luminance": 20,
             "color": {
                 "r": 255,
@@ -263,8 +263,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Brake_Left_0",
-            "material_name": "Light_Brake_Lens_Left",
+            "assocNode": "Grp_Light_Brake_Left_0",
+            "materialName": "Light_Brake_Lens_Left",
             "luminance": 60,
             "color": {
                 "r": 255,
@@ -273,8 +273,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Brake_Right_0",
-            "material_name": "Light_Brake_Lens_Right",
+            "assocNode": "Grp_Light_Brake_Right_0",
+            "materialName": "Light_Brake_Lens_Right",
             "luminance": 60,
             "color": {
                 "r": 255,
@@ -283,8 +283,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Tail_Left_0",
-            "material_name": "Light_Tail_Lens_Left",
+            "assocNode": "Grp_Light_Tail_Left_0",
+            "materialName": "Light_Tail_Lens_Left",
             "luminance": 10,
             "color": {
                 "r": 255,
@@ -293,8 +293,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Tail_Right_0",
-            "material_name": "Light_Tail_Lens_Right",
+            "assocNode": "Grp_Light_Tail_Right_0",
+            "materialName": "Light_Tail_Lens_Right",
             "luminance": 10,
             "color": {
                 "r": 255,
@@ -303,8 +303,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Fog_Left_0",
-            "material_name": "Light_Head_Lens_Left",
+            "assocNode": "Grp_Light_Fog_Left_0",
+            "materialName": "Light_Head_Lens_Left",
             "luminance": 5000,
             "color": {
                 "r": 255,
@@ -313,8 +313,8 @@
             }
         },
         {
-            "assoc_node": "Grp_Light_Fog_Right_0",
-            "material_name": "Light_Head_Lens_Right",
+            "assocNode": "Grp_Light_Fog_Right_0",
+            "materialName": "Light_Head_Lens_Right",
             "luminance": 5000,
             "color": {
                 "r": 255,
