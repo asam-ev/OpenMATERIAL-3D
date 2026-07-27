@@ -103,19 +103,19 @@ Description:: If the property 'lightDefinition' is set, all nodes referenced in 
 
 UID:: asam.net:xom:1.1.0:xoma.emissive_light_nodes_exist
 
-Description:: If the property 'emissiveLightMapping' is set, all nodes referenced in the 'emissiveLightMapping.assoc_node' fields shall exist in the corresponding 3D data file.
+Description:: If the property 'emissiveLightMapping' is set, all nodes referenced in the 'emissiveLightMapping.assocNode' fields shall exist in the corresponding 3D data file.
 
 ==== emissive_light_materials_exist
 
 UID:: asam.net:xom:1.1.0:xoma.emissive_light_materials_exist
 
-Description:: If the property 'emissiveLightMapping' is set, all materials referenced in the 'emissiveLightMapping.material_name' fields shall exist in the corresponding 3D data file.
+Description:: If the property 'emissiveLightMapping' is set, all materials referenced in the 'emissiveLightMapping.materialName' fields shall exist in the corresponding 3D data file.
 
 ==== external_reference_nodes_exist
 
 UID:: asam.net:xom:1.1.0:xoma.external_reference_nodes_exist
 
-Description:: If the property 'externalAssetReferences' is set, all nodes referenced in the 'externalAssetReferences.reference_node' fields shall exist in the corresponding 3D data file.
+Description:: If the property 'externalAssetReferences' is set, all nodes referenced in the 'externalAssetReferences.referenceNode' fields shall exist in the corresponding 3D data file.
 
 ==== geometry_property_nodes_exist
 
