@@ -385,7 +385,7 @@
             "description": "A list of discrete light sources linked to the 3D asset hierarchy.",
             "items": {
                 "type": "object",
-                "required": ["node", "outerConeAngle", "luminousIntensity"],
+                "required": ["node", "luminousIntensity"],
                 "properties": {
                     "node": {
                         "type": "string",
