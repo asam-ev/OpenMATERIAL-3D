@@ -76,7 +76,6 @@
         },
         {
             "node": "Grp_Light_Low_Beam_Left_0",
-            "photometric_profile_uri": "./lighting_profiles/low_beam_left.ies",
             "innerConeAngle": 40.5,
             "outerConeAngle": 45,
             "luminousIntensity": 50000,
@@ -84,7 +83,6 @@
         },
         {
             "node": "Grp_Light_Low_Beam_Right_0",
-            "photometric_profile_uri": "./lighting_profiles/low_beam_right.ies",
             "innerConeAngle": 40.5,
             "outerConeAngle": 45,
             "luminousIntensity": 50000,
