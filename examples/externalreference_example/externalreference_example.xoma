@@ -9,7 +9,7 @@
         "copyrights": ["(C) 2026 BMW AG"],
         "license": "MPL-2.0",
         "authors": ["ludwig.friedmann@bmw.de"],
-        "modelCreationTool": "Blender",
+        "modelCreationTool": "esmini, Blender",
         "creationDate": "20260727T150000Z",
         "modelingMethod": "Modeled freely without real-world counterpart",
         "validationDescription": "Since this is a fictional environment, the geometry was not validated. Standard compliance was verified manually.",
