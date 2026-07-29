@@ -26,5 +26,15 @@
             "y": [-10.3, 10.3],
             "z": [0.0, 1.91]
         }
-    }
+    },
+    "externalAssetReferences": [
+        {
+            "referenceNode": "Grp_Traffic_Light_0",
+            "externalAssetUri": "../trafficlight_example/trafficlight_example.xoma"
+        },
+        {
+            "referenceNode": "Grp_Traffic_Light_1",
+            "externalAssetUri": "../trafficlight_example/trafficlight_example.xoma"
+        }
+   ]
 }
