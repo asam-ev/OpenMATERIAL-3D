@@ -29,17 +29,7 @@
     },
     "lightDefinitions": [
         {
-            "node": "Grp_Bulbs_Attention_Stop",
-            "outerConeAngle": 180,
-            "luminousIntensity": 100000,
-            "color": {
-                "r": 255,
-                "g": 255,
-                "b": 0
-            }
-        },
-        {
-            "node": "Grp_Bulbs_Go",
+            "node": "Grp_Bulb_0",
             "outerConeAngle": 180,
             "luminousIntensity": 100000,
             "color": {
@@ -49,7 +39,17 @@
             }
         },
         {
-            "node": "Grp_Bulbs_Stop",
+            "node": "Grp_Bulb_1",
+            "outerConeAngle": 180,
+            "luminousIntensity": 100000,
+            "color": {
+                "r": 255,
+                "g": 255,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Bulb_2",
             "outerConeAngle": 180,
             "luminousIntensity": 100000,
             "color": {
