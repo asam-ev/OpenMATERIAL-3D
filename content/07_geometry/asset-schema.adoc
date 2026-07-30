@@ -1,5 +1,102 @@
 = Asset schema
 
+== Overview
+
+This is the documentation about the JSON schema file. The actual file is located in the ASAM OpenMATERIAL 3D link:https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/asset_schema.json[GitHub repository].
+
+The following diagram shows the hierarchy of the fields defined in this schema. Fields marked with `\(R)` are required. A field can be optional while some of its children are required. In that case, the required children only have to be filled in if the optional parent field is present.
+
+[plantuml]
+----
+legend
+Asset schema
+|_ [[../07_geometry/asset-schema.html#_metadata metadata]] (R)
+  |_ [[../07_geometry/asset-schema.html#_name name]] (R)
+  |_ [[../07_geometry/asset-schema.html#_description description]]
+  |_ [[../07_geometry/asset-schema.html#_uuid uuid]] (R)
+  |_ [[../07_geometry/asset-schema.html#_assetversion assetVersion]] (R)
+  |_ [[../07_geometry/asset-schema.html#_openmaterial3dversion openMaterial3dVersion]] (R)
+  |_ [[../07_geometry/asset-schema.html#_copyrights copyrights]] (R)
+  |_ [[../07_geometry/asset-schema.html#_license license]] (R)
+  |_ [[../07_geometry/asset-schema.html#_authors authors]] (R)
+  |_ [[../07_geometry/asset-schema.html#_modelcreationtool modelCreationTool]]
+  |_ [[../07_geometry/asset-schema.html#_creationdate creationDate]]
+  |_ [[../07_geometry/asset-schema.html#_modelingmethod modelingMethod]]
+  |_ [[../07_geometry/asset-schema.html#_validationdescription validationDescription]]
+  |_ [[../07_geometry/asset-schema.html#_assettype assetType]]
+  |_ [[../07_geometry/asset-schema.html#_objectclass objectClass]] (R)
+  |_ [[../07_geometry/asset-schema.html#_vehicleclassdata vehicleClassData]]
+    |_ [[../07_geometry/asset-schema.html#_vehiclecategory vehicleCategory]] (R)
+    |_ [[../07_geometry/asset-schema.html#_performance performance]] (R)
+      |_ [[../07_geometry/asset-schema.html#_maxspeed maxSpeed]] (R)
+      |_ [[../07_geometry/asset-schema.html#_maxacceleration maxAcceleration]] (R)
+      |_ [[../07_geometry/asset-schema.html#_maxdeceleration maxDeceleration]] (R)
+    |_ [[../07_geometry/asset-schema.html#_axles axles]] (R)
+      |_ [[../07_geometry/asset-schema.html#_frontaxle frontAxle]] (R)
+        |_ [[../07_geometry/asset-schema.html#_maxsteering maxSteering]] (R)
+        |_ [[../07_geometry/asset-schema.html#_wheeldiameter wheelDiameter]] (R)
+        |_ [[../07_geometry/asset-schema.html#_trackwidth trackWidth]] (R)
+        |_ [[../07_geometry/asset-schema.html#_positionx positionX]] (R)
+        |_ [[../07_geometry/asset-schema.html#_positionz positionZ]] (R)
+      |_ [[../07_geometry/asset-schema.html#_rearaxle rearAxle]] (R)
+        |_ [[../07_geometry/asset-schema.html#_maxsteering_2 maxSteering]] (R)
+        |_ [[../07_geometry/asset-schema.html#_wheeldiameter_2 wheelDiameter]] (R)
+        |_ [[../07_geometry/asset-schema.html#_trackwidth_2 trackWidth]] (R)
+        |_ [[../07_geometry/asset-schema.html#_positionx_2 positionX]] (R)
+        |_ [[../07_geometry/asset-schema.html#_positionz_2 positionZ]] (R)
+      |_ [[../07_geometry/asset-schema.html#_additionalaxles additionalAxles]]
+        |_ [[../07_geometry/asset-schema.html#_maxsteering_3 maxSteering]] (R)
+        |_ [[../07_geometry/asset-schema.html#_wheeldiameter_3 wheelDiameter]] (R)
+        |_ [[../07_geometry/asset-schema.html#_trackwidth_3 trackWidth]] (R)
+        |_ [[../07_geometry/asset-schema.html#_positionx_3 positionX]] (R)
+        |_ [[../07_geometry/asset-schema.html#_positionz_3 positionZ]] (R)
+  |_ [[../07_geometry/asset-schema.html#_humanclassdata humanClassData]]
+    |_ [[../07_geometry/asset-schema.html#_mass mass]] (R)
+  |_ [[../07_geometry/asset-schema.html#_animated animated]] (R)
+  |_ [[../07_geometry/asset-schema.html#_pbrmaterialworkflow pbrMaterialWorkflow]] (R)
+  |_ [[../07_geometry/asset-schema.html#_trianglecount triangleCount]] (R)
+  |_ [[../07_geometry/asset-schema.html#_meshcount meshCount]] (R)
+  |_ [[../07_geometry/asset-schema.html#_textureresolutions textureResolutions]] (R)
+  |_ [[../07_geometry/asset-schema.html#_normalmapformat normalMapFormat]] (R)
+  |_ [[../07_geometry/asset-schema.html#_boundingbox boundingBox]] (R)
+    |_ [[../07_geometry/asset-schema.html#_x x]] (R)
+    |_ [[../07_geometry/asset-schema.html#_y y]] (R)
+    |_ [[../07_geometry/asset-schema.html#_z z]] (R)
+|_ [[../07_geometry/asset-schema.html#_materialmappinguri materialMappingUri]]
+|_ [[../07_geometry/asset-schema.html#_materialtextureassignment materialTextureAssignment]]
+|_ [[../07_geometry/asset-schema.html#_materialreplacement materialReplacement]]
+|_ [[../07_geometry/asset-schema.html#_externalassetreferences externalAssetReferences]]
+  |_ [[../07_geometry/asset-schema.html#_referencenode referenceNode]] (R)
+  |_ [[../07_geometry/asset-schema.html#_externalasseturi externalAssetUri]] (R)
+|_ [[../07_geometry/asset-schema.html#_lightdefinitions lightDefinitions]]
+  |_ [[../07_geometry/asset-schema.html#_node node]] (R)
+  |_ [[../07_geometry/asset-schema.html#_photometricprofileuri photometricProfileUri]]
+  |_ [[../07_geometry/asset-schema.html#_radiometricprofileuri radiometricProfileUri]]
+  |_ [[../07_geometry/asset-schema.html#_innerconeangle innerConeAngle]]
+  |_ [[../07_geometry/asset-schema.html#_outerconeangle outerConeAngle]] (R)
+  |_ [[../07_geometry/asset-schema.html#_luminousintensity luminousIntensity]] (R)
+  |_ [[../07_geometry/asset-schema.html#_color color]]
+    |_ [[../07_geometry/asset-schema.html#_r r]] (R)
+    |_ [[../07_geometry/asset-schema.html#_g g]] (R)
+    |_ [[../07_geometry/asset-schema.html#_b b]] (R)
+  |_ [[../07_geometry/asset-schema.html#_temperature temperature]]
+|_ [[../07_geometry/asset-schema.html#_emissivelightmapping emissiveLightMapping]]
+  |_ [[../07_geometry/asset-schema.html#_assocnode assocNode]] (R)
+  |_ [[../07_geometry/asset-schema.html#_materialname materialName]] (R)
+  |_ [[../07_geometry/asset-schema.html#_luminance luminance]] (R)
+  |_ [[../07_geometry/asset-schema.html#_emissivetextureuri emissiveTextureUri]]
+  |_ [[../07_geometry/asset-schema.html#_maskingtextureuri maskingTextureUri]]
+  |_ [[../07_geometry/asset-schema.html#_color_2 color]] (R)
+    |_ [[../07_geometry/asset-schema.html#_r_2 r]] (R)
+    |_ [[../07_geometry/asset-schema.html#_g_2 g]] (R)
+    |_ [[../07_geometry/asset-schema.html#_b_2 b]] (R)
+|_ [[../07_geometry/asset-schema.html#_geometryproperties geometryProperties]]
+  |_ [[../07_geometry/asset-schema.html#_node_2 node]] (R)
+  |_ [[../07_geometry/asset-schema.html#_thickness thickness]]
+|_ [[../07_geometry/asset-schema.html#_customproperties customProperties]]
+end legend
+----
+
 == metadata
 
 The key meta information about the asset, including its identity, authorship, technical specifications, and legal details.

@@ -1,5 +1,29 @@
 = Mapping schema
 
+== Overview
+
+This is the documentation about the JSON schema file. The actual file is located in the ASAM OpenMATERIAL 3D link:https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/mapping_schema.json[GitHub repository].
+
+The following diagram shows the hierarchy of the fields defined in this schema. Fields marked with `\(R)` are required. A field can be optional while some of its children are required. In that case, the required children only have to be filled in if the optional parent field is present.
+
+[plantuml]
+----
+legend
+Mapping schema
+|_ [[../07_geometry/mapping-schema.html#_metadata metadata]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_name name]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_description description]]
+  |_ [[../07_geometry/mapping-schema.html#_uuid uuid]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_mappingversion mappingVersion]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_openmaterial3dversion openMaterial3dVersion]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_copyrights copyrights]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_license license]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_authors authors]] (R)
+  |_ [[../07_geometry/mapping-schema.html#_creationdate creationDate]]
+|_ [[../07_geometry/mapping-schema.html#_materialmapping materialMapping]] (R)
+end legend
+----
+
 == metadata
 
 The key meta information about the mapping table, including its identity, authorship, technical specifications, and legal details.

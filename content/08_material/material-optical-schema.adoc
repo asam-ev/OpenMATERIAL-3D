@@ -1,5 +1,30 @@
 = Material optical schema
 
+== Overview
+
+This is the documentation about the JSON schema file. The actual file is located in the ASAM OpenMATERIAL 3D link:https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/material_optical_schema.json[GitHub repository].
+
+The following diagram shows the hierarchy of the fields defined in this schema. Fields marked with `\(R)` are required. A field can be optional while some of its children are required. In that case, the required children only have to be filled in if the optional parent field is present.
+
+[plantuml]
+----
+legend
+Material optical schema
+|_ [[../08_material/material-optical-schema.html#_metadata metadata]] (R)
+  |_ [[../08_material/material-optical-schema.html#_name name]] (R)
+  |_ [[../08_material/material-optical-schema.html#_description description]]
+  |_ [[../08_material/material-optical-schema.html#_uuid uuid]] (R)
+  |_ [[../08_material/material-optical-schema.html#_materialversion materialVersion]] (R)
+  |_ [[../08_material/material-optical-schema.html#_openmaterial3dversion openMaterial3dVersion]] (R)
+  |_ [[../08_material/material-optical-schema.html#_copyrights copyrights]] (R)
+  |_ [[../08_material/material-optical-schema.html#_license license]] (R)
+  |_ [[../08_material/material-optical-schema.html#_authors authors]] (R)
+  |_ [[../08_material/material-optical-schema.html#_creationdate creationDate]]
+  |_ [[../08_material/material-optical-schema.html#_sources sources]] (R)
+|_ [[../08_material/material-optical-schema.html#_opticalproperties opticalProperties]] (R)
+end legend
+----
+
 == metadata
 
 The key meta information about the optical look-up table.

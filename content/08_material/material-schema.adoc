@@ -1,5 +1,52 @@
 = Material schema
 
+== Overview
+
+This is the documentation about the JSON schema file. The actual file is located in the ASAM OpenMATERIAL 3D link:https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/material_schema.json[GitHub repository].
+
+The following diagram shows the hierarchy of the fields defined in this schema. Fields marked with `\(R)` are required. A field can be optional while some of its children are required. In that case, the required children only have to be filled in if the optional parent field is present.
+
+[plantuml]
+----
+legend
+Material schema
+|_ [[../08_material/material-schema.html#_metadata metadata]] (R)
+  |_ [[../08_material/material-schema.html#_name name]] (R)
+  |_ [[../08_material/material-schema.html#_description description]]
+  |_ [[../08_material/material-schema.html#_uuid uuid]] (R)
+  |_ [[../08_material/material-schema.html#_materialversion materialVersion]] (R)
+  |_ [[../08_material/material-schema.html#_openmaterial3dversion openMaterial3dVersion]] (R)
+  |_ [[../08_material/material-schema.html#_copyrights copyrights]] (R)
+  |_ [[../08_material/material-schema.html#_license license]] (R)
+  |_ [[../08_material/material-schema.html#_authors authors]] (R)
+  |_ [[../08_material/material-schema.html#_creationdate creationDate]]
+|_ [[../08_material/material-schema.html#_materialproperties materialProperties]] (R)
+  |_ [[../08_material/material-schema.html#_surfaceroughness surfaceRoughness]]
+    |_ [[../08_material/material-schema.html#_surfaceheightrms surfaceHeightRms]] (R)
+    |_ [[../08_material/material-schema.html#_surfacecorrelationlength surfaceCorrelationLength]] (R)
+    |_ [[../08_material/material-schema.html#_sources sources]] (R)
+  |_ [[../08_material/material-schema.html#_emissivitydata emissivityData]]
+    |_ [[../08_material/material-schema.html#_emissivitycoefficient emissivityCoefficient]] (R)
+    |_ [[../08_material/material-schema.html#_temperature temperature]] (R)
+    |_ [[../08_material/material-schema.html#_sources_2 sources]] (R)
+  |_ [[../08_material/material-schema.html#_elasticitydata elasticityData]]
+    |_ [[../08_material/material-schema.html#_youngsmodulus youngsModulus]] (R)
+    |_ [[../08_material/material-schema.html#_poissonsratio poissonsRatio]] (R)
+    |_ [[../08_material/material-schema.html#_sources_3 sources]] (R)
+  |_ [[../08_material/material-schema.html#_densitydata densityData]]
+    |_ [[../08_material/material-schema.html#_density density]] (R)
+    |_ [[../08_material/material-schema.html#_sources_4 sources]] (R)
+  |_ [[../08_material/material-schema.html#_retroreflectivitydata retroreflectivityData]]
+    |_ [[../08_material/material-schema.html#_coefficientofretroreflection coefficientOfRetroreflection]] (R)
+    |_ [[../08_material/material-schema.html#_sources_5 sources]] (R)
+  |_ [[../08_material/material-schema.html#_electromagneticpropertiesuri electromagneticPropertiesUri]]
+  |_ [[../08_material/material-schema.html#_opticalpropertiesuri opticalPropertiesUri]]
+  |_ [[../08_material/material-schema.html#_brdfuris brdfUris]]
+  |_ [[../08_material/material-schema.html#_reflectioncoefficienturis reflectionCoefficientUris]]
+  |_ [[../08_material/material-schema.html#_customproperties customProperties]]
+end legend
+----
+
 == metadata
 
 The key meta information about the material properties.
