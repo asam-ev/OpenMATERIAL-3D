@@ -20,3 +20,5 @@ Additional group nodes may be added to support additional use cases, but they sh
 
 Groups with a local transform are indicated in the structure by a (T).
 This is only an indicator in the documentation and must not be contained in the actual node name.
+
+An example of a vehicle asset can be found in the examples folder of the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/vehicle_example[GitHub repository].

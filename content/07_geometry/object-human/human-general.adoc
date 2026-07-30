@@ -34,3 +34,5 @@ image::fig_human-structure.svg[,500]
 
 Bones with a local transform are indicated in the structure by a (T).
 This is only an indicator in the documentation and must not be contained in the actual node name.
+
+An example of a human asset can be found in the examples folder of the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/human_example[GitHub repository].
