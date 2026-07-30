@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import copy
 import argparse
 from typing import List, Dict
@@ -229,6 +230,150 @@ def generate_asciidoc_main_field(field_name: str, schema: Dict, is_required: boo
     return asciidoc_content
 
 
+def generate_heading_id(text: str) -> str:
+    """
+    Approximate the auto-generated AsciiDoc section ID for a heading with the given text.
+
+    Args:
+        text (str): The heading text, i.e. the property name.
+
+    Returns:
+        str: The approximated section ID, including the leading underscore.
+    """
+    slug = re.sub(r'[^a-zA-Z0-9]+', '_', text).strip('_').lower()
+    return f"_{slug}"
+
+
+def build_hierarchy_tree(schema: Dict) -> List[Dict]:
+    """
+    Build a tree mirroring the section hierarchy that will be generated for the schema,
+    so it can be rendered as an overview hierarchy diagram.
+
+    Traverses the schema properties in the same order and with the same rules used by
+    generate_asciidoc_main_field/generate_asciidoc_properties, so that section IDs assigned
+    here line up with the IDs AsciiDoc will auto-generate for the actual headings.
+
+    Args:
+        schema (dict): The (reference-resolved) JSON schema.
+
+    Returns:
+        list[dict]: The top-level nodes of the hierarchy tree. Each node has the keys
+                     'name', 'required', 'id', and 'children'.
+    """
+    id_counts: Dict[str, int] = {}
+
+    def next_id(name: str) -> str:
+        base = generate_heading_id(name)
+        count = id_counts.get(base, 0) + 1
+        id_counts[base] = count
+        return base if count == 1 else f"{base}_{count}"
+
+    def build_node(name: str, field_data: Dict, required: bool) -> Dict:
+        node = {"name": name, "required": required, "id": next_id(name), "children": []}
+
+        if (
+            field_data.get("type") == "array"
+            and isinstance(field_data.get("items"), dict)
+            and field_data["items"].get("type") == "object"
+        ):
+            item_properties = field_data["items"].get("properties", {})
+            item_required_fields = field_data["items"].get("required", [])
+            for child_name, child_data in item_properties.items():
+                node["children"].append(build_node(child_name, child_data, child_name in item_required_fields))
+        elif "properties" in field_data:
+            nested_required_fields = field_data.get("required", [])
+            for child_name, child_data in field_data["properties"].items():
+                node["children"].append(build_node(child_name, child_data, child_name in nested_required_fields))
+
+        return node
+
+    top_required_fields = schema.get("required", [])
+    return [
+        build_node(name, field_data, name in top_required_fields)
+        for name, field_data in schema["properties"].items()
+    ]
+
+
+def compute_page_link_prefix(output_path: str) -> str:
+    """
+    Compute the relative link prefix pointing from the rendered diagram image (which lives in
+    the shared content/_images directory) to the HTML page that will be generated for this file.
+
+    PlantUML diagrams are rendered to standalone SVG images, so links embedded in them are
+    resolved relative to the SVG file itself, not the page it is displayed on. This means
+    fragment-only links (e.g. "#_metadata") do not work and the link must instead point back at
+    the compiled page explicitly, mirroring the convention used in vehicle-structure.adoc.
+
+    Args:
+        output_path (str): The directory the AsciiDoc file is written to.
+
+    Returns:
+        str: The relative path prefix, for example "../07_geometry", to prepend to the page
+             filename and anchor.
+    """
+    parts = os.path.normpath(output_path).split(os.sep)
+    if "content" in parts:
+        page_dir = "/".join(parts[parts.index("content") + 1:])
+    else:
+        page_dir = ""
+    return f"../{page_dir}" if page_dir else ".."
+
+
+def render_hierarchy_diagram(headline: str, tree: List[Dict], page_url: str, schema_filename: str) -> str:
+    """
+    Render a hierarchy tree as a PlantUML legend diagram, similar to the vehicle structure
+    overview diagram, preceded by an explanatory sentence. Required fields are marked with "(R)".
+
+    Args:
+        headline (str): The label for the virtual root node representing the whole schema.
+        tree (list[dict]): The hierarchy tree as returned by build_hierarchy_tree.
+        page_url (str): The relative URL of the HTML page this diagram will be embedded in,
+                         used as the base for the section anchor links (e.g.
+                         "../07_geometry/asset-schema.html").
+        schema_filename (str): The base file name of the JSON schema (e.g. "asset_schema.json"),
+                                used to link to the actual file in the OpenMATERIAL-3D repository.
+
+    Returns:
+        str: The AsciiDoc content for the overview section, including the heading.
+    """
+    lines = [headline]
+
+    def render_node(node: Dict, level: int) -> None:
+        entry = f"[[{page_url}#{node['id']} {node['name']}]]"
+        if node["required"]:
+            entry += " (R)"
+        indent = "  " * (level - 1)
+        lines.append(f"{indent}|_ {entry}")
+        for child in node["children"]:
+            render_node(child, level + 1)
+
+    for node in tree:
+        render_node(node, 1)
+
+    diagram_body = "\n".join(lines)
+
+    schema_url = f"https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/{schema_filename}"
+    description = (
+        "This is the documentation about the JSON schema file. "
+        f"The actual file is located in the ASAM OpenMATERIAL 3D link:{schema_url}[GitHub repository].\n\n"
+        "The following diagram shows the hierarchy of the fields defined in this schema. "
+        "Fields marked with `\\(R)` are required. "
+        "A field can be optional while some of its children are required. "
+        "In that case, the required children only have to be filled in if the optional parent field is present.\n\n"
+    )
+
+    return (
+        "== Overview\n\n"
+        f"{description}"
+        "[plantuml]\n"
+        "----\n"
+        "legend\n"
+        f"{diagram_body}\n"
+        "end legend\n"
+        "----\n\n"
+    )
+
+
 def resolve_references(definitions, schema):
     """
         Resolve JSON Schema references in the provided schema using the given definitions.
@@ -290,13 +435,19 @@ def generate_asciidoc_file(json_schema_path: str, output_path: str):
     headline = headline.replace("reflcoeff", "reflection coefficient")     # This is an exception because of the abbreviation of reflection coefficient in the schema file name
     asciidoc_content = f"= {headline}\n\n"
 
+    output_filename = f"{os.path.splitext(base_filename)[0]}.adoc"
+    output_filename = output_filename.replace("reflCoeff", "reflection-coefficient")  # This is an exception because of the abbreviation of reflection coefficient in the schema file name
+    html_filename = f"{os.path.splitext(output_filename)[0]}.html"
+    page_url = f"{compute_page_link_prefix(output_path)}/{html_filename}"
+
+    hierarchy_tree = build_hierarchy_tree(schema)
+    asciidoc_content += render_hierarchy_diagram(headline, hierarchy_tree, page_url, os.path.basename(json_schema_path))
+
     for field in schema['properties']:
         is_required = field in schema.get('required', [])
         required_fields = schema['properties'][field].get('required', [])
         asciidoc_content += generate_asciidoc_main_field(field, schema, is_required, required_fields)
 
-    output_filename = f"{os.path.splitext(base_filename)[0]}.adoc"
-    output_filename = output_filename.replace("reflCoeff", "reflection-coefficient")  # This is an exception because of the abbreviation of reflection coefficient in the schema file name
     output_file = os.path.join(output_path, output_filename)
 
     with open(output_file, 'w') as file:
