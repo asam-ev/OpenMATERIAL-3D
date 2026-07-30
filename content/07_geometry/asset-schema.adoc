@@ -593,7 +593,7 @@ The 1/2 opening angle in degree, measured from the center of the conical spotlig
 
 *Type:* `+number+` +
 *Minimum value:* `+0+` +
-*Maximum value:* `+360+` +
+*Maximum value:* `+180+` +
 *Required:* No
 
 
@@ -602,7 +602,7 @@ The 1/2 opening angle in degree, measured from the center of the conical spotlig
 
 *Type:* `+number+` +
 *Minimum value:* `+0+` +
-*Maximum value:* `+360+` +
+*Maximum value:* `+180+` +
 *Required:* Yes
 
 
