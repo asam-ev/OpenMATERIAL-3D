@@ -400,18 +400,18 @@
                     "radiometricProfileUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to a mapping table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (Format to be defined.)"
+                        "description": "Relative or absolute file path to a table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (The format of the referenced radiance table is not defined in this standard. It may be defined in a future version.)"
                     },
                     "innerConeAngle": {
                         "type": "number",
                         "minimum": 0,
-                        "maximum": 360,
+                        "maximum": 180,
                         "description": "The 1/2 opening angle in degree, measured from the center of the conical spotlight to the angle where the light falloff begins. If not set, the default is 0. This will be overwritten, if a photometric profile is set."
                     },
                     "outerConeAngle": {
                         "type": "number",
                         "minimum": 0,
-                        "maximum": 360,
+                        "maximum": 180,
                         "description": "The 1/2 opening angle in degree, measured from the center of the conical spotlight to the angle where the falloff ends. Set to 360° for point lights. If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile."
                     },
                     "luminousIntensity": {
