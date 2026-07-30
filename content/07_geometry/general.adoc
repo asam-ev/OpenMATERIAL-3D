@@ -203,11 +203,11 @@ A Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehicle asset cou
 [#lighting]
 == Lighting
 
-The lighting concept in ASAM OpenMATERIAL 3D introduces a clear distinction between discrete light sources, e.g., point lights or spotlights) and emissive materials, enabling both physically simulated light sources and visually emissive elements to be defined in a standardized way.
+The lighting concept in ASAM OpenMATERIAL 3D introduces a clear distinction between discrete light sources, e.g., point lights or spotlights, and emissive materials, enabling both physically simulated light sources and visually emissive elements to be defined in a standardized way.
 
 === Discrete light sources
 
-Discrete light sources represent active light sources that emit light into the environment.
+Discrete light sources represent active light sources that emit light into the environment, e.g., point lights or spotlights.
 They are defined within the XOMA file format using the lightDefinitions property.
 
 Each discrete light source is associated with a corresponding node in the 3D model file.
