@@ -22,40 +22,40 @@ jobs:
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/asset_schema.json
-          file: ./examples/*.xoma
+          file: ./examples/**/*.xoma
 
       - name: Validate material mapping JSON schemas
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/mapping_schema.json
-          file: ./examples/*.xomm
+          file: ./examples/**/*.xomm
 
       - name: Validate material JSON schemas
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/material_schema.json
-          file: ./examples/*.xomp
+          file: ./examples/**/*.xomp
 
       - name: Validate electromagnetic material properties JSON schemas
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/material_emp_schema.json
-          file: ./examples/*_emp.xompt
+          file: ./examples/**/*_emp.xompt
 
       - name: Validate optical material properties JSON schemas
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/material_optical_schema.json
-          file: ./examples/*_optical.xompt
+          file: ./examples/**/*_optical.xompt
 
       - name: Validate brdf JSON schemas
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/material_brdf_schema.json
-          file: ./examples/*_brdf.xompt
+          file: ./examples/**/*_brdf.xompt
 
       - name: Validate reflection coefficient JSON schemas
         uses: cardinalby/schema-validator-action@v3
         with:
           schema: ./schemas/material_reflCoeff_schema.json
-          file: ./examples/*_reflCoeff.xompt
+          file: ./examples/**/*_reflCoeff.xompt

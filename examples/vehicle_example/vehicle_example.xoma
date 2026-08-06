@@ -1,11 +1,11 @@
 {
-    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/asset_schema.json",
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/heads/main/schemas/asset_schema.json",
     "metadata": {
         "name": "vehicle_example",
         "description": "This is an example vehicle asset. It demonstrates how ASAM OpenMATERIAL 3D assets and their node structure work.",
         "uuid": "cd9cc640-249e-4a1d-bc95-a713c4250f82",
         "assetVersion": "1.0.0",
-        "openMaterial3dVersion": "1.0.0",
+        "openMaterial3dVersion": "1.1.0",
         "copyrights": ["(C) 2024 BMW AG", "(C) 2024 Persival GmbH"],
         "license": "MPL-2.0",
         "authors": ["ludwig.friedmann@bmw.de", "clemens.linnhoff@persival.de"],
@@ -51,22 +51,292 @@
             "z": [0, 1.29637]
         }
     },
+    "lightDefinitions": [
+        {
+            "node": "Grp_Light_High_Beam_Left_0",
+            "innerConeAngle": 27,
+            "outerConeAngle": 30,
+            "luminousIntensity": 100000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "node": "Grp_Light_High_Beam_Right_0",
+            "innerConeAngle": 27,
+            "outerConeAngle": 30,
+            "luminousIntensity": 100000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "node": "Grp_Light_Low_Beam_Left_0",
+            "innerConeAngle": 40.5,
+            "outerConeAngle": 45,
+            "luminousIntensity": 50000,
+            "temperature": 5000
+        },
+        {
+            "node": "Grp_Light_Low_Beam_Right_0",
+            "innerConeAngle": 40.5,
+            "outerConeAngle": 45,
+            "luminousIntensity": 50000,
+            "temperature": 5000
+        },
+        {
+            "node": "Grp_Light_Indicator_Left_0",
+            "luminousIntensity": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Indicator_Right_0",
+            "luminousIntensity": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Indicator_Left_1",
+            "luminousIntensity": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Indicator_Right_1",
+            "luminousIntensity": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Brake_Left_0",
+            "luminousIntensity": 60,
+            "color": {
+                "r": 255,
+                "g": 10,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Brake_Right_0",
+            "luminousIntensity": 60,
+            "color": {
+                "r": 255,
+                "g": 10,
+                "b": 0
+            }
+        },
+        {
+            "node": "Grp_Light_Tail_Left_0",
+            "innerConeAngle": 70,
+            "outerConeAngle": 80,
+            "luminousIntensity": 10,
+            "color": {
+                "r": 255,
+                "g": 20,
+                "b": 5
+            }
+        },
+        {
+            "node": "Grp_Light_Tail_Right_0",
+            "innerConeAngle": 70,
+            "outerConeAngle": 80,
+            "luminousIntensity": 10,
+            "color": {
+                "r": 255,
+                "g": 20,
+                "b": 5
+            }
+        },
+        {
+            "node": "Grp_Light_Fog_Left_0",
+            "innerConeAngle": 51,
+            "outerConeAngle": 60,
+            "luminousIntensity": 10000,
+            "temperature": 4000
+        },
+        {
+            "node": "Grp_Light_Fog_Right_0",
+            "innerConeAngle": 51,
+            "outerConeAngle": 60,
+            "luminousIntensity": 10000,
+            "temperature": 4000
+        }
+    ],
+    "emissiveLightMapping": [
+        {
+            "assocNode": "Grp_Light_High_Beam_Left_0",
+            "materialName": "Light_Head_Lens_Left",
+            "luminance": 15000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assocNode": "Grp_Light_High_Beam_Right_0",
+            "materialName": "Light_Head_Lens_Right",
+            "luminance": 15000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Low_Beam_Left_0",
+            "materialName": "Light_Head_Lens_Left",
+            "luminance": 10000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Low_Beam_Right_0",
+            "materialName": "Light_Head_Lens_Right",
+            "luminance": 10000,
+            "color": {
+                "r": 255,
+                "g": 245,
+                "b": 230
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Indicator_Left_0",
+            "materialName": "Light_Indicator_Lens_Left_0",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Indicator_Right_0",
+            "materialName": "Light_Indicator_Lens_Right_0",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Indicator_Left_1",
+            "materialName": "Light_Indicator_Lens_Left_1",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Indicator_Right_1",
+            "materialName": "Light_Indicator_Lens_Right_1",
+            "luminance": 20,
+            "color": {
+                "r": 255,
+                "g": 140,
+                "b": 0
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Brake_Left_0",
+            "materialName": "Light_Brake_Lens_Left",
+            "luminance": 60,
+            "color": {
+                "r": 255,
+                "g": 10,
+                "b": 0
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Brake_Right_0",
+            "materialName": "Light_Brake_Lens_Right",
+            "luminance": 60,
+            "color": {
+                "r": 255,
+                "g": 10,
+                "b": 0
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Tail_Left_0",
+            "materialName": "Light_Tail_Lens_Left",
+            "luminance": 10,
+            "color": {
+                "r": 255,
+                "g": 20,
+                "b": 5
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Tail_Right_0",
+            "materialName": "Light_Tail_Lens_Right",
+            "luminance": 10,
+            "color": {
+                "r": 255,
+                "g": 20,
+                "b": 5
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Fog_Left_0",
+            "materialName": "Light_Head_Lens_Left",
+            "luminance": 5000,
+            "color": {
+                "r": 255,
+                "g": 235,
+                "b": 200
+            }
+        },
+        {
+            "assocNode": "Grp_Light_Fog_Right_0",
+            "materialName": "Light_Head_Lens_Right",
+            "luminance": 5000,
+            "color": {
+                "r": 255,
+                "g": 235,
+                "b": 200
+            }
+        }
+    ],
     "geometryProperties": [
-    {
-      "node": "Window_R",
-      "thickness": 0.005
-    },
-    {
-      "node": "Window_FL",
-      "thickness": 0.005
-    },
-    {
-      "node": "Window_FR",
-      "thickness": 0.005
-    },
-    {
-      "node": "Window_F",
-      "thickness": 0.005
-    }
-  ]
+        {
+            "node": "Window_R",
+            "thickness": 0.005
+        },
+        {
+            "node": "Window_FL",
+            "thickness": 0.005
+        },
+        {
+            "node": "Window_FR",
+            "thickness": 0.005
+        },
+        {
+            "node": "Window_F",
+            "thickness": 0.005
+        }
+    ]
 }
