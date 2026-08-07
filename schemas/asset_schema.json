@@ -155,12 +155,12 @@
                                 },
                                 "maxAcceleration": {
                                     "type": "number",
-                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2; Range: [0, inf[.",
+                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2^; Range: [0, inf[.",
                                     "minimum": 0
                                 },
                                 "maxDeceleration": {
                                     "type": "number",
-                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2; Range: [0, inf[.",
+                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2^; Range: [0, inf[.",
                                     "minimum": 0
                                 }
                             },
