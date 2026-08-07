@@ -7,8 +7,8 @@ The vehicle class includes all land vehicles, whether wheeled or tracked.
 In this version of the standard, only wheeled vehicles are considered.
 
 The vehicle's 3D geometry is structured according to the node structure defined in xref:../07_geometry/object-vehicle/vehicle-index.adoc#_model_structure[Section 7.3.2.3, "Model structure"].
-The structure begins with a Root node, which is the parent of all other nodes. 
-The origin of the Root node is the center of the vehicle's bounding box projected to the ground, including all vehicle parts in their default positions, meaning the vehicle is under neutral load conditions, the wheels are running straight, the doors are closed and the lights are off.
+The structure begins with a Root node, which is the parent of all other nodes.
+The origin of the Root node is the center of the vehicle's bounding box projected to the ground, including all vehicle parts in their default positions, meaning the vehicle is under neutral load conditions, the wheels are running straight, the doors are closed, and the lights are off.
 This origin can easily be transformed to coordinate frames from other ASAM standards, such as ASAM OpenSCENARIO XML vehicle coordinates as well as ASAM OSI object coordinates and host vehicle coordinates,
 see xref:../07_geometry/general.adoc#_local_coordinate_system[Section 7.2.2.2, "Local coordinate system"].
 
@@ -19,6 +19,6 @@ Not all nodes need to be present in every vehicle _3D model_, as not all vehicle
 Additional group nodes may be added to support additional use cases, but they shall be integrated into the general structure of external or internal and static or dynamic groups and follow the naming convention.
 
 Groups with a local transform are indicated in the structure by a (T).
-This is only an indicator in the documentation and must not be contained in the actual node name.
+This indicator is used in the documentation only and shall not be part of the actual node name.
 
 An example of a vehicle asset can be found in the examples folder of the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/vehicle_example[GitHub repository].

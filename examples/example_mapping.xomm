@@ -1,11 +1,11 @@
 {
-    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/mapping_schema.json",
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.1.0/schemas/mapping_schema.json",
     "metadata": {
         "name": "example_mapping",
         "description": "This is an example for a material mapping table. This file can be shared between multiple assets.",
         "uuid": "c492bda2-7c84-43e6-be19-03115545e844",
         "mappingVersion": "1.0.0",
-        "openMaterial3dVersion": "1.0.0",
+        "openMaterial3dVersion": "1.1.0",
         "copyrights": ["(C) 2023-2024 Example Company"],
         "license": "MPL-2.0",
         "authors": ["john.doe@asam.net"],

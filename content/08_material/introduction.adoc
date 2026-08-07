@@ -11,7 +11,7 @@ endif::[]
 
 In virtual environments and simulations, the accurate representation of materials plays a critical role in achieving realism and ensuring proper interaction between objects and perception sensors.
 _Material properties_, such as roughness, permittivity, and index of refraction, influence how sensors like cameras, radars, and lidars perceive and interact with objects.
-However, existing formats for materials in _3D models_ lack a standardized way to represent and manage multi-spectral materials, which can lead to inconsistencies in simulation scenarios and are not exchangeable between simulation tools.
+However, existing formats for materials in _3D models_ lack a standardized way to represent and manage multi-spectral materials, which can lead to inconsistencies in simulation scenarios and prevent exchange between simulation tools.
 
 The {THIS_STANDARD} standard addresses this gap by providing a robust framework for defining materials in a way that is comprehensive, multi-spectral, and interchangeable.
 
@@ -20,7 +20,7 @@ This section includes all _material_ definitions of {THIS_STANDARD}, marked in b
 The first point of contact with a _material_ is the **Material Data File** (for example, `my-material.xomp`).
 This file contains metadata as well as basic _material properties_, such as roughness or density.
 The _material_ data file may link one or multiple wavelength-dependent **Look-up Table Files** (.xompt).
-If multiple look-up tables of the same kind are linked, for example, BRDF or optical look-up tables, the contained property combinations, for example wavelength, humidity and temperate, must be complementary between the files and shall not overlap.
+If multiple look-up tables of the same kind are linked, for example, BRDF or optical look-up tables, the contained property combinations, for example, wavelength, humidity, and temperature, shall be complementary between the files and shall not overlap.
 There are different kinds of look-up tables:
 
 - Electromagnetic properties (`*_emp.xompt`) containing complex permeability and permittivity values
@@ -38,9 +38,9 @@ image::overview_material.png[,1100]
 Some key use cases include:
 
 - Accurate simulation of sensor perception:
-  To simulate sensors in virtual environments, the _material properties_ of objects must be accurately defined.
+  To simulate sensors in virtual environments, the _material properties_ of objects shall be accurately defined.
   These definitions require wavelength-dependent multi-spectral _material_ definitions, as various sensor types perceive the environment differently.
 
 - _Material_ reusability across platforms:
-  To ensure consistency in simulations, _3D assets_ including their _material_ data must be reusable across different tools and platforms.
+  To ensure consistency in simulations, _3D assets_, including their _material_ data, shall be reusable across different tools and platforms.
   Therefore, _material_ definitions need to be compatible and portable, allowing the same _materials_ to be used in various simulation environments without requiring rework or translation.

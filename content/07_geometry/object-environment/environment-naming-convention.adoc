@@ -1,7 +1,7 @@
 = Naming convention
 
 Every object has a unique name and represents a part of the environment.
-All included meshes are part of a group to indicate which kind of object type it represents.
-All meshes should be named meaningful.
+All included meshes are part of a group that indicates which _object type_ they represent.
+All meshes should be given meaningful names.
 
-If needed, the user is free to add more groups and new keywords, which are not part of the standard, for himself.
+Users may define additional groups and keywords that are not part of the standard.

@@ -34,7 +34,7 @@ Unless stated otherwise, all numeric values within {THIS_STANDARD} are in SI uni
 * Local coordinate system, see <<Local coordinate system, Section 7.2.2.2, "Local coordinate system">>
 
 Both coordinate systems consist of three orthogonal directions associated with
-x-, y-, and z-axes, and a coordinate origin where axes meet. The coordinate
+the x-, y-, and z-axes, and a coordinate origin where the axes meet. The coordinate
 systems are right-handed Cartesian coordinate systems according to ISO 8855 cite:[iso8855]. For
 a non-rotated coordinate system, the following applies:
 
@@ -82,7 +82,7 @@ A coordinate system of type (x, y, z) that is fixed in the inertial reference fr
 the simulation environment has the x~w~- and y~w~-axes parallel to the ground
 plane and the z~w~-axis pointing upward.
 
-Neither origin nor orientation of the world coordinate system are defined by the {THIS_STANDARD} standard. Nevertheless, the origin of the world coordinate system in an {THIS_STANDARD} environment should coincide with the origin of a corresponding ASAM OpenDRIVE map (if available).
+Neither the origin nor the orientation of the world coordinate system is defined by {THIS_STANDARD}. Nevertheless, the origin of the world coordinate system in an {THIS_STANDARD} environment should coincide with the origin of a corresponding ASAM OpenDRIVE map (if available).
 The origin of the world coordinate system in ASAM OSI should also be aligned with these two coordinate systems.
 
 === Local coordinate system
@@ -97,7 +97,7 @@ By static transformations, these coordinate frames may be synchronized with refe
 |===
 |Standard |Coordinate System | Transformation
 
-|ASAM OpenSCNEARIO XML | Vehicle | The origin is the center of the rear axle projected to the ground. Add the x-coordinate of the xref:../07_geometry/asset-schema.adoc#_rearaxle[rear axle] from the vehicle asset metadata to the {THIS_STANDARD} reference frame.
+|ASAM OpenSCENARIO XML | Vehicle | The origin is the center of the rear axle projected to the ground. Add the x-coordinate of the xref:../07_geometry/asset-schema.adoc#_rearaxle[rear axle] from the vehicle asset metadata to the {THIS_STANDARD} reference frame.
 |ASAM OSI |Moving or stationary object | The origin is in the center of the bounding box. Add half of the height of the asset defined as the maximum z-coordinate in the xref:../07_geometry/asset-schema.adoc#_boundingbox[bounding box] to the {THIS_STANDARD} reference frame.
 |ASAM OSI |Host vehicle | The origin is the center of the rear axle. Add the x- and z-coordinate of the xref:../07_geometry/asset-schema.adoc#_rearaxle[rear axle] from the vehicle asset metadata to the {THIS_STANDARD} reference frame.
 |===
@@ -113,24 +113,24 @@ The following naming conventions apply to {THIS_STANDARD} geometry files:
 
 * The _3D model_ file and the related _3D asset_ file shall have the same base name.
   Example: `Example.gltf`, `Example.xoma`
-* The naming convention inside the _3D model_ file (contains 3D information) must follow the capital Snake_Case definition, to improve human readability and enable consistent parsing of the file structure.
-* The naming convention inside the _3D asset_ file (contains metadata) must follow the lowerCamelCase definition, to allow a consistent naming convention in all JSON files and consistent parsing.
+* The naming convention inside the _3D model_ file (contains 3D information) shall follow the capital Snake_Case definition, to improve human readability and enable consistent parsing of the file structure.
+* The naming convention inside the _3D asset_ file (contains metadata) shall follow the lowerCamelCase definition, to allow a consistent naming convention in all JSON files and consistent parsing.
 * Keywords are predefined names for objects inside the node structure.
 
 === Node structure
 
 Every node structure for a 3D object uses predefined keywords to allow a consistent naming convention and parsing.
-Some keywords are already defined by the {THIS_STANDARD} standard and more could follow in future updates.
-Users are free to add more keywords for themself, if they are needed. The following rules apply:
+Some keywords are already defined by {THIS_STANDARD}, and more may follow in future versions.
+Users may define additional keywords as needed. The following rules apply:
 
-* All components shall be named according to capital snake case definition, starting with uppercase letters.
+* All components shall be named according to the capital Snake_Case definition, starting with uppercase letters.
 * Group nodes (also known as empty nodes or parent nodes) shall have "Grp_" as a prefix.
 * Iterators shall be added as suffixes.
   In the documentation, iterator names are written in angled brackets. Example: `<type_idx>`.
   In the node name itself, the iterator names are replaced by integer values, starting from 0.
-* Sequence of suffixes: 
-** 1: Iterator 
-** 2: Type Enumerator 
+* Sequence of suffixes:
+** 1: Iterator
+** 2: Type Enumerator
 ** 3: Subtype Enumerator.
 * The predefined keywords shall be used for the corresponding asset parts and can be found in the corresponding subchapters.
 
@@ -147,96 +147,121 @@ The following rules for metadata apply:
 The _3D asset_ file provides metadata as well as a mapping table to {THIS_STANDARD} _material property_ files.
 This information extends the geometry of an asset given in standard _3D model_ file formats, for example, glTF, FBX, or USD.
 The _3D asset_ file is in JSON format with the file extension .xoma.
-The asset file has to have the same file name as the accompanying _3D model_.
+The asset file shall have the same file name as the accompanying _3D model_.
 The following is an example of a _3D model_ file in glTF format with an accompanying _3D asset_ file:
 
 * `my-model.gltf`
 * `my-model.xoma`
 
-== Asset Type
-In the current specification of {THIS_STANDARD}, assets of type 'object' and 'scene' can be specified.
- Since the concept of 'scene' has been replaced by the following concept of referencing external assets, it can be understood as deprecated.
+== Asset type
 
+The `assetType` property of the _3D asset_ file distinguishes assets that represent an individual object ('object') from assets that represent a collection of objects ('scene').
+
+The value 'scene' is deprecated as of {THIS_STANDARD} 1.1.0.
+It is replaced by the concept of referencing external assets described in the following section.
+The value is retained for backward compatibility and should not be used in new assets.
+
+[#external-asset-references]
 == References to external assets
-To accommodate use cases in which 3D objects are not built from single assets but from (variable) compositions of assets
- (e.g., vehicles with roof racks and bicycles, environments built up by separate layers or enhanced with additional objects),
-  {THIS_STANDARD} allows external assets to be referenced in the _3D asset_ file.
-  
-To do this, the _3D asset_ files of external assets must be associated with a node of an overarching asset in its _3D asset_ file.
- This node acts as parent to the external assets and determines their spatial placement and orientation.
- The mapping is implemented as a list of key-value pairs of parent nodes and references to _3D asset_ files.
-  
-Example:
-A Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehicle asset could be a parent node for interchangeable car wheels, which are individually referenced from external assets.
+
+Some 3D objects are not built from a single asset, but from variable compositions of several assets.
+Examples are vehicles with roof racks or bicycle carriers, and environments that are built up from separate layers or enhanced with additional objects.
+To accommodate these use cases, {THIS_STANDARD} allows external assets to be referenced from the _3D asset_ file.
+
+An external asset is referenced by associating its _3D asset_ file with a node of the overarching asset.
+This node acts as the parent of the external asset and determines its spatial placement and orientation.
+The references are given in the `externalAssetReferences` property, a list of pairs of a parent node and a reference to a _3D asset_ file, see xref:../07_geometry/asset-schema.adoc#_externalassetreferences[].
+
+For example, a Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehicle asset can act as the parent node for interchangeable car wheels that are each referenced from an external asset.
+
+[#material-replacement]
+== Material replacement
+
+_Material_ names in a _3D data file_ are used as keys into the _material_ mapping file, see xref:../07_geometry/mapping-schema.adoc[].
+This requires the _material_ names in the _3D data file_ to match the keys of a shared mapping table, which is not always possible when a _3D model_ is reused from another source.
+
+The `materialReplacement` property of the _3D asset_ file resolves this without modifying the _3D data file_, see xref:../07_geometry/asset-schema.adoc#_materialreplacement[].
+It maps a _material_ name from the _3D data file_ to a replacement name or an RGB code.
+The replacement value, rather than the original _material_ name, is then used as the key into the _material_ mapping file.
+
+[#geometry-properties]
+== Geometry properties
+
+Some physical properties of an object cannot be derived from its surface geometry alone.
+For example, a wall or a window may be modeled as a single surface, although its physical thickness affects the propagation of sensor signals through it.
+
+The `geometryProperties` property of the _3D asset_ file assigns such properties to individual nodes of the _3D data file_, see xref:../07_geometry/asset-schema.adoc#_geometryproperties[].
+Currently, only the `thickness` property is defined.
+It specifies the extrusion along the surface normal, in meters, applied on the side opposite the viewer.
 
 == Requirements
 
-* The geometry of the object shall be in real-word scale, using meters as the unit for measurement distances.
+* The geometry of the object shall be in real-world scale, using meters as the unit of length.
 * The object's origins and pivot points shall coincide with position and orientation of the origin of the object's reference coordinate frame, unless otherwise specified.
-* Meshes shall not contain problematic characteristics such as doubled, isolated, coincident, coplanar, degenerate, or primitives.
+* Meshes shall not contain problematic primitives, such as doubled, isolated, coincident, coplanar, or degenerate primitives.
 * Meshes shall have outside facing normals. Soft or hard edges shall be set correctly.
-* Meshes shall not be empty or contain multiple level of details (LoDs).
+* Meshes shall not be empty and shall not contain multiple levels of detail (LoDs).
 * Meshes shall be triangulated. Potential normal maps shall match that triangulation.
-* Rendering materials shall support physically based rendering (PBR) workflows and there shall not be geometry without assigned material.
+* Rendering materials shall support physically based rendering (PBR) workflows and there shall not be any geometry without an assigned material.
 * Additional requirements apply when {THIS_STANDARD} assignment textures are used:
 ** UV channel 1 shall be used for assignment textures.
-** UV Islands shall have margins in between, so that assignment texture interpolation errors are avoided.
+** UV islands shall have margins between them, so that assignment texture interpolation errors are avoided.
 ** There shall not be any geometry without UV coverage.
 
 
 == Recommendations
 
-* UVs should not overlap and be within 0-1 UV space.
-* Elongated primitives should be avoided as they fit badly in acceleration structures.
-* Alpha-textured meshes should be optimized to minimize the amount of alpha testing.
+* UVs should not overlap and should lie within the 0-1 UV space.
+* Elongated primitives should be avoided, because they fit poorly into acceleration structures.
+* Alpha-textured meshes should be optimized to minimize the amount of alpha testing required.
 * Meshes should not have holes or gaps.
-* Meshes should have a clean edgeflow.
-* Usage of N-Gons is not recommended.
+* Meshes should have a clean edge flow.
+* N-gons should not be used.
 * Faces should be one-sided.
 * An object's shape should have the lowest possible number of polygons.
 * Texel density should be homogeneous and as low as possible.
 * UV stretching should be minimized.
 * Naming of files, nodes, meshes, and materials should be meaningful.
-* Usage of multiple PBR maps is encouraged, for example, albedo, roughness, metallic, normals.
+* The use of multiple PBR maps is encouraged, for example, albedo, roughness, metallic, and normal maps.
 * Smaller objects should have one _material_ per object, for example, baked traffic cone. Larger objects should contain multiple seamless repeatable materials, for example, brick building.
 
 [#lighting]
 == Lighting
 
-The lighting concept in ASAM OpenMATERIAL 3D introduces a clear distinction between discrete light sources, e.g., point lights or spotlights, and emissive materials, enabling both physically simulated light sources and visually emissive elements to be defined in a standardized way.
+The lighting concept of {THIS_STANDARD} distinguishes between discrete light sources, for example, point lights or spotlights, and emissive materials.
+This allows both physically simulated light sources and visually emissive elements to be defined in a standardized way.
 
 === Discrete light sources
 
-Discrete light sources represent active light sources that emit light into the environment, e.g., point lights or spotlights.
-They are defined within the XOMA file format using the lightDefinitions property.
+Discrete light sources are active light sources that emit light into the environment, for example, point lights or spotlights.
+They are defined in the _3D asset_ file using the `lightDefinitions` property, see xref:../07_geometry/asset-schema.adoc#_lightdefinitions[].
 
-Each discrete light source is associated with a corresponding node in the 3D model file.
+Each discrete light source is associated with a corresponding node in the _3D data file_.
 This node determines the spatial placement and orientation of the light within the asset.
 
-If the associated node follows a predefined naming convention for lighting group nodes of a specific asset class, the lighting function is implicitly defined.
-For example:
-A node named Grp_Light_Low_Beam_Left_0 in a vehicle asset indicates that the light represents the left low beam.
-In a simulation, this light is activated when the corresponding vehicle function (low beam) is enabled.
+If the associated node follows the predefined naming convention for lighting group nodes of a specific object class, the lighting function is defined implicitly.
+For example, a node named Grp_Light_Low_Beam_Left_0 in a vehicle asset indicates that the light represents the left low beam.
+In a simulation, this light is activated when the corresponding vehicle function, the low beam, is enabled.
 
 If a generic node name is used, no standardized function can be derived.
-In such cases, the simulator may assign a lighting function arbitrarily, resulting in non-standardized behavior.
+In such cases, the simulator may assign a lighting function arbitrarily, which results in non-standardized behavior.
 
-Additional properties of discrete light sources, such as intensity, color and beam shape, can be configured in the XOMA file as defined in the corresponding schema.
+Additional properties of discrete light sources, such as intensity, color, and beam shape, can be configured in the _3D asset_ file as defined in the corresponding JSON schema.
 
 === Emissive materials
 
-Emissive materials are defined in the 3D model file and mapped within the XOMA file format using the emissiveLightMapping property.
+Emissive materials are defined in the _3D data file_ and mapped in the _3D asset_ file using the `emissiveLightMapping` property, see xref:../07_geometry/asset-schema.adoc#_emissivelightmapping[].
 
-Similar to discrete light sources, emissive materials are associated with nodes in the 3D model file.
-However, in this case, the node does not define spatial positioning but is used solely to determine the lighting function via its name.
-For example:
-A material associated with the node Grp_Light_Indicator_Left_0 corresponds to the left turn indicator.
-In a simulation, the emissive effect of the indicator is activated by modification of parameters or activation of textures of the corresponding material.
+As with discrete light sources, emissive materials are associated with nodes in the _3D data file_.
+In this case, however, the node does not define any spatial placement.
+It is used solely to derive the lighting function from its name.
+For example, a material associated with the node Grp_Light_Indicator_Left_0 corresponds to the left turn indicator.
+In a simulation, the emissive effect of the indicator is activated by modifying parameters of the corresponding material or by activating its textures.
 
-As with discrete light sources, generic node names lead to undefined behavior, allowing the simulator to decide the mapping.
+As with discrete light sources, generic node names result in non-standardized behavior, and the simulator decides the mapping.
 
-The visual appearance of emissive materials is defined by materials within the 3D model file.
-These materials are referenced in the XOMA file.
+The visual appearance of emissive materials is defined by the materials in the _3D data file_.
+These materials are referenced in the _3D asset_ file.
 
-Additionally, emissive textures can be specified in the XOMA file.
+In addition, emissive textures can be specified in the _3D asset_ file.
 A masking texture may be used to selectively control emissive regions for specific lighting functions.

@@ -1,11 +1,11 @@
 {
-    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.0.0/schemas/asset_schema.json",
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.1.0/schemas/asset_schema.json",
     "metadata": {
         "name": "environment_example",
         "description": "This is an example environment with a short road.",
         "uuid": "13426059-a91e-44d2-aa0e-3b4244e759aa",
         "assetVersion": "1.0.0",
-        "openMaterial3dVersion": "1.0.0",
+        "openMaterial3dVersion": "1.1.0",
         "copyrights": ["(C) 2024 Persival GmbH"],
         "license": "MPL-2.0",
         "authors": ["clemens.linnhoff@persival.de"],

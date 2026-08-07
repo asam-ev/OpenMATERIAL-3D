@@ -6,9 +6,9 @@
 
 The other object class comprises all objects not yet specified by {THIS_STANDARD}.
 It includes all objects that are not specified by type-specific object classes.
-Definitions in type-specific object classes overwrite the specifications in the other object class.
+Definitions in type-specific object classes take precedence over the specifications in the other object class.
 
 For objects of class other, only the presence of the Grp_Root node is mandatory.
 All object components shall be children of Grp_Root.
 The associated coordinate system for Grp_Root should have its origin in the geometric center of the object's bounding box, projected to the ground.
-The x-axis of the coordinate system should point to the front of the object (if applicable), the z-axis of the object should point vertically upwards and the y-axis should point sidewards to complete the right-hand coordinate system.
+The x-axis of the coordinate system should point to the front of the object (if applicable), the z-axis should point vertically upwards, and the y-axis should point laterally to complete the right-handed coordinate system.

@@ -42,12 +42,12 @@ legend
 end legend
 ----
 
-== Grp_Root 
+== Grp_Root
 
 This group is used as a parent for all following nodes. It can be used to place the whole asset and select the complete node hierarchy at once. The transformation is set to 0 for all axes.
 
 [#tab-human-Grp_Root]
-.Grp_Root 
+.Grp_Root
 [%header, cols="20, 80"]
 |===
 
@@ -60,18 +60,18 @@ This group is used as a parent for all following nodes. It can be used to place 
 | Pointing forwards
 
 | *y-axis*
-| Pointing sidewards
+| Pointing laterally
 
 | *z-axis*
 | Pointing upwards
 |===
 
 
-== Armature_<Name> 
+== Armature_<Name>
 
 This object or group represents the armature (skeleton) of the object and contains all bones. It is needed to ensure that the bone hierarchy can be exported and imported correctly.
 Depending on the 3D software, the armature is a separate _object type_ (for example in Blender) or represented by a group (for example in Maya).
-The postfix `_<Name>` is optional, but is recommended to use, if you prepare multiple human assets in one file of an 3D application to keep the names unique and within the naming convention.
+The suffix `_<Name>` is optional. It is recommended when multiple human assets are prepared in a single file of a 3D application, in order to keep the names unique and within the naming convention.
 The armature shares the coordinate system with Grp_Root.
 
 
@@ -100,13 +100,13 @@ The Hip bone represents the lowest parts and bones of the spine, that is, the Hi
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
 == Lower_Spine (T)
 
-The Lower_Spine bone represents the middle parts und bones of the spine, that is, the Lumbar spine bones of the human skeleton.
+The Lower_Spine bone represents the middle parts and bones of the spine, that is, the Lumbar spine bones of the human skeleton.
 
 [#tab-human-lower-spine]
 .Lower_Spine bone
@@ -125,13 +125,13 @@ The Lower_Spine bone represents the middle parts und bones of the spine, that is
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
 == Upper_Spine (T)
 
-The Upper_Spine bone represents the upper parts und bones of the spine, that is, the Thoracic spine bones of the human skeleton.
+The Upper_Spine bone represents the upper parts and bones of the spine, that is, the Thoracic spine bones of the human skeleton.
 
 [#tab-human-upper-spine]
 .Upper_Spine bone
@@ -150,20 +150,20 @@ The Upper_Spine bone represents the upper parts und bones of the spine, that is,
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
 == Neck (T)
 
-The Neck bone represents the most upper parts und bones of the spine, that is, the Cervical spine bones of the human skeleton.
+The Neck bone represents the uppermost parts and bones of the spine, that is, the Cervical spine bones of the human skeleton.
 
 [#tab-human-neck]
 .Neck bone
 [%header, cols="20, 80"]
 |===
 
-2+^| Neck 
+2+^| Neck
 
 | *Origin*
 | At the height of the lowest Cervical spine bone and in the middle of the geometry
@@ -175,7 +175,7 @@ The Neck bone represents the most upper parts und bones of the spine, that is, t
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -200,7 +200,7 @@ The Head bone represents the head, that is, the skull of the human skeleton.
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -225,7 +225,7 @@ The Eye_Left bone represents the left eye of the human body. It is used to calcu
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -250,7 +250,7 @@ The Eye_Right bone represents the right eye of the human body. It is used to cal
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -275,7 +275,7 @@ The Shoulder_Left bone represents the upper part of the left shoulder, that is, 
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -300,7 +300,7 @@ The Upper_Arm_Left bone represents the upper part of the left arm, that is, the 
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -325,7 +325,7 @@ The Lower_Arm_Left bone represents the lower part of the left arm, that is, the 
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -342,7 +342,7 @@ When used with ASAM OSI, this bone corresponds to TYPE_FULL_HAND_L in the Pedest
 2+^| Hand_Left
 
 | *Origin*
-| At the height of the beginning carpal bones and in the middle of the geometry
+| At the height of the proximal carpal bones and in the middle of the geometry
 
 | *x-axis*
 | Pointing forwards
@@ -351,7 +351,7 @@ When used with ASAM OSI, this bone corresponds to TYPE_FULL_HAND_L in the Pedest
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -367,7 +367,7 @@ The Full_Thumb_Left bone represents the thumb of the left hand, that is, the ful
 2+^| Full_Thumb_Left
 
 | *Origin*
-| At the height of the beginning carpal bones and in the middle of the geometry
+| At the height of the proximal carpal bones and in the middle of the geometry
 
 | *x-axis*
 | Pointing forwards
@@ -376,13 +376,13 @@ The Full_Thumb_Left bone represents the thumb of the left hand, that is, the ful
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
 == Full_Fingers_Left (T)
 
-The Full_Fingers_Left bone represents all other fingers of the left hand, that is, the full index finger, middle finger, ring finger, and pinkie finger of the human skeleton. The middle finger position and length are used to place the bone correctly.
+The Full_Fingers_Left bone represents all other fingers of the left hand, that is, the full index finger, middle finger, ring finger, and little finger of the human skeleton. The middle finger position and length are used to place the bone correctly.
 
 [#tab-human-full-fingers-left]
 .Full_Fingers_Left bone
@@ -392,7 +392,7 @@ The Full_Fingers_Left bone represents all other fingers of the left hand, that i
 2+^| Full_Fingers_Left
 
 | *Origin*
-| At the height of the beginning carpal bones and in the middle of the hand geometry
+| At the height of the proximal carpal bones and in the middle of the hand geometry
 
 | *x-axis*
 | Pointing forwards
@@ -401,7 +401,7 @@ The Full_Fingers_Left bone represents all other fingers of the left hand, that i
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -426,7 +426,7 @@ The Shoulder_Right bone represents the upper part of the right shoulder, that is
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -451,7 +451,7 @@ The Upper_Arm_Right bone represents the upper part of the right arm, that is, th
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -476,7 +476,7 @@ The Lower_Arm_Right bone represents the lower part of the right arm, that is, th
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -493,7 +493,7 @@ When used with ASAM OSI, this bone corresponds to TYPE_FULL_HAND_R in the Pedest
 2+^| Hand_Right
 
 | *Origin*
-| At the height of the beginning carpal bones and in the middle of the geometry
+| At the height of the proximal carpal bones and in the middle of the geometry
 
 | *x-axis*
 | Pointing forwards
@@ -502,7 +502,7 @@ When used with ASAM OSI, this bone corresponds to TYPE_FULL_HAND_R in the Pedest
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -518,7 +518,7 @@ The Full_Thumb_Right bone represents the thumb of the right hand, that is, the f
 2+^| Full_Thumb_Right
 
 | *Origin*
-| At the height of the beginning carpal bones and in the middle of the geometry
+| At the height of the proximal carpal bones and in the middle of the geometry
 
 | *x-axis*
 | Pointing forwards
@@ -527,13 +527,13 @@ The Full_Thumb_Right bone represents the thumb of the right hand, that is, the f
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
 == Full_Fingers_Right (T)
 
-The Full_Fingers_Right bone represents all other fingers of the right hand, that is, the full index finger, middle finger, ring finger, and pinkie finger. The middle finger position and length are used to place the bone correctly.
+The Full_Fingers_Right bone represents all other fingers of the right hand, that is, the full index finger, middle finger, ring finger, and little finger of the human skeleton. The middle finger position and length are used to place the bone correctly.
 
 [#tab-human-full-fingers-right]
 .Full_Fingers_Right bone
@@ -543,7 +543,7 @@ The Full_Fingers_Right bone represents all other fingers of the right hand, that
 2+^| Full_Fingers_Right
 
 | *Origin*
-| At the height of the beginning carpal bones and in the middle of the hand geometry
+| At the height of the proximal carpal bones and in the middle of the hand geometry
 
 | *x-axis*
 | Pointing forwards
@@ -552,7 +552,7 @@ The Full_Fingers_Right bone represents all other fingers of the right hand, that
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 == Upper_Leg_Left (T)
@@ -576,7 +576,7 @@ The Upper_Leg_Left bone represents the upper part of the left leg, that is, the 
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -601,7 +601,7 @@ The Lower_Leg_Left bone represents the lower part of the left leg, that is, the 
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -627,7 +627,7 @@ When used with ASAM OSI, this bone corresponds to TYPE_FULL_Foot_L in the Pedest
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -640,7 +640,7 @@ The Full_Toes_Left bone represents all toes of the left foot of the human skelet
 [%header, cols="20, 80"]
 |===
 
-2+^| Full_Toes_Left 
+2+^| Full_Toes_Left
 
 | *Origin*
 | At the height of the phalanges and in the middle of the geometry
@@ -652,7 +652,7 @@ The Full_Toes_Left bone represents all toes of the left foot of the human skelet
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -677,7 +677,7 @@ The Upper_Leg_Right bone represents the upper part of the right leg, that is, th
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -702,7 +702,7 @@ The Lower_Leg_Right bone represents the lower part of the right leg, that is, th
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
@@ -728,20 +728,20 @@ When used with ASAM OSI, this bone corresponds to TYPE_FULL_Foot_R in the Pedest
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 
 == Full_Toes_Right (T)
 
-The Full_Toes_Right bone in a human skeleton represents all toes of the right foot of the human skeleton.
+The Full_Toes_Right bone represents all toes of the right foot of the human skeleton.
 
 [#tab-human-full-toes-right]
 .Full_Toes_Right bone
 [%header, cols="20, 80"]
 |===
 
-2+^| Full_Toes_Right 
+2+^| Full_Toes_Right
 
 | *Origin*
 | At the height of the phalanges and in the middle of the geometry
@@ -753,7 +753,7 @@ The Full_Toes_Right bone in a human skeleton represents all toes of the right fo
 | Pointing along the bone direction
 
 | *z-axis*
-| Pointing sidewards
+| Pointing laterally
 |===
 
 == Accessories_<Name>

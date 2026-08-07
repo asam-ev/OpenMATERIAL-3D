@@ -6,5 +6,22 @@ ifndef::include-only-once[]
 include::{root-path}_config.adoc[]
 endif::[]
 
-This is the first release of this standard published by ASAM.
-Therefore, no information about the backward compatibility of this standard has been added to this section.
+{THIS_STANDARD} 1.1.0 is backward compatible with {THIS_STANDARD} 1.0.0.
+Files that are valid according to the 1.0.0 JSON schemas remain valid according to the 1.1.0 JSON schemas.
+
+The following changes were introduced in version 1.1.0:
+
+* The asset file (.xoma) has the following new optional properties:
+** `lightDefinitions`, which defines discrete light sources, see xref:../07_geometry/general.adoc#lighting[Lighting].
+** `emissiveLightMapping`, which maps emissive materials to lighting functions, see xref:../07_geometry/general.adoc#lighting[Lighting].
+** `externalAssetReferences`, which references external assets, see xref:../07_geometry/general.adoc#external-asset-references[References to external assets].
+** `materialReplacement`, which replaces material names from the _3D data file_ with alternative mapping keys.
+** `geometryProperties`, which defines per-node geometry properties, such as thickness.
+* The BRDF look-up table file (.xompt) has the new optional property `receiverSolidAngles`.
+* The property `assetType` of the asset file is no longer required.
+  The value 'scene' is deprecated and is replaced by `externalAssetReferences`.
+* Assignment textures referenced in `materialTextureAssignment` are no longer restricted to the 'png' and 'jpg' file formats.
+* Checker rules are no longer distinguished by the standard strings `xom-geo` and `xom-mat`.
+  All rule UIDs now use the standard string `xom`.
+
+Implementations that support {THIS_STANDARD} 1.0.0 can read {THIS_STANDARD} 1.1.0 files, but they ignore the properties listed above.

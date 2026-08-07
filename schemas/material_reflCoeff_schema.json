@@ -13,7 +13,7 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Short description of the material in 2 - 3 sentences."
+                    "description": "Short description of the material in two to three sentences."
                 },
                 "uuid": {
                     "type": "string",
@@ -32,7 +32,7 @@
                 },
                 "copyrights": {
                     "type": "array",
-                    "description": "Indicates copyright details, including the year and copyright holder (e.g., '© 2024 ACME Inc.').",
+                    "description": "Indicates copyright details, including the year and copyright holder (for example, '© 2024 ACME Inc.').",
                     "items": {
                         "type": "string"
                     },
@@ -75,11 +75,11 @@
         },
         "reflectionCoefficient": {
             "type": "object",
-            "description": "Reflection coefficient lookup table including relevant meta data. The reflection coefficient is defined as the ratio of amplitudes of the reflected electromagnetic wave over the incident electromagnetic wave \\(r = E_{\\textrm{r}} / E_{\\textrm{i}}\\). This complex value is represented by angle- and wavelength-dependent magnitude and phase values.",
+            "description": "Reflection coefficient look-up table including the relevant metadata. The reflection coefficient is defined as the ratio of amplitudes of the reflected electromagnetic wave over the incident electromagnetic wave \\(r = E_{\\textrm{r}} / E_{\\textrm{i}}\\). This complex value is represented by angle- and wavelength-dependent magnitude and phase values.",
             "properties": {
                 "wavelengths": {
                     "type": "array",
-                    "description": "List of all wavelengths in meters contained in the lookup table. The wavelength values shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                    "description": "List of all wavelengths contained in the look-up table. Unit: meter (m). The wavelength values shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
                     "items": {
                         "type": "number",
                         "minimum": 1e-09,
@@ -97,7 +97,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                                "description": "Wavelength of the radiation in free space. Unit: meter (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
                                 "minimum": 1e-09,
                                 "maximum": 17.16e-03
                             },
@@ -106,7 +106,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Incident zenith angle relative to the surface normal in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
+                                "description": "Incident zenith angle relative to the surface normal, in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
                                 "minimum": 0,
                                 "maximum": 1.570796
                             },
@@ -115,7 +115,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit zenith angle relative to the surface normal in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
+                                "description": "Exit zenith angle relative to the surface normal, in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
                                 "minimum": 0,
                                 "maximum": 1.570796
                             },
@@ -124,7 +124,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0° as the incident ray is used as reference.",
+                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0, because the incident ray is used as the reference.",
                                 "minimum": 0,
                                 "maximum": 6.283185
                             },
@@ -133,7 +133,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Polarized plane angle in rad. This is the angle between the plane containing the incident, exit, and normal vector, and the plane of polarization. The plane of polarization contains the direction of propagation and the electric vector. The value shall be within a range of \\(0\\) to \\(\\pi\\).",
+                                "description": "Polarized plane angle in rad. This is the angle between the plane containing the incident, exit, and normal vectors, and the plane of polarization. The plane of polarization contains the direction of propagation and the electric vector. The value shall be within a range of \\(0\\) to \\(\\pi\\).",
                                 "minimum": 0,
                                 "maximum": 3.141593
                             },
@@ -142,7 +142,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Magnitude within the linearly polarized plane. The magnitude is given as an absolute relative value compared to an ideal reflector. The value shall be between 0 and 1",
+                                "description": "Magnitude within the linearly polarized plane. The magnitude is given as an absolute value relative to an ideal reflector. The value shall be within a range of 0 to 1.",
                                 "minimum": 0,
                                 "maximum": 1
                             },

@@ -13,7 +13,7 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Short description of the material in 2 - 3 sentences."
+                    "description": "Short description of the material in two to three sentences."
                 },
                 "uuid": {
                     "type": "string",
@@ -76,12 +76,12 @@
                     "properties": {
                         "surfaceHeightRms": {
                             "type": "number",
-                            "description": "Root mean square of surface height deviations, called RMS-Roughness, being a vertical measure of roughness and given in meters (m).",
+                            "description": "Root mean square of the surface height deviations, also called RMS roughness. This is a vertical measure of roughness. Unit: meter (m).",
                             "minimum": 0
                         },
                         "surfaceCorrelationLength": {
                             "type": "number",
-                            "description": "Correlation length of the surface height deviations, being the distance after autocorrelation function has dropped to 1/e. Thus being a horizontal measure of roughness and given in meters.",
+                            "description": "Correlation length of the surface height deviations, that is, the distance after which the autocorrelation function has dropped to 1/e. This is a horizontal measure of roughness. Unit: meter (m).",
                             "minimum": 0
                         },
                         "sources": {
@@ -101,13 +101,13 @@
                     "properties": {
                         "emissivityCoefficient": {
                             "type": "number",
-                            "description": "Emissivity describes the ability to emit energy as thermal radiation. Given as the fraction of thermal radiation emitted by a surface relative to the radiation emitted by an ideal black body at the same temperature. Here the hemispherical total emissivity is used which considers full emission over all wavelengths, directions and polarization for a given particular temperature: ε(T).",
+                            "description": "Emissivity describes the ability to emit energy as thermal radiation. It is given as the fraction of thermal radiation emitted by a surface relative to the radiation emitted by an ideal black body at the same temperature. The hemispherical total emissivity is used here, which considers the full emission over all wavelengths, directions, and polarizations at one particular temperature: ε(T).",
                             "minimum": 0,
                             "maximum": 1
                         },
                         "temperature": {
                             "type": "number",
-                            "description": "Temperature of material in Kelvin (K) at which the emissivity is measured.",
+                            "description": "Temperature at which the emissivity is measured. Unit: kelvin (K).",
                             "minimum": 0
                         },
                         "sources": {
@@ -127,7 +127,7 @@
                     "properties": {
                         "youngsModulus": {
                             "type": "number",
-                            "description": "Young's modulus of the material in Pascal (Pa). The value shall be in the range of 0 to 1.5e12 Pa (Young’s modulus of a diamond)",
+                            "description": "Young's modulus of the material. Unit: pascal (Pa). The value shall be in the range of 0 to 1.5e12 Pa, the upper limit being the Young's modulus of diamond.",
                             "minimum": 0,
                             "maximum": 1500000000000
                         },
@@ -154,7 +154,7 @@
                     "properties": {
                         "density": {
                             "type": "number",
-                            "description": "Density of the material in kg/m^3^. The value shall be in the range of 0 to 25000 (density of Osmium)",
+                            "description": "Density of the material. Unit: kg/m^3^. The value shall be in the range of 0 to 25000 kg/m^3^, the upper limit being the density of osmium.",
                             "minimum": 0,
                             "maximum": 25000
                         },
@@ -170,17 +170,17 @@
                 },
                 "retroreflectivityData": {
                     "type": "object",
-                    "description": "Information about the retro-reflective properties of the material in the visible light spectrum.",
+                    "description": "Information about the retroreflective properties of the material in the visible light spectrum.",
                     "properties": {
                         "coefficientOfRetroreflection": {
                             "type": "number",
-                            "description": "Coefficient of retro-reflection in candela per lux per square metre (cd lx^-1^ m^-2^).",
+                            "description": "Coefficient of retroreflection. Unit: candela per lux per square meter (cd lx^-1^ m^-2^).",
                             "minimum": 0,
                             "maximum": 5000
                         },
                         "sources": {
                             "type": "string",
-                            "description": "Sources of the retro-reflectivity data. Multiple sources should be comma-separated."
+                            "description": "Sources of the retroreflectivity data. Multiple sources should be comma-separated."
                         }
                     },
                     "required": [
@@ -190,17 +190,17 @@
                 },
                 "electromagneticPropertiesUri": {
                     "type": "string",
-                    "description": "Relative or absolute file path to a property lookup table file with electromagnetic material properties. For cross-platform compatibility, Unix-style paths are recommended.",
+                    "description": "Relative or absolute file path to a property look-up table file with electromagnetic material properties. For cross-platform compatibility, Unix-style paths are recommended.",
                     "pattern": ".*_emp\\.xompt$"
                 },
                 "opticalPropertiesUri": {
                     "type": "string",
-                    "description": "Relative or absolute file path to a property lookup table file with optical material properties. For cross-platform compatibility, Unix-style paths are recommended.",
+                    "description": "Relative or absolute file path to a property look-up table file with optical material properties. For cross-platform compatibility, Unix-style paths are recommended.",
                     "pattern": ".*_optical\\.xompt$"
                 },
                 "brdfUris": {
                     "type": "array",
-                    "description": "Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent bidirectional reflectance distribution functions. For cross-platform compatibility, Unix-style paths are recommended.",
+                    "description": "Relative or absolute file paths to one or multiple property look-up table files with wavelength-dependent bidirectional reflectance distribution functions. For cross-platform compatibility, Unix-style paths are recommended.",
                     "items": {
                         "type": "string",
                         "pattern": ".*_brdf\\.xompt$"
@@ -208,7 +208,7 @@
                 },
                 "reflectionCoefficientUris": {
                     "type": "array",
-                    "description": "Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent reflection coefficient values. For cross-platform compatibility, Unix-style paths are recommended.",
+                    "description": "Relative or absolute file paths to one or multiple property look-up table files with wavelength-dependent reflection coefficient values. For cross-platform compatibility, Unix-style paths are recommended.",
                     "items": {
                         "type": "string",
                         "pattern": ".*_reflCoeff\\.xompt$"

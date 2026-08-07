@@ -1,15 +1,15 @@
 = Naming convention
 
 Every mesh has a unique name and represents a part of the vehicle.
-The different vehicle components can be identified by the keywords.
-All included meshes use one or more keywords to indicate which kind of object it represents and where it is located:
+The individual vehicle components can be identified by their keywords.
+All included meshes use one or more keywords to indicate which kind of object they represent and where they are located:
 
 * Count the axle index from front to rear starting with 0 (according to the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1MovingObject_1_1VehicleAttributes_1_1WheelData.html#a094de989f5a2aab080f9a65f0feb3867[ASAM OSI definition]).
 * Count the wheel index per axle from right to left (in positive y-direction and according to the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1MovingObject_1_1VehicleAttributes_1_1WheelData.html#a094de989f5a2aab080f9a65f0feb3867[ASAM OSI definition]).
 * Count the door index per side from front to rear and right to left (in positive y-direction).
 * Count the seat index per level from first level front to rear, and right to left, to the next level from right to left and front to rear.
 
-Note: A rear bench with 3 seats is considered as 3 seats, because 3 passengers could take a seat on it.
+NOTE: A rear bench with three seats is considered to be three seats, because three passengers can be seated on it.
 
-If needed, the user is free to add more groups and new keywords, which are not part of the standard.
+Users may define additional groups and keywords that are not part of the standard.
 

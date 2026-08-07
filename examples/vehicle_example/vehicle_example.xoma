@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/heads/main/schemas/asset_schema.json",
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.1.0/schemas/asset_schema.json",
     "metadata": {
         "name": "vehicle_example",
         "description": "This is an example vehicle asset. It demonstrates how ASAM OpenMATERIAL 3D assets and their node structure work.",
@@ -54,8 +54,8 @@
     "lightDefinitions": [
         {
             "node": "Grp_Light_High_Beam_Left_0",
-            "innerConeAngle": 27,
-            "outerConeAngle": 30,
+            "innerConeAngle": 0.471239,
+            "outerConeAngle": 0.523599,
             "luminousIntensity": 100000,
             "color": {
                 "r": 255,
@@ -65,8 +65,8 @@
         },
         {
             "node": "Grp_Light_High_Beam_Right_0",
-            "innerConeAngle": 27,
-            "outerConeAngle": 30,
+            "innerConeAngle": 0.471239,
+            "outerConeAngle": 0.523599,
             "luminousIntensity": 100000,
             "color": {
                 "r": 255,
@@ -76,15 +76,15 @@
         },
         {
             "node": "Grp_Light_Low_Beam_Left_0",
-            "innerConeAngle": 40.5,
-            "outerConeAngle": 45,
+            "innerConeAngle": 0.706858,
+            "outerConeAngle": 0.785398,
             "luminousIntensity": 50000,
             "temperature": 5000
         },
         {
             "node": "Grp_Light_Low_Beam_Right_0",
-            "innerConeAngle": 40.5,
-            "outerConeAngle": 45,
+            "innerConeAngle": 0.706858,
+            "outerConeAngle": 0.785398,
             "luminousIntensity": 50000,
             "temperature": 5000
         },
@@ -144,8 +144,8 @@
         },
         {
             "node": "Grp_Light_Tail_Left_0",
-            "innerConeAngle": 70,
-            "outerConeAngle": 80,
+            "innerConeAngle": 1.22173,
+            "outerConeAngle": 1.396263,
             "luminousIntensity": 10,
             "color": {
                 "r": 255,
@@ -155,8 +155,8 @@
         },
         {
             "node": "Grp_Light_Tail_Right_0",
-            "innerConeAngle": 70,
-            "outerConeAngle": 80,
+            "innerConeAngle": 1.22173,
+            "outerConeAngle": 1.396263,
             "luminousIntensity": 10,
             "color": {
                 "r": 255,
@@ -166,15 +166,15 @@
         },
         {
             "node": "Grp_Light_Fog_Left_0",
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.890118,
+            "outerConeAngle": 1.047198,
             "luminousIntensity": 10000,
             "temperature": 4000
         },
         {
             "node": "Grp_Light_Fog_Right_0",
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.890118,
+            "outerConeAngle": 1.047198,
             "luminousIntensity": 10000,
             "temperature": 4000
         }
