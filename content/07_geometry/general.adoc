@@ -170,7 +170,7 @@ To accommodate these use cases, {THIS_STANDARD} allows external assets to be ref
 
 An external asset is referenced by associating its _3D asset_ file with a node of the overarching asset.
 This node acts as the parent of the external asset and determines its spatial placement and orientation.
-The references are given in the `externalAssetReferences` property, a list of pairs of a parent node and a reference to a _3D asset_ file, see xref:../07_geometry/asset-schema.adoc#_externalassetreferences[].
+The references are given in the xref:../07_geometry/asset-schema.adoc#_externalassetreferences[externalAssetReferences] property of the _3D asset_ file, as a list of pairs of a parent node and a reference to a _3D asset_ file.
 
 For example, a Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehicle asset can act as the parent node for interchangeable car wheels that are each referenced from an external asset.
 
@@ -180,7 +180,7 @@ For example, a Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehi
 _Material_ names in a _3D data file_ are used as keys into the _material_ mapping file, see xref:../07_geometry/mapping-schema.adoc[].
 This requires the _material_ names in the _3D data file_ to match the keys of a shared mapping table, which is not always possible when a _3D model_ is reused from another source.
 
-The `materialReplacement` property of the _3D asset_ file resolves this without modifying the _3D data file_, see xref:../07_geometry/asset-schema.adoc#_materialreplacement[].
+The xref:../07_geometry/asset-schema.adoc#_materialreplacement[materialReplacement] property of the _3D asset_ file resolves this without modifying the _3D data file_.
 It maps a _material_ name from the _3D data file_ to a replacement name or an RGB code.
 The replacement value, rather than the original _material_ name, is then used as the key into the _material_ mapping file.
 
@@ -190,7 +190,7 @@ The replacement value, rather than the original _material_ name, is then used as
 Some physical properties of an object cannot be derived from its surface geometry alone.
 For example, a wall or a window may be modeled as a single surface, although its physical thickness affects the propagation of sensor signals through it.
 
-The `geometryProperties` property of the _3D asset_ file assigns such properties to individual nodes of the _3D data file_, see xref:../07_geometry/asset-schema.adoc#_geometryproperties[].
+The xref:../07_geometry/asset-schema.adoc#_geometryproperties[geometryProperties] property of the _3D asset_ file assigns such properties to individual nodes of the _3D data file_.
 Currently, only the `thickness` property is defined.
 It specifies the extrusion along the surface normal, in meters, applied on the side opposite the viewer.
 
@@ -234,7 +234,7 @@ This allows both physically simulated light sources and visually emissive elemen
 === Discrete light sources
 
 Discrete light sources are active light sources that emit light into the environment, for example, point lights or spotlights.
-They are defined in the _3D asset_ file using the `lightDefinitions` property, see xref:../07_geometry/asset-schema.adoc#_lightdefinitions[].
+They are defined in the _3D asset_ file using the xref:../07_geometry/asset-schema.adoc#_lightdefinitions[lightDefinitions] property.
 
 Each discrete light source is associated with a corresponding node in the _3D data file_.
 This node determines the spatial placement and orientation of the light within the asset.
@@ -250,7 +250,7 @@ Additional properties of discrete light sources, such as intensity, color, and b
 
 === Emissive materials
 
-Emissive materials are defined in the _3D data file_ and mapped in the _3D asset_ file using the `emissiveLightMapping` property, see xref:../07_geometry/asset-schema.adoc#_emissivelightmapping[].
+Emissive materials are defined in the _3D data file_ and mapped in the _3D asset_ file using the xref:../07_geometry/asset-schema.adoc#_emissivelightmapping[emissiveLightMapping] property.
 
 As with discrete light sources, emissive materials are associated with nodes in the _3D data file_.
 In this case, however, the node does not define any spatial placement.
