@@ -81,7 +81,7 @@
             "properties": {
                 "wavelengths": {
                     "type": "array",
-                    "description": "List of all wavelengths in meters contained in the lookup table. The wavelength values shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                    "description": "List of all wavelengths in meters contained in the lookup table. The upper limit corresponds to 20 kHz.",
                     "items": {
                         "type": "number",
                         "minimum": 1e-09,
@@ -96,13 +96,13 @@
                         "properties": {
                             "wavelength": {
                                 "type": "number",
-                                "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                                "description": "Wavelength of radiation in free-space in meters (m). The upper limit corresponds to 20 kHz.",
                                 "minimum": 1e-09,
                                 "maximum": 17.16e-03
                             },
                             "solidAngle": {
                                 "type": "number",
-                                "description": "Receiver solid angle in steradians (sr). The value shall be greater than 0.",
+                                "description": "Receiver solid angle in steradians (sr).",
                                 "exclusiveMinimum": 0
                             }
                         },
@@ -123,7 +123,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Wavelength of radiation in free-space in meters (m). The value shall be within the range of 1e-09 to 17.16e-03 (upper limit corresponds to 20 kHz).",
+                                "description": "Wavelength of radiation in free-space in meters (m). The upper limit corresponds to 20 kHz.",
                                 "minimum": 1e-09,
                                 "maximum": 17.16e-03
                             },
@@ -132,7 +132,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Incident zenith angle relative to the surface normal in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
+                                "description": "Incident zenith angle relative to the surface normal in rad.",
                                 "minimum": 0,
                                 "maximum": 1.570796
                             },
@@ -141,7 +141,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit zenith angle relative to the surface normal in rad. It shall be within a range of \\(0\\) to \\(\\pi/2\\).",
+                                "description": "Exit zenith angle relative to the surface normal in rad.",
                                 "minimum": 0,
                                 "maximum": 1.570796
                             },
@@ -150,7 +150,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit azimuth angle in rad. It shall be within a range of \\(0\\) to \\(2 \\pi\\). The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0° as the incident ray is used as reference.",
+                                "description": "Exit azimuth angle in rad. The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0° as the incident ray is used as reference.",
                                 "minimum": 0,
                                 "maximum": 6.283185
                             },

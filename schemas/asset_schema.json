@@ -9,18 +9,18 @@
             "properties": {
                 "maxSteering": {
                     "type": "number",
-                    "description": "Maximum steering angle which can be performed by the wheels on this axle. Unit: rad; Range: [0, \\(\\pi\\)], symmetrical.",
+                    "description": "Maximum steering angle which can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.",
                     "minimum": 0,
                     "maximum": 3.14159
                 },
                 "wheelDiameter": {
                     "type": "number",
-                    "description": "Diameter of the wheels on this axle. Unit: meter; Range: ]0, inf[.",
+                    "description": "Diameter of the wheels on this axle. Unit: meter.",
                     "exclusiveMinimum": 0
                 },
                 "trackWidth": {
                     "type": "number",
-                    "description": "Distance of the wheels center lines at zero steering. Unit: meter; Range: [0, inf[.",
+                    "description": "Distance of the wheels center lines at zero steering. Unit: meter.",
                     "minimum": 0
                 },
                 "positionX": {
@@ -29,7 +29,7 @@
                 },
                 "positionZ": {
                     "type": "number",
-                    "description": "The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit:meter; Range:[0, inf[.",
+                    "description": "The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit: meter.",
                     "minimum": 0
                 }
             },
@@ -155,12 +155,12 @@
                                 },
                                 "maxAcceleration": {
                                     "type": "number",
-                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2. Range: [0, inf[.",
+                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2.",
                                     "minimum": 0
                                 },
                                 "maxDeceleration": {
                                     "type": "number",
-                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2. Range: [0, inf[.",
+                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2.",
                                     "minimum": 0
                                 }
                             },
@@ -506,7 +506,7 @@
                     "maskingTextureUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to the masking texture to mask a defined part in an emissive atlas texture. Only allowed if emissive_texture is present. For cross-platform compatibility, Unix-style paths are recommended."
+                        "description": "Relative or absolute file path to the masking texture to mask a defined part in an emissive atlas texture. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "color": {
                         "type": "object",
@@ -535,7 +535,7 @@
                     }
                 },
                 "dependencies": {
-                    "maskingTexture": ["emissiveTexture"]
+                    "maskingTextureUri": ["emissiveTextureUri"]
                 }
             }
         },
