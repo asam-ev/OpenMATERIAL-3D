@@ -45,7 +45,7 @@
             "checker_xom.png"
         ]
     ],
-    "materialReplacement": [
+    "materialReplacements": [
         [
             "Material_Sphere",
             "rgb:255;0;0"

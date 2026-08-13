@@ -180,7 +180,7 @@ For example, a Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> node in a vehi
 _Material_ names in a _3D data file_ are used as keys into the _material_ mapping file, see xref:../07_geometry/mapping-schema.adoc[].
 This requires the _material_ names in the _3D data file_ to match the keys of a shared mapping table, which is not always possible when a _3D model_ is reused from another source.
 
-The xref:../07_geometry/asset-schema.adoc#{empty}_materialreplacement[materialReplacement] property of the _3D asset_ file resolves this without modifying the _3D data file_.
+The xref:../07_geometry/asset-schema.adoc#{empty}_materialreplacements[materialReplacements] property of the _3D asset_ file resolves this without modifying the _3D data file_.
 It maps a _material_ name from the _3D data file_ to a replacement name or an RGB code.
 The replacement value, rather than the original _material_ name, is then used as the key into the _material_ mapping file.
 

@@ -15,7 +15,7 @@ The following changes were introduced in version 1.1.0:
 ** `lightDefinitions`, which defines discrete light sources, see xref:../07_geometry/general.adoc#lighting[Lighting].
 ** `emissiveLightMapping`, which maps emissive materials to lighting functions, see xref:../07_geometry/general.adoc#lighting[Lighting].
 ** `externalAssetReferences`, which references external assets, see xref:../07_geometry/general.adoc#external-asset-references[References to external assets].
-** `materialReplacement`, which replaces material names from the _3D data file_ with alternative mapping keys.
+** `materialReplacements`, which replaces material names from the _3D data file_ with alternative mapping keys.
 ** `geometryProperties`, which defines per-node geometry properties, such as thickness.
 * The BRDF look-up table file (.xompt) has the new optional property `receiverSolidAngles`.
 * The property `assetType` of the asset file is no longer required.

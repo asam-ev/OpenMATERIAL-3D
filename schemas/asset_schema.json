@@ -341,7 +341,7 @@
                 "maxItems": 2
             }
         },
-        "materialReplacement": {
+        "materialReplacements": {
             "type": "array",
             "description": "Optional array containing material reassignments. It links material names contained in the 3D model file to RGB codes or alternative names that are used as keys in the ASAM OpenMATERIAL 3D material mapping file. An example of the material replacement mechanism can be found in the examples folder of the ASAM OpenMATERIAL 3D GitHub repository.",
             "items": {
