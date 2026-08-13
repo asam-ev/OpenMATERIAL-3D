@@ -1,7 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.1.0/schemas/asset_schema.json",
     "metadata": {
-        "name": "trafficlight_example",
+        "name": "traffic_light_example",
         "description": "This is an example traffic light.",
         "uuid": "0086f0de-23e8-4d93-a266-8bb54fbad30f",
         "assetVersion": "1.0.0",

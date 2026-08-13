@@ -19,7 +19,6 @@
                 <left>
                     <lane id="4" type="none" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="4.7000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
-                        <roadMark sOffset="0.0000000000000000e+00" type="none" weight="standard" color="standard" width="1.3000000000000000e-01"/>
                     </lane>
                     <lane id="3" type="sidewalk" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="1.5000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
@@ -27,7 +26,6 @@
                     </lane>
                     <lane id="2" type="border" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="3.5000000000000000e-01" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
-                        <roadMark sOffset="0.0000000000000000e+00" type="none" weight="standard" color="standard" width="1.3000000000000000e-01"/>
                     </lane>
                     <lane id="1" type="driving" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="3.7500000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
@@ -46,7 +44,6 @@
                     </lane>
                     <lane id="-2" type="border" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="3.5000000000000000e-01" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
-                        <roadMark sOffset="0.0000000000000000e+00" type="none" weight="standard" color="standard" width="1.3000000000000000e-01"/>
                     </lane>
                     <lane id="-3" type="sidewalk" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="1.5000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
@@ -54,16 +51,17 @@
                     </lane>
                     <lane id="-4" type="none" level= "0">
                         <width sOffset="0.0000000000000000e+00" a="4.7000000000000000e+00" b="0.0000000000000000e+00" c="0.0000000000000000e+00" d="0.0000000000000000e+00"/>
-                        <roadMark sOffset="0.0000000000000000e+00" type="none" weight="standard" color="standard" width="1.3000000000000000e-01"/>
                     </lane>
                 </right>
             </laneSection>
         </lanes>
         <objects>
+            <object id="0" name="Pole_0" s="5.0000000000000000e+01" t="5.6000000000000000e+00" zOffset="0.0000000000000000e+00" hdg="0.0000000000000000e+00" roll="0.0000000000000000e+00" pitch="0.0000000000000000e+00" orientation="-" type="pole" height="2.3" width="0.1" length="0.1"/>
+            <object id="1" name="Pole_1" s="5.0000000000000000e+01" t="-5.6000000000000000e+00" zOffset="0.0000000000000000e+00" hdg="0.0000000000000000e+00" roll="0.0000000000000000e+00" pitch="0.0000000000000000e+00" orientation="+" type="pole" height="2.3" width="0.1" length="0.1"/>
         </objects>
         <signals>
-            <signal s="5.0000000000000000e+01" t="5.6000000000000000e+00" id="0" name="Trafficlight_0" dynamic="yes" orientation="-" zOffset="2.3" type="1000001" country="Germany" subtype="-1" value="-1.0000000000000000e+00" hOffset="0.0000000000000000e+00"/>
-            <signal s="5.0000000000000000e+01" t="-5.6000000000000000e+00" id="1" name="Trafficlight_1" dynamic="yes" orientation="-" zOffset="2.3" type="1000001" country="Germany" subtype="-1" value="-1.0000000000000000e+00" hOffset="0.0000000000000000e+00"/>
+            <signal s="5.0000000000000000e+01" t="5.6000000000000000e+00" id="0" name="Traffic_Light_0" dynamic="yes" orientation="-" zOffset="2.3" type="1000001" country="Germany" subtype="-1" value="-1.0000000000000000e+00" hOffset="0.0000000000000000e+00"/>
+            <signal s="5.0000000000000000e+01" t="-5.6000000000000000e+00" id="1" name="Traffic_Light_1" dynamic="yes" orientation="+" zOffset="2.3" type="1000001" country="Germany" subtype="-1" value="-1.0000000000000000e+00" hOffset="0.0000000000000000e+00"/>
         </signals>
     </road>
 </OpenDRIVE>

@@ -1509,7 +1509,7 @@
 	"buffers":[
 		{
 			"byteLength":17700,
-			"uri":"externalreference_example.bin"
+			"uri":"external_reference_example.bin"
 		}
 	]
 }
