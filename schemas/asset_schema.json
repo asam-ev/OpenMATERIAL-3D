@@ -375,7 +375,7 @@
                         "type": "string",
                         "format": "uri-reference",
                         "description": "Relative or absolute file path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma). For cross-platform compatibility, Unix-style paths are recommended.",
-						"pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$"
+						"pattern": ".*\\.xoma$"
                     }
 				}
             }
@@ -394,7 +394,7 @@
                     "photometricProfileUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "pattern": "\\.(ies|ldt|IES|LDT)$",
+                        "pattern": ".*\\.(ies|ldt|IES|LDT)$",
                         "description": "Relative or absolute file path to an IES or ELUMDAT file defining the light profile. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "radiometricProfileUri": {
