@@ -2,7 +2,7 @@
 :root-path: ./
 include::{root-path}_config.adoc[]
 //NOTE: All central attributes for Asciidoctor have to be defined in the _config.adoc AND in the antora.yml in the .antora folder in root
-= ASAM OpenMATERIAL 3D BS 1.0.0 Specification, 2025-04-03
+= ASAM OpenMATERIAL 3D BS 1.1.0 Specification, <RELEASE_DATE>
 // DO NOT USE THE ATTRIBUTE {THIS_STANDARD} in the document title, it will break with Antora build pipeline!
 
 // DO NOT CHANGE!!!
@@ -35,9 +35,9 @@ include::00_preface/introduction.adoc[leveloffset=+1]
 include::01_scope/scope.adoc[leveloffset=+1]
 include::02_normative_references/normative-references.adoc[leveloffset=+1]
 include::03_abbreviations/abbreviations.adoc[leveloffset=+1]
-include::04_backward-compatibility/backward-compatibility.adoc[leveloffset=+1]
-include::05_terms-and-definitions/terms-and-definitions.adoc[leveloffset=+1]
-include::06_use-cases/use-cases.adoc[leveloffset=+1]
+include::04_backward_compatibility/backward-compatibility.adoc[leveloffset=+1]
+include::05_terms_and_definitions/terms-and-definitions.adoc[leveloffset=+1]
+include::06_use_cases/use-cases.adoc[leveloffset=+1]
 = Geometry
 include::07_geometry/introduction.adoc[leveloffset=+1]
 include::07_geometry/general.adoc[leveloffset=+1]

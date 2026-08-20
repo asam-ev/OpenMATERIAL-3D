@@ -12,13 +12,13 @@ The {THIS_STANDARD} standard supports the following object classes:
 * Environment (see xref:../07_geometry/object-environment/environment-index.adoc[])
 * Other (see xref:../07_geometry/object-other/other-index.adoc[])
 
-If a human is clearly distinguishable from a vehicle, then both the
-human and the vehicle are represented by two different objects respectively.
+If a human is clearly distinguishable from a vehicle, the human and the vehicle are
+represented by two separate objects.
 Examples are bicycles, motorbikes, or scooters, where the human and the vehicle are
 perceived as separate entities.
-Stationary objects, for example, the road network, traffic infrastructure, vegetation, buildings, are part
+Stationary objects, such as the road network, traffic infrastructure, vegetation, and buildings, are part
 of the environment object class.
 
 The other object class comprises all objects not yet specified by {THIS_STANDARD}.
 It includes all objects that are not specified by type-specific object classes.
-Definitions in type-specific object classes overwrite the specifications in the other object class.
+Definitions in type-specific object classes take precedence over the specifications in the other object class.

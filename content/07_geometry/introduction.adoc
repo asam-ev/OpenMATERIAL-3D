@@ -9,16 +9,16 @@ endif::[]
 
 == Motivation
 
-A _3D asset_ is a digital entity that includes a 3D geometric representation of an object (also known as _3D model_ or _3D data file_) along with its attributes and metadata. 
+A _3D asset_ is a digital entity that includes a 3D geometric representation of an object (also known as _3D model_ or _3D data file_) along with its attributes and metadata.
 Common formats for storing the geometry and visual materials of _3D models_ include glTF, FBX, and USD.
 
-However, these formats do not provide a standardized way to structure the geometry or provide extensive metadata storage and exchange capabilities. 
+However, these formats do not provide a standardized way to structure the geometry or provide extensive metadata storage and exchange capabilities.
 The {THIS_STANDARD} standard addresses these needs.
 
 This section includes all geometry-related definitions of {THIS_STANDARD}, marked in red in <<fig-openmaterial-geometry-overview>>.
 
 The {THIS_STANDARD} asset file contains essential information relevant to the display and interactivity attributes of the _3D model_ in various computer applications.
-This includes metadata, _material_ mappings, and semantic information like coordinate system and pivot point descriptions.
+This includes metadata, _material_ mappings, and semantic information, such as coordinate system and pivot point descriptions.
 The mapping of materials is stored in a separate material mapping file (.xomm), which is linked in the asset file.
 This setup ensures that the _3D asset_ (or _3D data file_) can be consistently integrated into complex simulations or real-time environments with detailed _material_ and dynamic properties.
 
@@ -29,17 +29,17 @@ image::overview_geometry.png[,1100]
 
 == Applications
 
-To accurately replicate how sensors interact with objects in the real world, it is essential to model the behavior of sensors like cameras, radars, and lidars based on the _material_ and geometric properties of objects in a virtual environment. For this purpose, assets that conform to the {THIS_STANDARD} standards may be necessary in various scenarios, such as:
+To accurately replicate how sensors interact with objects in the real world, it is essential to model the behavior of sensors such as cameras, radars, and lidars based on the _material_ and geometric properties of objects in a virtual environment. For this purpose, assets that conform to {THIS_STANDARD} may be necessary in various scenarios, such as:
 
 * *Accurate simulation of sensor perception*: _3D assets_ are essential to ensure that sensors interact realistically with their environment. This includes both the visual representation, such as how objects appear and are detected by the sensor, and the _material_ properties, like how objects reflect or absorb signals such as light or radar waves.
 * *Dynamic and real-time environment simulation*: _3D assets_ with changing materials or dynamic properties, such as moving parts like wheels, are necessary to simulate environments where the interaction between sensors and objects is constantly evolving.
 * *Semantic labeling for machine learning applications*: Assets with semantic information about sub-meshes, or labels for parts of objects, enable the system to understand and differentiate between different parts of an object, such as the wheels or windows of a car, aiding in accurate training.
-* *Re-using _3D assets_*: Using the same asset file in different simulation tools is only possible if the structure of the assets is standardized.
+* *Reusing _3D assets_*: Using the same asset file in different simulation tools is only possible if the structure of the assets is standardized.
 
 
 == Role of 3D exchange formats
 
 3D exchange formats like glTF, FBX, and USD are widely used across various industries for standardized _3D model_ representation.
 
-In the context of {THIS_STANDARD}, these formats form the foundation for seamlessly integrating {THIS_STANDARD} into existing 3D modeling and simulation workflows. 
+In the context of {THIS_STANDARD}, these formats form the foundation for seamlessly integrating {THIS_STANDARD} into existing 3D modeling and simulation workflows.
 Users can continue using their familiar tools and processes to manage geometry, while {THIS_STANDARD} extends these formats by adding _material properties_, semantic information, and dynamic behaviors through additional files, such as asset files and _material_ mapping files.

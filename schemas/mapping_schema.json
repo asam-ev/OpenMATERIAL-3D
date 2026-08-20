@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
-    "description": "ASAM OpenMATERIAL 3D Geometry Asset file definition.",
+    "description": "ASAM OpenMATERIAL 3D Material Mapping file definition.",
     "properties": {
         "metadata": {
             "type": "object",
@@ -13,7 +13,7 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Short description of the mapping table in 2 - 3 sentences."
+                    "description": "Short description of the mapping table in two to three sentences."
                 },
                 "uuid": {
                     "type": "string",
@@ -74,7 +74,7 @@
                 "items": [
                     {
                         "type": "string",
-                        "description": "Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255]."
+                        "description": "Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G>, and <B> are integers in the range [0, 255]."
                     },
                     {
                         "type": "string",

@@ -1,15 +1,15 @@
 = General
 
-The environment consists of the terrain, buildings, objects, and traffic areas, for example roads. It also includes all stationary traffic items, such as traffic signals, signs or lights.
+The environment consists of the terrain, buildings, objects, and traffic areas, for example, roads. It also includes all stationary traffic items, such as traffic signals, signs, or lights.
 
 The environment's 3D geometry is structured according to the node structure defined in xref:../07_geometry/object-environment/environment-index.adoc#_model_structure[Section 7.3.4.3, "Model structure"].
 The structure begins with a root node, which is the parent of all other nodes. If applicable, the origin of the root node should match that of the corresponding OpenDRIVE map.
 Children of the root node are terrain, environment objects, and the road network.
-The latter is further detailed by its child nodes, the drivable area, sidewalks, roadmarks, road objects, and signals.
+The latter is further detailed by its child nodes, the drivable area, sidewalks, road marks, road objects, and signals.
 
 An https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/environment_example[example environment asset] is provided in the examples folder.
 
 Groups with a local transform are indicated in the structure by a (T).
-This is only an indicator in the documentation and must not be contained in the actual node name.
+This indicator is used in the documentation only and shall not be part of the actual node name.
 
 An example of an environment asset can be found in the examples folder of the https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/environment_example[GitHub repository].
