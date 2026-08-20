@@ -225,7 +225,7 @@ image::Grp_Door_Left.svg[,600]
 
 == Grp_Door_Rear_<door_rear_idx> (T)
 
-This group contains all parts of a door located at the rear of the vehicle, such as the trunklid. It also includes the door's interior parts, as they move together as a single unit.
+This group contains all parts of a door located at the rear of the vehicle, such as the trunk lid. It also includes the door's interior parts, as they move together as a single unit.
 
 `<door_rear_idx>` denotes the index of rear doors. The index entries are sorted
 from right to left in positive y-direction, starting with 0.
@@ -349,7 +349,7 @@ image::Grp_Hitch_Front.svg[,600]
 
 This group defines the contact point to attach another vehicle.
 
-During simulation a vehicle's Grp_Hitch_Rear_Contact_Point and another
+During simulation, a vehicle's Grp_Hitch_Rear_Contact_Point and another
 vehicle's Grp_Hitch_Front_Contact_Point are placed at the same position.
 
 [#fig-Hitch-Front-Contact-Point]
@@ -410,7 +410,7 @@ image::Grp_Hitch_Rear.svg[,600]
 
 This group defines the contact point to attach another vehicle.
 
-During simulation a vehicle's Grp_Hitch_Rear_Contact_Point and another
+During simulation, a vehicle's Grp_Hitch_Rear_Contact_Point and another
 vehicle's Grp_Hitch_Front_Contact_Point are placed at the same position.
 
 [#fig-Hitch-Rear-Contact-Point]
@@ -1026,7 +1026,7 @@ are sorted from right to left in positive y-direction, and from front to rear, s
 == Grp_Light_Position_Left_<position_left_idx> (T)
 
 This group contains all parts of a position light on the vehicle's left side.
-Position lights are usually small, low-intensity, and orange.
+Position lights are usually small, low-intensity, orange lights.
 
 `<position_left_idx>` denotes the index of position lights on the left side. The index entries
 are sorted from right to left in positive y-direction, and from front to rear, starting with 0.
@@ -1055,7 +1055,7 @@ are sorted from right to left in positive y-direction, and from front to rear, s
 == Grp_Light_Position_Right_<position_right_idx> (T)
 
 This group contains all parts of a position light on the vehicle's right side.
-Position lights are usually small, low-intensity, and orange.
+Position lights are usually small, low-intensity, orange lights.
 
 `<position_right_idx>` denotes the index of position lights on the right side. The index entries
 are sorted from right to left in positive y-direction, and from front to rear, starting with 0.
@@ -1387,7 +1387,7 @@ image::Grp_Mirror_Side_Mounting_Left.svg[,600]
 == Grp_Mirror_Side_Joint_Left_<side_mirror_joint_left_idx> (T)
 
 This group contains all parts of the movable structure that holds the mirror on the vehicle's left side.
-The mirror view automatically adjusts when the angle of the  joint changes.
+The mirror view automatically adjusts when the angle of the joint changes.
 
 It is a child node of the corresponding mirror mounting group.
 
@@ -1494,8 +1494,8 @@ image::Grp_Mirror_Side_Mounting_Right.svg[,600]
 
 == Grp_Mirror_Side_Joint_Right_<side_mirror_joint_right_idx> (T)
 
-This group contains all parts of the movable structure that holds the mirror on  the vehicle's left side.
-The mirror view automatically adjusts when the angle of the  joint changes.
+This group contains all parts of the movable structure that holds the mirror on the vehicle's right side.
+The mirror view automatically adjusts when the angle of the joint changes.
 
 It is a child node of the corresponding mirror mounting group.
 
@@ -1592,13 +1592,13 @@ The coordinate origin of this group is aligned with the ASAM OSI host vehicle co
 
 This group contains all parts of a wheel, which may consist of the tire, rim, brake caliper, and so on.
 
-The groups' transform shall only be used to implement translational movement of the wheel.
-Rotational movement of the wheel shall be applied simultaneously to the transforms of both groups'
-child nodes, Grp_Wheel_Steering and Grp_Wheel_Steering_Rotating, whereby the wheels' rolling movement
-shall only be taken into account for the latter (see following sections for details).
+The transform of this group shall only be used to implement translational movement of the wheel.
+Rotational movement of the wheel shall be applied simultaneously to the transforms of both child
+groups, Grp_Wheel_Steering and Grp_Wheel_Steering_Rotating, whereby the rolling movement of the wheel
+shall only be taken into account for the latter. See the following sections for details.
 
 Suspension deflection is represented by translation along the z-axis.
-Zero translation around all axles is defined under neutral load conditions.
+Zero translation along all axes is defined under neutral load conditions.
 
 `<axle_idx>` denotes the index of the axle to which the wheel is mounted,
 counting from front to rear, starting with 0.
@@ -1634,12 +1634,12 @@ image::Grp_Wheel.svg[,600]
 
 == Grp_Wheel_Steering_<axle_idx>_<wheel_idx> (T)
 
-This group contains all parts of a wheel that follow the steering motion but not the wheels' rolling movement, such as brake calipers.
+This group contains all parts of a wheel that follow the steering motion but not the rolling movement of the wheel, such as brake calipers.
 Therefore, rotational movement due to wheel steering and wheel camber shall be applied to this group.
 
 Wheel steering is represented by rotation around the z-axis.
 Wheel camber is defined by a rotation around the x-axis.
-Zero rotation around all axles is defined under neutral load conditions.
+Zero rotation around all axes is defined under neutral load conditions.
 
 The indices are the same as in the parent group Grp_Wheel.
 
@@ -1667,12 +1667,12 @@ The indices are the same as in the parent group Grp_Wheel.
 == Grp_Wheel_Steering_Rotating_<axle_idx>_<wheel_idx> (T)
 
 This group contains all parts of a wheel that follow the steering motion as well as the rolling movement of the wheel, such as tire and rim.
-Therefore, rotational movement due to wheel steering, wheel camber and the wheel rolling movement shall be applied to this group.
+Therefore, rotational movement due to wheel steering, wheel camber, and the rolling movement of the wheel shall be applied to this group.
 
 Wheel steering is represented by rotation around the z-axis.
 Wheel camber is defined by a rotation around the x-axis.
-The wheels' rolling movement is defined by a rotation around the y-axis.
-Zero rotation around all axles is defined under neutral load conditions.
+The rolling movement of the wheel is defined by a rotation around the y-axis.
+Zero rotation around all axes is defined under neutral load conditions.
 
 The indices are the same as in the parent group Grp_Wheel.
 
@@ -1855,16 +1855,16 @@ This group contains all parts of the vehicle's seats.
 The seat position can be used to place a human _3D model_ as a passenger.
 Therefore, a bench consists of multiple individual seats.
 
-`<seat_row_idx>` denotes a row of seats, counted from the front to the rear, starting with 0.
+`<seat_row>` denotes a row of seats, counted from the front to the rear, starting with 0.
 `<seat_idx>` denotes the index of a seat per row. The index entries
 are sorted from right to left in positive y-direction, starting with 0.
 
 [#fig-seat]
-.Grp_Seat_<seat_row>_<seat_idx> 
+.Grp_Seat_<seat_row>_<seat_idx>
 image::Grp_Seat.svg[,600]
 
 [#tab-Grp-Seat]
-.Grp_Seat_<seat_row>_<seat_idx> 
+.Grp_Seat_<seat_row>_<seat_idx>
 [%header, cols="20, 80"]
 |===
 
@@ -1944,7 +1944,7 @@ Standard passenger vehicles do not have separate parts.
 2+^| Grp_Vehicle_Part
 
 | *Origin*
-| Center of the joint to the main vehicle or the parent.
+| Center of the joint to the main vehicle or to the parent vehicle part
 
 | *x-axis*
 | Collinear with the part's longitudinal axis, pointing forwards

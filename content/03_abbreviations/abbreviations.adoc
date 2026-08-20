@@ -9,23 +9,20 @@ endif::[]
 AABB::
 Axis-Aligned Bounding Box
 
-ASAM::
-Association for Standardization of Automation and Measuring Systems
-
 AD/ADAS::
 Automated Driving/Automated Driving Assistance Systems
+
+ASAM::
+Association for Standardization of Automation and Measuring Systems
 
 BRDF::
 Bidirectional Reflectance Distribution Function
 
-BSDF::
-Bidirectional Scattering Distribution Function
-
-BTDF::
-Bidirectional Transmittance Distribution Function
-
 CAD::
 Computer-Aided Design
+
+CCT::
+Correlated Color Temperature
 
 EMP::
 Electromagnetic Property
@@ -36,8 +33,14 @@ Filmbox (proprietary file format)
 FMI::
 Functional Mock-up Interface
 
+FMU::
+Functional Mock-up Unit
+
 glTF::
 Graphics Library Transmission Format
+
+HiL::
+Hardware-in-the-Loop
 
 ISO::
 International Organization for Standardization
@@ -51,15 +54,38 @@ Light Detection and Ranging
 LoD::
 Level of Detail
 
+OSI::
+Open Simulation Interface
+
+OSMP::
+Open Simulation Interface Sensor Model Packaging
+
 PBR::
 Physically Based Rendering
 
+RGB::
+Red, Green, Blue
+
+RGBA::
+Red, Green, Blue, Alpha
+
+SI::
+International System of Units (Système International d'Unités)
+
+SiL::
+Software-in-the-Loop
+
 SPDX::
-Software Package Data Exchange 
+Software Package Data Exchange
+
+URI::
+Uniform Resource Identifier
+
+URL::
+Uniform Resource Locator
 
 USD::
 Universal Scene Description (proprietary file format)
 
 UV::
-Ultraviolet
-
+UV texture coordinates, the two axes of the 2D texture space of a 3D model

@@ -13,7 +13,7 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Short description of the material in 2 - 3 sentences."
+                    "description": "Short description of the material in two to three sentences."
                 },
                 "uuid": {
                     "type": "string",
@@ -57,11 +57,11 @@
                 },
                 "sources": {
                     "type": "string",
-                    "description": "Source of the BRDF data. Was it measured, simulated, or taken from literature? Multiple sources should be comma-separated."
+                    "description": "Sources of the BRDF data. Was it measured, simulated, or taken from literature? Multiple sources should be comma-separated."
                 },
                 "typicalSensorTechnology": {
                     "type": "string",
-                    "description": "Typical sensor technology this BRDF table is used for. Examples: 'radar', 'lidar', 'camera'. If more than one applies, use comma-separation."
+                    "description": "Typical sensor technology this BRDF table is used for, for example, 'radar', 'lidar', or 'camera'. If more than one applies, the values should be comma-separated."
                 }
             },
             "required": [
@@ -77,11 +77,11 @@
         },
         "brdf": {
             "type": "object",
-            "description": "The BRDF is used as a basic quantity to characterize the reflecting properties of a surface geometrically. The following BRDF definition applies: “The ratio of the radiance or power per unit solid-angle in the outgoing direction from a unit projected surface area to the collimated irradiance or power per unit projected surface area.” A physically plausible BRDF shall additionally obey the following three properties. (1) Positivity: The BRDF has units of inverse steradians (1/sr) and can vary from 0 to infinity. (2) Helmholtz reciprocity: It is symmetric in the incoming and outgoing direction. (3) Energy conservation: No more radiant energy is reflected from a point on the surface than incident radiant energy to that point. ",
+            "description": "The BRDF is used as a basic quantity to characterize the reflecting properties of a surface geometrically. The following BRDF definition applies: “The ratio of the radiance or power per unit solid angle in the outgoing direction from a unit projected surface area to the collimated irradiance or power per unit projected surface area.” A physically plausible BRDF shall additionally obey the following three properties. (1) Positivity: The BRDF has units of inverse steradians (1/sr) and can vary from 0 to infinity. (2) Helmholtz reciprocity: It is symmetric in the incoming and outgoing direction. (3) Energy conservation: No more radiant energy is reflected from a point on the surface than the radiant energy incident to that point.",
             "properties": {
                 "wavelengths": {
                     "type": "array",
-                    "description": "List of all wavelengths in meters contained in the lookup table. The upper limit corresponds to 20 kHz.",
+                    "description": "List of all wavelengths contained in the lookup table. Unit: meter (m). The upper limit corresponds to 20 kHz.",
                     "items": {
                         "type": "number",
                         "minimum": 1e-09,
@@ -90,19 +90,19 @@
                 },
                 "receiverSolidAngles": {
                     "type": "array",
-                    "description": "List of all receiver solid angles in steradians (sr) used to measure the BRDF data. The solid angles are given as a key-value pair mapped to the wavelengths contained in the lookup table. In case of primary receiver optics in front of the detector, an assumed solid angle defined by the optics aperture shall be given here. The necessity of this field is based on common laser measurement standards, such as SEMI ME1392-0116 (2023) and EN ISO 19986:2020.",
+                    "description": "List of all receiver solid angles used to measure the BRDF data. Unit: steradian (sr). Each solid angle is given as a key-value pair mapped to one of the wavelengths contained in the look-up table. If primary receiver optics are placed in front of the detector, the assumed solid angle defined by the aperture of the optics shall be given here. This field is required by common laser measurement standards, such as SEMI ME1392-0116 (2023) and EN ISO 19986:2020.",
                     "items": {
                         "type": "object",
                         "properties": {
                             "wavelength": {
                                 "type": "number",
-                                "description": "Wavelength of radiation in free-space in meters (m). The upper limit corresponds to 20 kHz.",
+                                "description": "Wavelength of the radiation in free space. Unit: meter (m). The upper limit corresponds to 20 kHz.",
                                 "minimum": 1e-09,
                                 "maximum": 17.16e-03
                             },
                             "solidAngle": {
                                 "type": "number",
-                                "description": "Receiver solid angle in steradians (sr).",
+                                "description": "Receiver solid angle. Unit: steradian (sr).",
                                 "exclusiveMinimum": 0
                             }
                         },
@@ -123,7 +123,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Wavelength of radiation in free-space in meters (m). The upper limit corresponds to 20 kHz.",
+                                "description": "Wavelength of the radiation in free space. Unit: meter (m). The upper limit corresponds to 20 kHz.",
                                 "minimum": 1e-09,
                                 "maximum": 17.16e-03
                             },
@@ -132,7 +132,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Incident zenith angle relative to the surface normal in rad.",
+                                "description": "Incident zenith angle relative to the surface normal, in rad.",
                                 "minimum": 0,
                                 "maximum": 1.570796
                             },
@@ -141,7 +141,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit zenith angle relative to the surface normal in rad.",
+                                "description": "Exit zenith angle relative to the surface normal, in rad.",
                                 "minimum": 0,
                                 "maximum": 1.570796
                             },
@@ -150,7 +150,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Exit azimuth angle in rad. The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0° as the incident ray is used as reference.",
+                                "description": "Exit azimuth angle in rad. The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0, because the incident ray is used as the reference.",
                                 "minimum": 0,
                                 "maximum": 6.283185
                             },
@@ -159,7 +159,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "BRDF value in 1/sr. The minimum values is 0.",
+                                "description": "BRDF value. Unit: inverse steradian (1/sr). The minimum value is 0.",
                                 "minimum": 0
                             }
                         ],

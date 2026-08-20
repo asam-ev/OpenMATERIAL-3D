@@ -20,7 +20,7 @@ A project proposal should consider all three perspectives in order to provide a 
 
 This section provides a comprehensive list of use cases.
 These use cases are structured to demonstrate how various aspects of {THIS_STANDARD} are applied.
-They include the impact of technologies like 3D modeling tools and 3D engines, as well as specific _3D model_ formats such as glTF and FBX. 
+They include the impact of technologies like 3D modeling tools and 3D engines, as well as specific _3D model_ formats such as glTF and FBX.
 This clear organization helps users understand the practical applications of {THIS_STANDARD} and how it integrates into their workflows.
 
 [#tab-use-case-1, cols="1,5"]
@@ -69,7 +69,7 @@ To distribute material data and _3D assets_ efficiently, it shall be possible to
 |===
 |*Description*                      |As a sensor model developer, I want to import _3D assets_ that are packaged as FMUs into sensor models.
 |*Relevant OpenMATERIAL 3D segments*|Geometry and Material
-|*Influencing standards*            |FMI cite:[fmi], ASAM OSI (OSMP) cite:[osi], ASAM OpenLABEL cite:[ola], ASAM OpenDRIVE cite:[odr], ASAM OpenSCENARIO cite:[osc]
+|*Influencing standards*            |FMI cite:[fmi], ASAM OSI (OSMP) cite:[osi], ASAM OpenLABEL cite:[ola], ASAM OpenDRIVE cite:[odr], ASAM OpenSCENARIO XML cite:[osc]
 |*Influencing technologies*         |Unreal Engine, Unity, OptiX, CUDA
 |*Relevant user*                    |Sensor model developer
 |===
@@ -97,7 +97,7 @@ To distribute material data and _3D assets_ efficiently, it shall be possible to
 [#tab-use-case-8, cols="1,5"]
 .Use case 8: Moving _object parts_ in the environment simulation
 |===
-|*Description*                      |As a _simulation platform_ or sensor model developer, I want to move _objects_ as well as individual parts of the _objects_ during simulation runtime. These can be parts of a vehicle, for example, wheels and doors or the skeleton bones of a pedestrian. One option to manipulate the imported _3D assets_ during simulation runtime is using ASAM OSI. In the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1GroundTruth.html[osi3::GroundTruth] message, information about moving and stationary _objects_ is provided from the _scenario_ engine to the sensor model. This entails _object_ positions, orientations, speeds and so on for every simulation time step, but also a so-called model reference. This reference is the path to a _3D asset_ associated with the _object_ or the stationary environment. Using the pose information together with the 3D mesh data, a _3D environment_ is constructed and updated for every simulation time step. Further attributes, such as https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1MovingObject_1_1VehicleAttributes_1_1WheelData.html[wheel positions] for vehicles or https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1MovingObject_1_1PedestrianAttributes_1_1Bone.html[bone poses] for pedestrians, enable a more refined movement of traffic participants in the _3D environment_.
+|*Description*                      |As a _simulation platform_ or sensor model developer, I want to move _objects_ as well as individual parts of the _objects_ during simulation runtime. These can be parts of a vehicle, for example, wheels and doors or the skeleton bones of a pedestrian. One option to manipulate the imported _3D assets_ during simulation runtime is using ASAM OSI. In the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1GroundTruth.html[osi3::GroundTruth] message, information about moving and stationary _objects_ is provided from the _scenario_ engine to the sensor model. This entails _object_ positions, orientations, speeds, and so on for every simulation time step, but also a so-called model reference. This reference is the path to a _3D asset_ associated with the _object_ or the stationary environment. Using the pose information together with the 3D mesh data, a _3D environment_ is constructed and updated for every simulation time step. Further attributes, such as https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1MovingObject_1_1VehicleAttributes_1_1WheelData.html[wheel positions] for vehicles or https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.6.0/gen/structosi3_1_1MovingObject_1_1PedestrianAttributes_1_1Bone.html[bone poses] for pedestrians, enable a more refined movement of traffic participants in the _3D environment_.
 |*Relevant OpenMATERIAL 3D segments*|Geometry
 |*Influencing standards*            |ASAM OSI cite:[osi]
 |*Influencing technologies*         |-
@@ -118,9 +118,9 @@ The simulation shall be able to cope with different real-time requirements, for 
 [#tab-use-case-10, cols="1,5"]
 .Use case 10: Using sensor simulation to train perception algorithms
 |===
-|*Description*                      |As a perception algorithm developer, I want to use simulated environments for model training and testing, as real-world information collection is too expensive and inconvenient.
+|*Description*                      |As a perception algorithm developer, I want to use simulated environments for model training and testing, because collecting real-world information is too expensive and inconvenient.
 |*Relevant OpenMATERIAL 3D segments*|Geometry and Material
-|*Influencing standards*            |ASAM OSI cite:[osi], ASAM OpenSCENARIO cite:[osc], ASAM OpenDRIVE cite:[odr]
+|*Influencing standards*            |ASAM OSI cite:[osi], ASAM OpenSCENARIO XML cite:[osc], ASAM OpenDRIVE cite:[odr]
 |*Influencing technologies*         |Unity, OptiX, Regeneration AI
 |*Relevant user*                    |End user
 |===

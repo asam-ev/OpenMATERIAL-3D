@@ -14,18 +14,18 @@ endif::[]
 
 === Motivation
 
-Accurate sensor simulation that replicates physical phenomena is essential for evaluating the safety of AD/ADAS (automated driving/automated driving assistance systems) in virtual environments. 
+Accurate sensor simulation that replicates physical phenomena is essential for evaluating the safety of AD/ADAS (automated driving/automated driving assistance systems) in virtual environments.
 
-However, previous simulations were limited by computational power and memory, making them visually believable but not physically accurate. 
+However, previous simulations were limited by computational power and memory, making them visually believable but not physically accurate.
 Consequently, these simulations were mainly used in the early development stages, where precise physical modeling was not necessary.
 
-With increased computing power and improved simulation techniques, virtual testing now plays a crucial role at all stages of system development. 
-This aligns with the growing need to accurately represent the real world in simulations, known as digital twins, especially as the demand for physical sensor simulation rises. 
+With increased computing power and improved simulation techniques, virtual testing now plays a crucial role at all stages of system development.
+This aligns with the growing need to accurately represent the real world in simulations, known as digital twins, especially as the demand for physical sensor simulation rises.
 A fundamental step in virtually describing the real world is providing a full physical description of all objects, including their _material properties_ and 3D geometries.
 
-Standardizing the representation of data and attributes, such as scenarios, road data, and asset data, is extremely important for AD/ADAS simulation. This promotes data circulation and ensures consistent results across different systems. 
+Standardizing the representation of data and attributes, such as scenarios, road data, and asset data, is extremely important for AD/ADAS simulation. This promotes data circulation and ensures consistent results across different systems.
 
-Standardization efforts have been made for scenarios and road data using ASAM OpenSCENARIO, ASAM OpenDRIVE, ASAM OpenCRG, and other standards. 
+Standardization efforts have been made for scenarios and road data using ASAM OpenSCENARIO XML, ASAM OpenDRIVE, ASAM OpenCRG, and other standards.
 {THIS_STANDARD} advances standardization by providing standardized definitions of _material properties_ and 3D geometry.
 
 === The two main segments of {THIS_STANDARD}
@@ -36,9 +36,9 @@ Standardization efforts have been made for scenarios and road data using ASAM Op
 
 * *Geometry*, see xref:07_geometry/introduction.adoc[Section 7, "Geometry"]: This segment contains structures for different object classes. These structures define uniform node structure, naming scheme and coordinate systems to enable exchange, common integration and animation of 3D models. Tools or systems working primarily with geometric data, such as 3D models or spatial structures, can implement support for the geometry segment. For example: “This tool supports {THIS_STANDARD}: Geometry”.
 
-For a full exchange of simulation-ready _3D assets_ however, both segments must be supported. Systems or tools providing full support for both material and geometric data can be described as follows: “This tool supports {THIS_STANDARD}”.
+For a full exchange of simulation-ready _3D assets_, however, both segments shall be supported. Systems or tools providing full support for both material and geometric data can be described as follows: “This tool supports {THIS_STANDARD}”.
 
-A list of use cases examples can be found in xref:06_use_cases/use-cases.adoc[], each highlighting its relevance to the material segment, the geometry segment, or both.
+A list of example use cases can be found in xref:06_use_cases/use-cases.adoc[], each highlighting its relevance to the material segment, the geometry segment, or both.
 
 === Structure and file formats
 
@@ -60,14 +60,14 @@ To facilitate instancing and allow implementation of variants of an asset, multi
 It contains metadata, such as description, unique identifier, version information, copyright details, and so on.
 It also includes a _material_ texture assignment table, allowing dedicated _material_ mapping textures to be assigned to materials within _3D data files_.
 This enables comprehensive _material properties_ to be mapped to the geometry at a texture level.
-Each texel of this dedicated texture contains a 32 Bit code (8 Bit values in the RGBA channels) which is mapped to a _material property_ file (.xomp) in a separate _material_ mapping file (.xomm), linked in the asset file with a URI.
-For the mapping currently only the RGB channels are used (first 24 Bits).
+Each texel of this dedicated texture contains a 32-bit code (8-bit values in the RGBA channels) which is mapped to a _material property_ file (.xomp) in a separate _material_ mapping file (.xomm), linked in the asset file with a URI.
+Currently, only the RGB channels are used for the mapping, that is, the first 24 bits.
 The last channel is reserved for future use.
 An https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/example_asset.xoma[example asset] is provided in the examples folder of the repository.
 
 The *_3D data file_* is a standard _3D model_ file in glTF, FBX, or USD format.
 Multiple formats can exist in parallel, so one asset file can have multiple _3D data files_ with different formats with the same name as the asset file.
-However, to be compliant with {THIS_STANDARD}, a simulation environment must support at least one of the named 3D data formats.
+However, to be compliant with {THIS_STANDARD}, a simulation environment shall support at least one of the named 3D data formats.
 3D data files may contain conventional materials, supporting visual rendering.
 These materials are unaffected by {THIS_STANDARD} and may still be used in parallel.
 <<fig-openmaterial-overview>> shows that the 3D data file has the exemplary materials "asphalt", "concrete", and "texture".
@@ -79,7 +79,7 @@ More information about the file formats is given in xref:07_geometry/file-format
 An https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/example_asset.gltf[example model] is provided in the examples folder of the repository.
 
 The *material mapping file* is separated from the asset file to facilitate reusability.
-Multiple assets can link to the same _material_ mapping, allowing simulation systems to have a unified mapping table for all assets. 
+Multiple assets can link to the same _material_ mapping, allowing simulation systems to have a unified mapping table for all assets.
 A detailed definition of the https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/mapping_schema.json[mapping file JSON schema] is given in xref:07_geometry/mapping-schema.adoc[].
 It contains metadata, such as description, unique identifier, version information, and the _material_ mapping table.
 Each row in this table maps a _material_ name, given in the 3D data file or asset file, or an RGB value, given in a dedicated assignment texture or asset file, to a _material property_ file (.xomp).
@@ -91,8 +91,8 @@ This setup therefore allows for two mapping possibilities:
   In <<fig-openmaterial-overview>>, the material "asphalt" is mapped to a _material property_ file "asphalt.xomp".
 * Mapping an RGB color code from a dedicated {THIS_STANDARD} assignment texture to a _material property_ file, enabling detailed differentiation between _material properties_.
   In <<fig-openmaterial-overview>>, the material "texture" belonging to the "Road sign" has a visual texture of a stop sign.
-  The asset file of the 3D asset allows to define dedicated assignment textures for each material.
-  They use the same uv-map as the visual textures.
+  The asset file of the 3D asset allows dedicated assignment textures to be defined for each material.
+  They use the same UV map as the visual textures.
   The RGB values of the texels in the assignment texture can be mapped to _material property_ files.
   In the overview image, the RGB value (0, 0, 255) is mapped to the _material property_ file "steel_red.xomp" and (0, 255, 0) is mapped to "steel_white.xomp".
   The RGB values are assignment codes, so they are completely separate from the visual representation.
@@ -103,7 +103,7 @@ The *material property file* contains metadata and the properties of one materia
 Similar to the mapping file, _material property_ files can also be reused for different assets.
 A detailed definition of the https://github.com/asam-ev/OpenMATERIAL-3D/blob/main/schemas/material_schema.json[material file JSON schema] is given in xref:08_material/material-schema.adoc[].
 Some material properties depend on other simulation quantities, such as wavelength of the simulated sensor, temperature, and humidity.
-To avoid overloading one material file with large look-up tables, these are placed in auxiliary look-up table files linked with URIs in the main _material property_ file. 
+To avoid overloading one material file with large look-up tables, these are placed in auxiliary look-up table files linked with URIs in the main _material property_ file.
 The defined look-up tables include:
 
 * Electromagnetic properties, see xref:08_material/material-emp-schema.adoc[]
@@ -115,7 +115,7 @@ Examples for _material property_ files and look-up table files are provided in t
 
 All JSON-based file formats in this standard are defined with a corresponding JSON schema, which can be used for validation and implementation.
 The JSON schema files can be found in the deliverables of each version of this standard.
-Every JSON-based file shall have the url to the corresponding schema in the second line of the file as
+Every JSON-based file shall contain the URL of the corresponding schema in the second line of the file as
 
 [source,JSON]
 ----
@@ -128,7 +128,7 @@ ASAM OpenX standards strive to provide comprehensive, realistic, and exchangeabl
 {THIS_STANDARD} asset files and 3D objects, as defined in xref:07_geometry/introduction.adoc[Section 7.1, "Geometry-Introduction"], act as a connecting link between {THIS_STANDARD} and the ASAM OpenX ecosystem.
 Specifically, asset files are referenced from other ASAM OpenX standards to integrate and use 3D objects, their metadata and materials:
 
-* ASAM OpenDRIVE standardizes the description of road networks, including geometric definitions of the road, but primarily focuses on the semantic description of the road. 
+* ASAM OpenDRIVE standardizes the description of road networks, including geometric definitions of the road, but primarily focuses on the semantic description of the road.
   The {THIS_STANDARD} geometry object class "Environment" enhances this by allowing the definition of a comprehensive _3D environment_ that aligns with an ASAM OpenDRIVE map.
 * ASAM OpenSCENARIO XML is a file format created to describe dynamic content in driving and traffic simulators, with a primary focus on complex maneuvers involving multiple entities like vehicles and pedestrians.
   The {THIS_STANDARD} geometry segment defines node structures and metadata for these object classes to seamlessly integrate ASAM OpenSCENARIO XML definitions with a _3D model_.
@@ -136,18 +136,18 @@ Specifically, asset files are referenced from other ASAM OpenX standards to inte
   Asset files (.xoma) of individual objects, such as vehicles, shall be linked using the https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/07_components_scenario/07_02_storyboard_entities.html[model3d property].
   Both environment and objects may either be given as an absolute path or as a path relative to the ASAM OpenSCENARIO XML file (.xosc).
   A relative path is indicated by a dot (.) as the first character.
-  The paths to 3D assets specified in the _scenario_ definition shall serve as single source of truth and be used consistently in simulation environments.
+  The paths to 3D assets specified in the _scenario_ definition shall serve as the single source of truth and be used consistently in simulation environments.
   In the case of distributed simulation environments, the paths shall be synchronized between all relevant simulation components.
   Synchronization may be implemented using ASAM Open Simulation Interface (OSI).
 * ASAM OSI (Open Simulation Interface) is a specification for interfaces between models and components in a distributed simulation.
   ASAM OSI primarily focuses on the environmental perception of automated driving functions, but it also covers interfaces for models of traffic participants.
-  So called *model_references* in OSI enable enrichment of the object-list based environment representations by referencing 3D objects defined by {THIS_STANDARD}:
+  So-called *model_references* in OSI enable enrichment of the object-list based environment representations by referencing 3D objects defined by {THIS_STANDARD}:
   The asset file (.xoma) of a _3D environment_ shall be linked in ASAM OSI using the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/current/gen/structosi3_1_1GroundTruth.html#a83042861723a4a9e890a53aa98d88858[GroundTruth::model_reference].
   Asset files (.xoma) of individual objects, like vehicles, shall be linked with the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/current/gen/structosi3_1_1MovingObject.html#a07558573bee7a5fa2f0729e1cad1325f[MovingObject::model_reference] or the https://opensimulationinterface.github.io/osi-antora-generator/asamosi/current/gen/structosi3_1_1StationaryObject.html#aad1c24fcdb11699954bf3494b8632288[StationaryObject::model_reference].
   References to environments and individual objects may either be given as an absolute path or a relative path.
   A relative path is indicated by a dot (.) as the first character.
-  As ASAM OSI transfers the data between tools and simulation models, the root path that a relative model reference path is relative to, has to be given or known to all tools and models in the tool chain.
-  This can be done with tool settings, configs, or model parameters, for example, an functional mock-up interface (FMI) parameter.
+  As ASAM OSI transfers the data between tools and simulation models, the root path that a relative model reference path refers to has to be given or known to all tools and models in the tool chain.
+  This can be done with tool settings, configs, or model parameters, for example, a functional mock-up interface (FMI) parameter.
 
 The transformation of reference frames between these ASAM standards is described in xref:07_geometry/general.adoc#_local_coordinate_system[Section 7.2.2.2, "Local coordinate system"].
 
@@ -209,7 +209,7 @@ Further informative content is shown in <<tab-informative-text-components>>.
 |Abbreviations                                |Normative
 |Backward compatibility                       |Normative
 |Terms and definitions                        |Normative
-|Use Cases                                    |Informative
+|Use cases                                    |Informative
 |First to last specification-specific section |Normative
 |Annexes                                      |Annexes can be normative or informative. The annex heading contains the indication "(normative)" or "(informative)".
 |Bibliography                                 |Informative
@@ -234,7 +234,7 @@ Notes, footnotes, and examples shall not contain requirements or any information
 
 The following deliverables are provided for {THIS_STANDARD}:
 
-* https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/index.html[ASAM OpenMATERIAL® 3D BS 1-0-0 Specification, 2025-04-03] (this document, contained in this site)
+* https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/index.html[ASAM OpenMATERIAL® 3D BS 1-1-0 Specification, <RELEASE_DATE>] (this document, contained in this site)
 * https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/schemas[JSON schema files] for all JSON formats (contained in the {THIS_STANDARD} Github repository)
 * https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples[Example files] for all defined file formats (contained in the {THIS_STANDARD} Github repository) and further examples of
 ** a https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/vehicle_example[vehicle] (contained in the {THIS_STANDARD} Github repository)

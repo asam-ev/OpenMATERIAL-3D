@@ -17,7 +17,7 @@ _3D models_ of {THIS_STANDARD} in glTF format shall comply with the official htt
 The glTF specification has two delivery options: glTF + bin + textures, and the container format glb.
 Both delivery options are supported in {THIS_STANDARD}.
 +
-The glTF coordinate system is right-handed, with +Y as the up axis, +Z as forward, and -X as right. The front of a glTF asset faces +Z. 
+The glTF coordinate system is right-handed, with +Y as the up axis, +Z as forward, and -X as right. The front of a glTF asset faces +Z.
 +
 This setup differs from how coordinate systems are defined in {THIS_STANDARD}, see xref:07_geometry/general.adoc#_coordinate_systems[Section 7.2.2, "Coordinate systems"].
 While modeling, the {THIS_STANDARD} coordinate definitions shall be used.

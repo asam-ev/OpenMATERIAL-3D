@@ -13,7 +13,7 @@
                 },
                 "description": {
                     "type": "string",
-                    "description": "Short description of the material in 2 - 3 sentences."
+                    "description": "Short description of the material in two to three sentences."
                 },
                 "uuid": {
                     "type": "string",
@@ -32,7 +32,7 @@
                 },
                 "copyrights": {
                     "type": "array",
-                    "description": "Indicates copyright details, including the year and copyright holder (e.g., '© 2024 ACME Inc.').",
+                    "description": "Indicates copyright details, including the year and copyright holder (for example, '© 2024 ACME Inc.').",
                     "items": {
                         "type": "string"
                     },
@@ -82,7 +82,7 @@
                             "number",
                             "null"
                         ],
-                        "description": "Wavelength of radiation in free-space in meters (m). The upper limit corresponds to 20 kHz.",
+                        "description": "Wavelength of the radiation in free space. Unit: meter (m). The upper limit corresponds to 20 kHz.",
                         "minimum": 1e-09,
                         "maximum": 17.16e-03
                     },
@@ -91,7 +91,7 @@
                             "number",
                             "null"
                         ],
-                        "description": "Temperature of material in Kelvin (K).",
+                        "description": "Temperature of the material. Unit: kelvin (K).",
                         "minimum": 0
                     },
                     {
@@ -99,7 +99,7 @@
                             "number",
                             "null"
                         ],
-                        "description": "Real part of index of refraction of material, which is \\(n^{'}\\) in \\(n = n^{'} - j \\kappa\\).",
+                        "description": "Real part of index of refraction of the material, which is \\(n^{'}\\) in \\(n = n^{'} - j \\kappa\\).",
                         "minimum": 0
                     },
                     {
@@ -107,7 +107,7 @@
                             "number",
                             "null"
                         ],
-                        "description": "Imaginary part of index of refraction of material, which is \\(\\kappa\\) in \\(n = n^{'} - j \\kappa\\).",
+                        "description": "Imaginary part of index of refraction of the material, which is \\(\\kappa\\) in \\(n = n^{'} - j \\kappa\\).",
                         "minimum": 0
                     }
                 ],

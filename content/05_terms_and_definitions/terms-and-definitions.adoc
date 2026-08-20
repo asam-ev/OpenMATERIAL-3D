@@ -39,7 +39,7 @@ example, a simulation platform.
 [[sec-Machine-perception]] Machine perception::
 The ability of systems to interpret sensory data and to reliably detect objects
 and other road users relevant to the operation of automated driving. The data is
-used to generate situational awareness of the vehicle environment cite:[die]. 
+used to generate situational awareness of the vehicle environment cite:[die].
 
 [[sec-Material]] Material::
 A collection of material properties belonging to one entity.
@@ -61,8 +61,8 @@ Denotes a physical, chemical, or geometric property of a material.
 
 [[sec-Multispectral_hyperspectral-material]] Multispectral or hyperspectral material::
 Material with wavelength-specific properties that are defined for multiple spectra. +
-Multispectral material shows up in imagery as 3-10 wider bands. +
-Hyperspectral material shows hundreds of narrow bands. 
+Multispectral material appears in imagery as 3 to 10 wider bands. +
+Hyperspectral material appears as hundreds of narrow bands.
 
 [[sec-Object]] Object::
 A tangible thing with defined 3D boundaries and discrete meshes. An object ID can be assigned.
@@ -103,7 +103,7 @@ all-in-one solution including the generation of the 3D environment or a
 co-simulation platform orchestrating a co-simulation of multiple sensor models, vehicle dynamics models, and so on.
 
 [[sec-Surface-normal]] Surface normal::
-A vector that is perpendicular to a given object, surface, or geometrical
+A vector that is perpendicular to a given object, surface, or geometric
 primitive. It can be used to determine the face direction for 2D and
 3D rendering.
 

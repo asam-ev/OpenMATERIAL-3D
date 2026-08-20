@@ -6,5 +6,7 @@ ifndef::include-only-once[]
 include::{root-path}_config.adoc[]
 endif::[]
 
-This is the first release of this standard published by ASAM.
-Therefore, no information about the backward compatibility of this standard has been added to this section.
+{THIS_STANDARD} 1.1.0 is backward compatible with {THIS_STANDARD} 1.0.0.
+Files that are valid according to the 1.0.0 JSON schemas remain valid according to the 1.1.0 JSON schemas.
+
+Check the https://github.com/asam-ev/OpenMATERIAL-3D/releases[GitHub Releases Page] for changes in 1.1.0 compared to 1.0.0.

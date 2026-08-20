@@ -1,8 +1,8 @@
 = Naming convention
 
 Every bone has a unique name and represents a part of the human body.
-The left and right side of the armature are indicated with the keywords "Left" and "Right" as a suffix.
-All included meshes use a keyword as a prefix to indicate which kind of object it represents.
-They shall be named meaningful.
+The left and right sides of the armature are indicated by the keywords "Left" and "Right" used as a suffix.
+All included meshes use a keyword as a prefix to indicate which kind of object they represent.
+Meshes shall be given meaningful names.
 
-If needed, the user is free to add more prefixes or bones, which are not part of the standard, for himself.
+Users may define additional prefixes or bones that are not part of the standard.
