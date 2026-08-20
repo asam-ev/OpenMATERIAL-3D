@@ -64,7 +64,7 @@ Asset schema
     |_ [[../07_geometry/asset-schema.html#_z z]] (R)
 |_ [[../07_geometry/asset-schema.html#_materialmappinguri materialMappingUri]]
 |_ [[../07_geometry/asset-schema.html#_materialtextureassignment materialTextureAssignment]]
-|_ [[../07_geometry/asset-schema.html#_materialreplacement materialReplacement]]
+|_ [[../07_geometry/asset-schema.html#_materialreplacements materialReplacements]]
 |_ [[../07_geometry/asset-schema.html#_externalassetreferences externalAssetReferences]]
   |_ [[../07_geometry/asset-schema.html#_referencenode referenceNode]] (R)
   |_ [[../07_geometry/asset-schema.html#_externalasseturi externalAssetUri]] (R)
@@ -113,7 +113,7 @@ The display name of the asset, such as 'Car Model A' or 'Urban Scene 1'.
 
 
 === description
-A concise summary of the asset's purpose or features in 2 - 3 sentences.
+A concise summary of the asset's purpose or features in two to three sentences.
 
 *Type:* `++string++` +
 *Required:* No
@@ -198,7 +198,7 @@ Details the validation process used to compare the model geometry with real-worl
 
 
 === assetType
-Specifies whether the asset represents an individual object ('object') or a collection of objects ('scene'). With the introduction of a concept for referencing external assets, 'scene' is deprecated.
+Specifies whether the asset represents an individual object ('object') or a collection of objects ('scene'). The value 'scene' is deprecated as of ASAM OpenMATERIAL 3D 1.1.0 and is replaced by the 'externalAssetReferences' property.
 
 *Type:* `++string++` +
 *Enum:* `++'object', 'scene'++` +
@@ -206,7 +206,7 @@ Specifies whether the asset represents an individual object ('object') or a coll
 
 
 === objectClass
-Classifies the object type when 'assetType' is 'object', meaning, 'vehicle', 'human', 'environment', 'other'.
+Classifies the object type when 'assetType' is 'object'. The value is one of 'vehicle', 'human', 'environment', or 'other'.
 
 *Type:* `++string++` +
 *Enum:* `++'vehicle', 'human', 'environment', 'other'++` +
@@ -214,7 +214,7 @@ Classifies the object type when 'assetType' is 'object', meaning, 'vehicle', 'hu
 
 
 === vehicleClassData
-Vehicle specific data. This shall be filled if 'objectClass' is 'vehicle' based on the https://releases.asam.net/OpenSCENARIO/1.0.0/Model-Documentation/content/Vehicle.html[OpenSCENARIO XML vehicle definition].
+Vehicle-specific data. This shall be filled if 'objectClass' is 'vehicle' based on the https://releases.asam.net/OpenSCENARIO/1.0.0/Model-Documentation/content/Vehicle.html[OpenSCENARIO XML vehicle definition].
 
 *Type:* `++object++` +
 *Required:* No
@@ -243,7 +243,7 @@ Maximum speed of the vehicle. Unit: meter/second.
 
 
 ===== maxAcceleration
-Maximum acceleration of the vehicle. Unit: meter/second^2.
+Maximum acceleration of the vehicle. Unit: meter/second^2^.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -251,7 +251,7 @@ Maximum acceleration of the vehicle. Unit: meter/second^2.
 
 
 ===== maxDeceleration
-Maximum deceleration of the vehicle. Unit: meter/second^2.
+Maximum deceleration of the vehicle. Unit: meter/second^2^.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -259,21 +259,21 @@ Maximum deceleration of the vehicle. Unit: meter/second^2.
 
 
 ==== axles
-A set of the axles of a vehicle. A vehicle must have a front axle and a rear axle. It might have additional axles. The information about the rear axle is needed to transform the origin of the model to coordinate systems of other ASAM standards, for example the ASAM OpenSCENARIO XML vehicle coordinate system or the ASAM OSI host vehicle coordinate system.
+A set of the axles of a vehicle. A vehicle shall have a front axle and a rear axle. It may have additional axles. The information about the rear axle is needed to transform the origin of the model to coordinate systems of other ASAM standards, for example, the ASAM OpenSCENARIO XML vehicle coordinate system or the ASAM OSI host vehicle coordinate system.
 
 *Type:* `++object++` +
 *Required:* Yes
 
 
 ===== frontAxle
-The definition of vehicle axle based on the https://releases.asam.net/OpenSCENARIO/1.0.0/Model-Documentation/content/Axle.html[OpenSCENARIO XML vehicle axle definition].
+The definition of a vehicle axle, based on the https://releases.asam.net/OpenSCENARIO/1.0.0/Model-Documentation/content/Axle.html[OpenSCENARIO XML vehicle axle definition].
 
 *Type:* `++object++` +
 *Required:* Yes
 
 
 ====== maxSteering
-Maximum steering angle which can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.
+Maximum steering angle that can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.
 
 *Type:* `++number++` +
 *Range:* `++[0, 3.14159]++` +
@@ -289,7 +289,7 @@ Diameter of the wheels on this axle. Unit: meter.
 
 
 ====== trackWidth
-Distance of the wheels center lines at zero steering. Unit: meter.
+Distance between the center lines of the wheels at zero steering. Unit: meter.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -297,14 +297,14 @@ Distance of the wheels center lines at zero steering. Unit: meter.
 
 
 ====== positionX
-Longitudinal position of the axle with respect to the vehicles center of the bounding box projected to the ground. Unit: meter.
+Longitudinal position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Unit: meter.
 
 *Type:* `++number++` +
 *Required:* Yes
 
 
 ====== positionZ
-The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit: meter.
+Vertical position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Usually, this is half the wheel diameter. Unit: meter.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -312,14 +312,14 @@ The z-position of the axle with respect to the vehicles center of the bounding b
 
 
 ===== rearAxle
-The definition of vehicle axle based on the https://releases.asam.net/OpenSCENARIO/1.0.0/Model-Documentation/content/Axle.html[OpenSCENARIO XML vehicle axle definition].
+The definition of a vehicle axle, based on the https://releases.asam.net/OpenSCENARIO/1.0.0/Model-Documentation/content/Axle.html[OpenSCENARIO XML vehicle axle definition].
 
 *Type:* `++object++` +
 *Required:* Yes
 
 
 ====== maxSteering
-Maximum steering angle which can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.
+Maximum steering angle that can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.
 
 *Type:* `++number++` +
 *Range:* `++[0, 3.14159]++` +
@@ -335,7 +335,7 @@ Diameter of the wheels on this axle. Unit: meter.
 
 
 ====== trackWidth
-Distance of the wheels center lines at zero steering. Unit: meter.
+Distance between the center lines of the wheels at zero steering. Unit: meter.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -343,14 +343,14 @@ Distance of the wheels center lines at zero steering. Unit: meter.
 
 
 ====== positionX
-Longitudinal position of the axle with respect to the vehicles center of the bounding box projected to the ground. Unit: meter.
+Longitudinal position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Unit: meter.
 
 *Type:* `++number++` +
 *Required:* Yes
 
 
 ====== positionZ
-The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit: meter.
+Vertical position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Usually, this is half the wheel diameter. Unit: meter.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -364,7 +364,7 @@ An optional array of additional axles with the same properties as 'frontAxle' an
 *Required:* No
 
 ====== maxSteering
-Maximum steering angle which can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.
+Maximum steering angle that can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.
 
 *Type:* `++number++` +
 *Range:* `++[0, 3.14159]++` +
@@ -380,7 +380,7 @@ Diameter of the wheels on this axle. Unit: meter.
 
 
 ====== trackWidth
-Distance of the wheels center lines at zero steering. Unit: meter.
+Distance between the center lines of the wheels at zero steering. Unit: meter.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -388,14 +388,14 @@ Distance of the wheels center lines at zero steering. Unit: meter.
 
 
 ====== positionX
-Longitudinal position of the axle with respect to the vehicles center of the bounding box projected to the ground. Unit: meter.
+Longitudinal position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Unit: meter.
 
 *Type:* `++number++` +
 *Required:* Yes
 
 
 ====== positionZ
-The z-position of the axle with respect to the vehicles center of the bounding box projected to the ground. Usually this is half of wheel diameter. Unit: meter.
+Vertical position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Usually, this is half the wheel diameter. Unit: meter.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -411,7 +411,7 @@ Human-specific data. This shall be filled if 'objectClass' is 'human' based on t
 
 
 ==== mass
-The mass of a human. Unit: kg.
+The mass of a human. Unit: kilogram.
 
 *Type:* `++number++` +
 *Required:* Yes
@@ -425,7 +425,7 @@ Indicates whether the 3D model contains keyframe animations.
 
 
 === pbrMaterialWorkflow
-Indicates the usage of a Physically Based Rendering (PBR) material workflow as 'metallic', 'specular' or 'none'. This only applies to the internal materials of the 3D model file, not to mapped ASAM OpenMATERIAL 3D property files.
+Indicates the usage of a physically based rendering (PBR) material workflow as 'metallic', 'specular', or 'none'. This only applies to the internal materials of the 3D model file, not to mapped ASAM OpenMATERIAL 3D property files.
 
 *Type:* `++string++` +
 *Enum:* `++'metallic', 'specular', 'none'++` +
@@ -449,7 +449,7 @@ The total number of meshes in the 3D model file. A model geometry typically cons
 
 
 === textureResolutions
-Lists all the used texture resolutions in the 3D model, meaning 'albedo', 'normal', or 'displacement' textures. Possible values are '1K', '2K', '4K'. If no textures are used in the model, add empty element ' '.
+Lists all texture resolutions used in the 3D model, for example, for 'albedo', 'normal', or 'displacement' textures. Possible values are '1K', '2K', and '4K'. If no textures are used in the model, add a single empty string ''.
 
 *Type:* `++array++` +
 *Item count:* `++at least 1++` +
@@ -460,7 +460,7 @@ Lists all the used texture resolutions in the 3D model, meaning 'albedo', 'norma
 
 
 === normalMapFormat
-Specifies whether the 3D model utilizes normal maps as textures. If so, their format should be either 'DirectX' or 'OpenGL'. 
+Specifies whether the 3D model uses normal maps as textures. If so, their format shall be either 'DirectX' or 'OpenGL'. Otherwise, the value is 'none'.
 
 *Type:* `++string++` +
 *Enum:* `++'DirectX', 'OpenGL', 'none'++` +
@@ -468,7 +468,7 @@ Specifies whether the 3D model utilizes normal maps as textures. If so, their fo
 
 
 === boundingBox
-Defines the Axis-Aligned Bounding Box (AABB), which defines the spatial boundaries of an asset in a 3D space. Example: "boundingBox": { "x": [-2.5, 2.5], "y": [-1.1, 1.1],"z": [0, 1.8]}
+Defines the axis-aligned bounding box (AABB), which defines the spatial boundaries of an asset in 3D space. Example: "boundingBox": {"x": [-2.5, 2.5], "y": [-1.1, 1.1], "z": [0, 1.8]}
 
 *Type:* `++object++` +
 *Required:* Yes
@@ -531,9 +531,9 @@ Columns of the table:
 | 2 | string |  | Relative or absolute file path to the ASAM OpenMATERIAL 3D assignment texture. For cross-platform compatibility, Unix-style paths are recommended.
 |===
 
-== materialReplacement
+== materialReplacements
 
-Optional array containing material reassignments. It links material names contained in the 3D model file to RGB Codes or alternative names used as key for the ASAM OpenMATERIAL 3D material mapping file. An example of the material replacement mechanism can be found in the examples folder of the ASAM OpenMATERIAL 3D GitHub repository.
+Optional array containing material reassignments. It links material names contained in the 3D model file to RGB codes or alternative names that are used as keys in the ASAM OpenMATERIAL 3D material mapping file. An example of the material replacement mechanism can be found in the examples folder of the ASAM OpenMATERIAL 3D GitHub repository.
 
 
 *Type:* `++array++` +
@@ -549,25 +549,25 @@ Columns of the table:
 | Column | Type | Constraints | Description
 
 | 1 | string |  | Name of the material in the 3D model file.
-| 2 | string |  | Replacement name or RGB Code to use as key into the material mapping instead of the original material name in the 3D model file. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255].
+| 2 | string |  | Replacement name or RGB code to use as key into the material mapping instead of the original material name in the 3D model file. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G>, and <B> are integers in the range [0, 255].
 |===
 
 == externalAssetReferences
 
-Optional array containing references to external 3D assets. It links parenting nodes in the 3D model file to external ASAM OpenMATERIAL 3D asset files (.xoma).
+Optional array containing references to external 3D assets. It links parent nodes in the 3D model file to external ASAM OpenMATERIAL 3D asset files (.xoma).
 
 *Type:* `++array++` +
 *Required:* No
 
 === referenceNode
-Name of the parent node in the 3D model file.
+Name of the node in the 3D model file that acts as the parent of the referenced external asset. This node determines the spatial placement and orientation of the external asset.
 
 *Type:* `++string++` +
 *Required:* Yes
 
 
 === externalAssetUri
-Relative or absolute file path to the ASAM OpenMATERIAL 3D external ASAM OpenMATERIAL 3D asset files (.xoma). For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file path to the external ASAM OpenMATERIAL 3D asset file (.xoma). For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++string++` +
 *Format:* `++uri-reference++` +
@@ -577,7 +577,7 @@ Relative or absolute file path to the ASAM OpenMATERIAL 3D external ASAM OpenMAT
 
 == lightDefinitions
 
-A list of discrete light sources, e.g., point lights or spotlights, linked to the 3D asset hierarchy.
+A list of discrete light sources, for example, point lights or spotlights, linked to the 3D asset hierarchy.
 
 *Type:* `++array++` +
 *Required:* No
@@ -585,14 +585,14 @@ A list of discrete light sources, e.g., point lights or spotlights, linked to th
 NOTE: Only one of 'color' and 'temperature' shall be set. All of them may be omitted.
 
 === node
-Identifier of the node in the 3D model hierarchy defining the light origin. This determines the function the light is mapped to. E.g. a light associated with the node Grp_Light_Low_Beam_Left_0 of a vehicle asset shall be turned on in a simulation when the low beam is activated. If a generic node name is used, for example Grp_Light_0, the simulator can decide which lighting function to map it to. In this case the behavior is not standardized.
+Identifier of the node in the 3D model hierarchy that defines the light origin. The light is located at the origin of this node, and the node name determines the lighting function the light is mapped to. For example, a light associated with the node Grp_Light_Low_Beam_Left_0 of a vehicle asset shall be turned on in a simulation when the low beam is activated. If a generic node name is used, for example, Grp_Light_0, the simulator can decide which lighting function to map it to. In this case, the behavior is not standardized.
 
 *Type:* `++string++` +
 *Required:* Yes
 
 
 === photometricProfileUri
-Relative or absolute file path to an IES or ELUMDAT file defining the light profile. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file path to an IES or EULUMDAT file defining the light profile. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++string++` +
 *Format:* `++uri-reference++` +
@@ -601,7 +601,7 @@ Relative or absolute file path to an IES or ELUMDAT file defining the light prof
 
 
 === radiometricProfileUri
-Relative or absolute file path to a table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. (The format of the referenced radiance table is not defined in this standard. It may be defined in a future version.)
+Relative or absolute file path to a table providing radiance per wavelength. For cross-platform compatibility, Unix-style paths are recommended. The format of the referenced radiance table is not defined in this standard. It may be defined in a future version.
 
 *Type:* `++string++` +
 *Format:* `++uri-reference++` +
@@ -609,23 +609,23 @@ Relative or absolute file path to a table providing radiance per wavelength. For
 
 
 === innerConeAngle
-The 1/2 opening angle in degree, measured from the center of the conical spotlight to the angle where the light falloff begins. If not set, the default is 0. This will be overwritten, if a photometric profile is set.
+Half of the opening angle of a conical spotlight, measured from the cone axis to the angle at which the light falloff begins. Unit: rad; Range: [0, \(\pi\)]. If this field is not set, the default is 0. If a photometric profile is set, this value is overridden but serves as a fallback if a renderer cannot load the profile.
 
 *Type:* `++number++` +
-*Range:* `++[0, 180]++` +
+*Range:* `++[0, 3.14159]++` +
 *Required:* No
 
 
 === outerConeAngle
-The 1/2 opening angle in degree, measured from the center of the conical spotlight to the angle where the falloff ends. If this field is not set, the light is considered a point light. If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile.
+Half of the opening angle of a conical spotlight, measured from the cone axis to the angle at which the light falloff ends. Unit: rad; Range: [0, \(\pi\)]. If this field is not set, the light is considered a point light. If a photometric profile is set, this value is overridden but serves as a fallback if a renderer cannot load the profile.
 
 *Type:* `++number++` +
-*Range:* `++[0, 180]++` +
+*Range:* `++[0, 3.14159]++` +
 *Required:* No
 
 
 === luminousIntensity
-Luminous intensity defined in Candela (cd). If a photometric profile is set, this will be overwritten but serves as a fallback if a renderer cannot load the profile.
+Luminous intensity of the light source. Unit: candela (cd). If a photometric profile is set, this value is overridden but serves as a fallback if a renderer cannot load the profile.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -664,7 +664,7 @@ Blue channel.
 
 
 === temperature
-Correlated Color Temperature (CCT) in Kelvin.
+Correlated color temperature (CCT) of the light. Unit: kelvin (K).
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -673,7 +673,7 @@ Correlated Color Temperature (CCT) in Kelvin.
 
 == emissiveLightMapping
 
-Mapping of emissive properties to a specific material and an associated Grp node in the 3D model file. This concept can be used in ny type of object.
+Mapping of emissive properties to a specific material and an associated group node in the 3D model file. This concept can be used in any type of object.
 
 *Type:* `++array++` +
 *Required:* No
@@ -681,7 +681,7 @@ Mapping of emissive properties to a specific material and an associated Grp node
 NOTE: If 'maskingTextureUri' is set, 'emissiveTextureUri' shall also be set.
 
 === assocNode
-The node in the 3D hierarchy associated with this emissive light. This determines the lighting function the emissive material is mapped to. E.g. an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated. If a generic node name is used, for example Grp_Light_0, the simulator can decide which lighting function to map it to. In this case the behavior is not standardized.
+Identifier of the node in the 3D model hierarchy that this emissive light is associated with. In contrast to the 'node' property of 'lightDefinitions', this node does not define any spatial placement. It is used solely to derive the lighting function from its name. For example, an emissive material associated with the node Grp_Light_Indicator_Left_0 of a vehicle asset shall be turned on in a simulation when the left indicator is activated. If a generic node name is used, for example, Grp_Light_0, the simulator can decide which lighting function to map it to. In this case, the behavior is not standardized.
 
 *Type:* `++string++` +
 *Required:* Yes
@@ -695,7 +695,7 @@ The name of the material within the 3D model file to which this mapping applies.
 
 
 === luminance
-Luminance defined in Candela per square meter (cd/m²).
+Luminance of the emissive material. Unit: candela per square meter (cd/m^2^).
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -703,7 +703,7 @@ Luminance defined in Candela per square meter (cd/m²).
 
 
 === emissiveTextureUri
-Relative or absolute file path to an emissive texture. See 'color' property for an equation on how the emissive texture value is used in the lighting calculation. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file path to an emissive texture. See the 'color' property for the equation describing how the emissive texture value is used in the lighting calculation. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++string++` +
 *Format:* `++uri-reference++` +
@@ -711,7 +711,7 @@ Relative or absolute file path to an emissive texture. See 'color' property for 
 
 
 === maskingTextureUri
-Relative or absolute file path to the masking texture to mask a defined part in an emissive atlas texture. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file path to the masking texture that masks a defined part of an emissive atlas texture. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++string++` +
 *Format:* `++uri-reference++` +
@@ -719,7 +719,7 @@ Relative or absolute file path to the masking texture to mask a defined part in 
 
 
 === color
-Emissive color or RGB multiplier when used in combination with an emissive texture. The final color in the renderer is calculated as color = base_color + emissive_color * emissive_texture_color * emissive_strength. The emissive_strength needs to be set by the simulator in a way that the final luminance of the emissive material matches the defined 'luminance' value.
+Emissive color, or RGB multiplier when used in combination with an emissive texture. The final color in the renderer is calculated as finalColor = baseColor + emissiveColor * emissiveTextureColor * emissiveStrength. The simulator shall set emissiveStrength so that the resulting luminance of the emissive material matches the defined 'luminance' value.
 
 *Type:* `++object++` +
 *Required:* Yes
@@ -751,20 +751,20 @@ Blue channel.
 
 == geometryProperties
 
-Array of per-node geometry properties such as physical thickness.
+Array of per-node geometry properties, such as physical thickness.
 
 *Type:* `++array++` +
 *Required:* No
 
 === node
-Identifier of the node in the 3D model hierarchy the properties apply to.
+Identifier of the node in the 3D model hierarchy that the properties apply to.
 
 *Type:* `++string++` +
 *Required:* Yes
 
 
 === thickness
-Extrusion in meters along the surface normal (applied on the side opposite the viewer, regardless of whether the surface is single- or double-sided).
+Extrusion along the surface normal, applied on the side opposite the viewer, regardless of whether the surface is single-sided or double-sided. Unit: meter; Range: [0, inf[.
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +

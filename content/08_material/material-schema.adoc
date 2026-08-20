@@ -63,7 +63,7 @@ The display name of the material, such as 'Red brick' or 'Dark asphalt'.
 
 
 === description
-Short description of the material in 2 - 3 sentences.
+Short description of the material in two to three sentences.
 
 *Type:* `++string++` +
 *Required:* No
@@ -142,7 +142,7 @@ Information about the surface roughness of the material.
 
 
 ==== surfaceHeightRms
-Root mean square of surface height deviations, called RMS-Roughness, being a vertical measure of roughness and given in meters (m).
+Root mean square of the surface height deviations, also called RMS roughness. This is a vertical measure of roughness. Unit: meter (m).
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -150,7 +150,7 @@ Root mean square of surface height deviations, called RMS-Roughness, being a ver
 
 
 ==== surfaceCorrelationLength
-Correlation length of the surface height deviations, being the distance after autocorrelation function has dropped to 1/e. Thus being a horizontal measure of roughness and given in meters.
+Correlation length of the surface height deviations, that is, the distance after which the autocorrelation function has dropped to 1/e. This is a horizontal measure of roughness. Unit: meter (m).
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -172,7 +172,7 @@ Emissivity data of the material.
 
 
 ==== emissivityCoefficient
-Emissivity describes the ability to emit energy as thermal radiation. Given as the fraction of thermal radiation emitted by a surface relative to the radiation emitted by an ideal black body at the same temperature. Here the hemispherical total emissivity is used which considers full emission over all wavelengths, directions and polarization for a given particular temperature: ε(T).
+Emissivity describes the ability to emit energy as thermal radiation. It is given as the fraction of thermal radiation emitted by a surface relative to the radiation emitted by an ideal black body at the same temperature. The hemispherical total emissivity is used here, which considers the full emission over all wavelengths, directions, and polarizations at one particular temperature: ε(T).
 
 *Type:* `++number++` +
 *Range:* `++[0, 1]++` +
@@ -180,7 +180,7 @@ Emissivity describes the ability to emit energy as thermal radiation. Given as t
 
 
 ==== temperature
-Temperature of material in Kelvin (K) at which the emissivity is measured.
+Temperature at which the emissivity is measured. Unit: kelvin (K).
 
 *Type:* `++number++` +
 *Range:* `++[0, inf[++` +
@@ -202,7 +202,7 @@ Information about the elasticity of the material.
 
 
 ==== youngsModulus
-Young's modulus of the material in Pascal (Pa). The upper limit corresponds to the Young’s modulus of a diamond.
+Young's modulus of the material. Unit: pascal (Pa). The upper limit corresponds to the Young’s modulus of a diamond.
 
 *Type:* `++number++` +
 *Range:* `++[0, 1500000000000]++` +
@@ -232,7 +232,7 @@ Information about the density of the material.
 
 
 ==== density
-Density of the material in kg/m^3^. The upper limit corresponds to the density of Osmium.
+Density of the material. Unit: kg/m^3^. The upper limit corresponds to the density of Osmium.
 
 *Type:* `++number++` +
 *Range:* `++[0, 25000]++` +
@@ -247,14 +247,14 @@ Sources of the density data. Multiple sources should be comma-separated.
 
 
 === retroreflectivityData
-Information about the retro-reflective properties of the material in the visible light spectrum.
+Information about the retroreflective properties of the material in the visible light spectrum.
 
 *Type:* `++object++` +
 *Required:* No
 
 
 ==== coefficientOfRetroreflection
-Coefficient of retro-reflection in candela per lux per square metre (cd lx^-1^ m^-2^).
+Coefficient of retroreflection. Unit: candela per lux per square meter (cd lx^-1^ m^-2^).
 
 *Type:* `++number++` +
 *Range:* `++[0, 5000]++` +
@@ -262,14 +262,14 @@ Coefficient of retro-reflection in candela per lux per square metre (cd lx^-1^ m
 
 
 ==== sources
-Sources of the retro-reflectivity data. Multiple sources should be comma-separated.
+Sources of the retroreflectivity data. Multiple sources should be comma-separated.
 
 *Type:* `++string++` +
 *Required:* Yes
 
 
 === electromagneticPropertiesUri
-Relative or absolute file path to a property lookup table file with electromagnetic material properties. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file path to a property look-up table file with electromagnetic material properties. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++string++` +
 *Pattern:* `++.*_emp\.xompt$++` +
@@ -277,7 +277,7 @@ Relative or absolute file path to a property lookup table file with electromagne
 
 
 === opticalPropertiesUri
-Relative or absolute file path to a property lookup table file with optical material properties. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file path to a property look-up table file with optical material properties. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++string++` +
 *Pattern:* `++.*_optical\.xompt$++` +
@@ -285,7 +285,7 @@ Relative or absolute file path to a property lookup table file with optical mate
 
 
 === brdfUris
-Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent bidirectional reflectance distribution functions. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file paths to one or multiple property look-up table files with wavelength-dependent bidirectional reflectance distribution functions. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++array++` +
 *Item type:* `++string++` +
@@ -294,7 +294,7 @@ Relative or absolute file paths to one or multiple property lookup table files w
 
 
 === reflectionCoefficientUris
-Relative or absolute file paths to one or multiple property lookup table files with wavelength-dependent reflection coefficient values. For cross-platform compatibility, Unix-style paths are recommended.
+Relative or absolute file paths to one or multiple property look-up table files with wavelength-dependent reflection coefficient values. For cross-platform compatibility, Unix-style paths are recommended.
 
 *Type:* `++array++` +
 *Item type:* `++string++` +

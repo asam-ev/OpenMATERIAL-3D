@@ -40,7 +40,7 @@ The display name of the material mapping table.
 
 
 === description
-Short description of the mapping table in 2 - 3 sentences.
+Short description of the mapping table in two to three sentences.
 
 *Type:* `++string++` +
 *Required:* No
@@ -120,7 +120,7 @@ Columns of the table:
 |===
 | Column | Type | Constraints | Description
 
-| 1 | string |  | Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G> and <B> are integers in the range [0, 255].
+| 1 | string |  | Material name or RGB code. The RGB code represents color values in an ASAM OpenMATERIAL 3D assignment texture. RGB codes are formatted as rgb:<R>;<G>;<B>. <R>, <G>, and <B> are integers in the range [0, 255].
 | 2 | string | `++.*\.xomp$++` | Relative or absolute file path to the material. For cross-platform compatibility, Unix-style paths are recommended.
 | 3 | string |  | Description of the material.
 |===
