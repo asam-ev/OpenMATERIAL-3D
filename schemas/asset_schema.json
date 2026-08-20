@@ -9,18 +9,18 @@
             "properties": {
                 "maxSteering": {
                     "type": "number",
-                    "description": "Maximum steering angle that can be performed by the wheels on this axle. Unit: rad; Range: [0, \\(\\pi\\)], symmetrical.",
+                    "description": "Maximum steering angle that can be performed by the wheels on this axle. Unit: rad. The steering angle is symmetrical in both directions.",
                     "minimum": 0,
                     "maximum": 3.14159
                 },
                 "wheelDiameter": {
                     "type": "number",
-                    "description": "Diameter of the wheels on this axle. Unit: meter; Range: ]0, inf[.",
+                    "description": "Diameter of the wheels on this axle. Unit: meter.",
                     "exclusiveMinimum": 0
                 },
                 "trackWidth": {
                     "type": "number",
-                    "description": "Distance between the center lines of the wheels at zero steering. Unit: meter; Range: [0, inf[.",
+                    "description": "Distance between the center lines of the wheels at zero steering. Unit: meter.",
                     "minimum": 0
                 },
                 "positionX": {
@@ -29,7 +29,7 @@
                 },
                 "positionZ": {
                     "type": "number",
-                    "description": "Vertical position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Usually, this is half the wheel diameter. Unit: meter; Range: [0, inf[.",
+                    "description": "Vertical position of the axle with respect to the center of the vehicle's bounding box projected to the ground. Usually, this is half the wheel diameter. Unit: meter.",
                     "minimum": 0
                 }
             },
@@ -155,12 +155,12 @@
                                 },
                                 "maxAcceleration": {
                                     "type": "number",
-                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2^; Range: [0, inf[.",
+                                    "description": "Maximum acceleration of the vehicle. Unit: meter/second^2^.",
                                     "minimum": 0
                                 },
                                 "maxDeceleration": {
                                     "type": "number",
-                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2^; Range: [0, inf[.",
+                                    "description": "Maximum deceleration of the vehicle. Unit: meter/second^2^.",
                                     "minimum": 0
                                 }
                             },
@@ -378,7 +378,7 @@
                         "type": "string",
                         "format": "uri-reference",
                         "description": "Relative or absolute file path to the external ASAM OpenMATERIAL 3D asset file (.xoma). For cross-platform compatibility, Unix-style paths are recommended.",
-                        "pattern": "^(\\./|/)?([a-zA-Z0-9_\\-./]+)\\.(xoma)$"
+						"pattern": ".*\\.xoma$"
                     }
                 }
             }
@@ -400,7 +400,7 @@
                     "photometricProfileUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "pattern": "\\.(ies|ldt|IES|LDT)$",
+                        "pattern": ".*\\.(ies|ldt|IES|LDT)$",
                         "description": "Relative or absolute file path to an IES or EULUMDAT file defining the light profile. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "radiometricProfileUri": {
@@ -533,7 +533,7 @@
                     "maskingTextureUri": {
                         "type": "string",
                         "format": "uri-reference",
-                        "description": "Relative or absolute file path to the masking texture that masks a defined part of an emissive atlas texture. This property is only allowed if 'emissiveTextureUri' is present. For cross-platform compatibility, Unix-style paths are recommended."
+                        "description": "Relative or absolute file path to the masking texture that masks a defined part of an emissive atlas texture. For cross-platform compatibility, Unix-style paths are recommended."
                     },
                     "color": {
                         "type": "object",

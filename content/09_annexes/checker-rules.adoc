@@ -123,6 +123,18 @@ UID:: asam.net:xom:1.1.0:xoma.geometry_property_nodes_exist
 
 Description:: If the property 'geometryProperties' is set, all nodes referenced in the 'geometryProperties.node' fields shall exist in the corresponding 3D data file.
 
+==== bounding_box_min_max_values
+
+UID:: asam.net:xom:1.1.0:xoma.bounding_box_min_max_values
+
+Description:: In the 'metadata.boundingBox' property of .xoma files, the first value of the 'x', 'y', and 'z' arrays is the minimum and the second value is the maximum. The first value shall be smaller than or equal to the second value.
+
+==== cone_angles_ordered_correctly
+
+UID:: asam.net:xom:1.1.0:xoma.cone_angles_ordered_correctly
+
+Description:: If the properties 'lightDefinitions.innerConeAngle' and 'lightDefinitions.outerConeAngle' are both set, the value of 'lightDefinitions.innerConeAngle' shall be smaller than the value of 'lightDefinitions.outerConeAngle'.
+
 == A.3 Material
 
 === A.3.1 XOMP

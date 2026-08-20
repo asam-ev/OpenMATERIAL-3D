@@ -127,7 +127,7 @@
                     "properties": {
                         "youngsModulus": {
                             "type": "number",
-                            "description": "Young's modulus of the material. Unit: pascal (Pa). The value shall be in the range of 0 to 1.5e12 Pa, the upper limit being the Young's modulus of diamond.",
+                            "description": "Young's modulus of the material. Unit: pascal (Pa). The upper limit corresponds to the Young’s modulus of a diamond.",
                             "minimum": 0,
                             "maximum": 1500000000000
                         },
@@ -154,7 +154,7 @@
                     "properties": {
                         "density": {
                             "type": "number",
-                            "description": "Density of the material. Unit: kg/m^3^. The value shall be in the range of 0 to 25000 kg/m^3^, the upper limit being the density of osmium.",
+                            "description": "Density of the material. Unit: kg/m^3^. The upper limit corresponds to the density of Osmium.",
                             "minimum": 0,
                             "maximum": 25000
                         },
