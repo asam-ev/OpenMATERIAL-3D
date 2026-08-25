@@ -1,14 +1,190 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v5.1.18",
+		"generator":"Khronos glTF Blender I/O v4.5.51",
 		"version":"2.0"
+	},
+	"extensionsUsed":[
+		"KHR_lights_punctual"
+	],
+	"extensionsRequired":[
+		"KHR_lights_punctual"
+	],
+	"extensions":{
+		"KHR_lights_punctual":{
+			"lights":[
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":3261.0847839529356,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.006"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":3261.0847839529356,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.007"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":543514.1306588226,
+					"spot":{
+						"innerConeAngle":0.471238910371663,
+						"outerConeAngle":0.5235987901687622
+					},
+					"type":"spot",
+					"name":"Spot.004"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":543514.1306588226,
+					"spot":{
+						"innerConeAngle":0.471238910371663,
+						"outerConeAngle":0.5235987901687622
+					},
+					"type":"spot",
+					"name":"Spot.005"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":543514.1306588226,
+					"spot":{
+						"innerConeAngle":0.2356194551858315,
+						"outerConeAngle":0.2617993950843811
+					},
+					"type":"spot",
+					"name":"Spot.002"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":543514.1306588226,
+					"spot":{
+						"innerConeAngle":0.2356194551858315,
+						"outerConeAngle":0.2617993950843811
+					},
+					"type":"spot",
+					"name":"Spot.003"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":1087.0282613176453,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":1087.0282613176453,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.003"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":1087.0282613176453,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.001"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":1087.0282613176453,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.002"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":271757.0653294113,
+					"spot":{
+						"innerConeAngle":0.35342918277874724,
+						"outerConeAngle":0.39269909262657166
+					},
+					"type":"spot",
+					"name":"Spot"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":271757.0653294113,
+					"spot":{
+						"innerConeAngle":0.35342918277874724,
+						"outerConeAngle":0.39269909262657166
+					},
+					"type":"spot",
+					"name":"Spot.001"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":543.5141306588226,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.005"
+				},
+				{
+					"color":[
+						1,
+						1,
+						1
+					],
+					"intensity":543.5141306588226,
+					"type":"point",
+					"name":"Point_Light_Indicator_Right_0.004"
+				}
+			]
+		}
 	},
 	"scene":0,
 	"scenes":[
 		{
 			"name":"Scene",
 			"nodes":[
-				118
+				134
 			]
 		}
 	],
@@ -51,9 +227,9 @@
 		{
 			"name":"Grp_Mirror_Side_View_Left_0",
 			"translation":[
-				0.03203132003545761,
-				7.577240467071533e-06,
-				9.344026693725027e-06
+				0.0320313423871994,
+				7.5232237577438354e-06,
+				9.52979189605685e-06
 			]
 		},
 		{
@@ -67,10 +243,10 @@
 			],
 			"name":"Grp_Mirror_Side_Joint_Left_0",
 			"rotation":[
-				-0.058675333857536316,
+				-0.058675337582826614,
 				-0.9864494204521179,
 				0.009097355417907238,
-				0.15294456481933594
+				0.15294459462165833
 			],
 			"translation":[
 				0.0002263486385345459,
@@ -169,9 +345,9 @@
 		{
 			"name":"Grp_Mirror_Side_View_Right_0",
 			"translation":[
-				0.03202672302722931,
-				7.499009370803833e-06,
-				0.0005487009766511619
+				0.03202652931213379,
+				7.450580596923828e-06,
+				0.0005488728638738394
 			]
 		},
 		{
@@ -187,7 +363,7 @@
 			"rotation":[
 				0.037181783467531204,
 				0.9678691625595093,
-				0.009546676650643349,
+				0.009546673856675625,
 				0.24850688874721527
 			],
 			"translation":[
@@ -292,9 +468,24 @@
 			"name":"Light_Brake_Reflector_BL"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":0
+				}
+			},
+			"name":"Point_Light_Brake_Left_0",
+			"rotation":[
+				0,
+				0.7071068286895752,
+				0.7071068286895752,
+				1.3767878215276141e-07
+			]
+		},
+		{
 			"children":[
 				25,
-				26
+				26,
+				27
 			],
 			"name":"Grp_Light_Brake_Left_0",
 			"rotation":[
@@ -318,9 +509,24 @@
 			"name":"Light_Brake_Reflector_BR"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":1
+				}
+			},
+			"name":"Point_Light_Brake_Right_0",
+			"rotation":[
+				0,
+				0.7071068286895752,
+				0.7071068286895752,
+				1.3767878215276141e-07
+			]
+		},
+		{
 			"children":[
-				28,
-				29
+				29,
+				30,
+				31
 			],
 			"name":"Grp_Light_Brake_Right_0",
 			"rotation":[
@@ -336,6 +542,23 @@
 			]
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":2
+				}
+			},
+			"name":"Spot_Light_Fog_Left_0",
+			"rotation":[
+				-0.5043442249298096,
+				-0.49561774730682373,
+				0.49561774730682373,
+				0.5043442249298096
+			]
+		},
+		{
+			"children":[
+				33
+			],
 			"name":"Grp_Light_Fog_Left_0",
 			"translation":[
 				1.7611651420593262,
@@ -344,6 +567,23 @@
 			]
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":3
+				}
+			},
+			"name":"Spot_Light_Fog_Right_0",
+			"rotation":[
+				-0.5043442249298096,
+				-0.49561774730682373,
+				0.49561774730682373,
+				0.5043442249298096
+			]
+		},
+		{
+			"children":[
+				35
+			],
 			"name":"Grp_Light_Fog_Right_0",
 			"translation":[
 				1.761165738105774,
@@ -352,6 +592,23 @@
 			]
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":4
+				}
+			},
+			"name":"Spot_Light_High_Beam_Left_0",
+			"rotation":[
+				-0.5043442249298096,
+				-0.49561774730682373,
+				0.49561774730682373,
+				0.5043442249298096
+			]
+		},
+		{
+			"children":[
+				37
+			],
 			"name":"Grp_Light_High_Beam_Left_0",
 			"translation":[
 				1.7611651420593262,
@@ -360,6 +617,23 @@
 			]
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":5
+				}
+			},
+			"name":"Spot_Light_High_Beam_Right_0",
+			"rotation":[
+				-0.5043442249298096,
+				-0.49561774730682373,
+				0.49561774730682373,
+				0.5043442249298096
+			]
+		},
+		{
+			"children":[
+				39
+			],
 			"name":"Grp_Light_High_Beam_Right_0",
 			"translation":[
 				1.761165738105774,
@@ -376,9 +650,24 @@
 			"name":"Indicator_Reflector_FL"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":6
+				}
+			},
+			"name":"Point_Light_Indicator_Left_0",
+			"rotation":[
+				-0.7071068286895752,
+				0,
+				0,
+				0.7071068286895752
+			]
+		},
+		{
 			"children":[
-				35,
-				36
+				41,
+				42,
+				43
 			],
 			"name":"Grp_Light_Indicator_Left_0",
 			"translation":[
@@ -396,9 +685,24 @@
 			"name":"Indicator_Reflector_BL"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":7
+				}
+			},
+			"name":"Point_Light_Indicator_Left_1",
+			"rotation":[
+				0,
+				0.7071068286895752,
+				0.7071068286895752,
+				1.3767878215276141e-07
+			]
+		},
+		{
 			"children":[
-				38,
-				39
+				45,
+				46,
+				47
 			],
 			"name":"Grp_Light_Indicator_Left_1",
 			"rotation":[
@@ -422,9 +726,24 @@
 			"name":"Indicator_Reflector_FR"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":8
+				}
+			},
+			"name":"Point_Light_Indicator_Right_0",
+			"rotation":[
+				-0.7071068286895752,
+				0,
+				0,
+				0.7071068286895752
+			]
+		},
+		{
 			"children":[
-				41,
-				42
+				49,
+				50,
+				51
 			],
 			"name":"Grp_Light_Indicator_Right_0",
 			"translation":[
@@ -442,9 +761,24 @@
 			"name":"Indicator_Reflector_BR"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":9
+				}
+			},
+			"name":"Point_Light_Indicator_Right_1",
+			"rotation":[
+				0,
+				0.7071068286895752,
+				0.7071068286895752,
+				1.3767878215276141e-07
+			]
+		},
+		{
 			"children":[
-				44,
-				45
+				53,
+				54,
+				55
 			],
 			"name":"Grp_Light_Indicator_Right_1",
 			"rotation":[
@@ -468,9 +802,24 @@
 			"name":"Light_Low_Beam_Reflector_FL"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":10
+				}
+			},
+			"name":"Spot_Light_Low_Beam_Left_0",
+			"rotation":[
+				-0.5129171013832092,
+				-0.4867401719093323,
+				0.4867401719093323,
+				0.512917160987854
+			]
+		},
+		{
 			"children":[
-				47,
-				48
+				57,
+				58,
+				59
 			],
 			"name":"Grp_Light_Low_Beam_Left_0",
 			"translation":[
@@ -488,15 +837,58 @@
 			"name":"Light_Low_Beam_Reflector_FR"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":11
+				}
+			},
+			"name":"Spot_Light_Low_Beam_Right_0",
+			"rotation":[
+				-0.5129171013832092,
+				-0.4867401719093323,
+				0.4867401719093323,
+				0.512917160987854
+			]
+		},
+		{
 			"children":[
-				50,
-				51
+				61,
+				62,
+				63
 			],
 			"name":"Grp_Light_Low_Beam_Right_0",
 			"translation":[
 				1.761165738105774,
 				0.6593009829521179,
 				0.6364348530769348
+			]
+		},
+		{
+			"name":"Grp_Light_Park_Left_0",
+			"rotation":[
+				0,
+				-1,
+				0,
+				1.6292068494294654e-07
+			],
+			"translation":[
+				-1.8539128303527832,
+				0.5859900116920471,
+				-0.6504209637641907
+			]
+		},
+		{
+			"name":"Grp_Light_Park_Right_0",
+			"rotation":[
+				0,
+				-1,
+				0,
+				1.6292068494294654e-07
+			],
+			"translation":[
+				-1.853912591934204,
+				0.5859900116920471,
+				0.6504214406013489
 			]
 		},
 		{
@@ -508,9 +900,24 @@
 			"name":"Light_Tail_Reflector_BL"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":12
+				}
+			},
+			"name":"Point_Light_Tail_Left_0",
+			"rotation":[
+				0,
+				0.7071068286895752,
+				0.7071068286895752,
+				1.3767878215276141e-07
+			]
+		},
+		{
 			"children":[
-				53,
-				54
+				67,
+				68,
+				69
 			],
 			"name":"Grp_Light_Tail_Left_0",
 			"rotation":[
@@ -534,9 +941,24 @@
 			"name":"Light_Tail_Reflector_BR"
 		},
 		{
+			"extensions":{
+				"KHR_lights_punctual":{
+					"light":13
+				}
+			},
+			"name":"Point_Light_Tail_Right_0",
+			"rotation":[
+				0,
+				0.7071068286895752,
+				0.7071068286895752,
+				1.3767878215276141e-07
+			]
+		},
+		{
 			"children":[
-				56,
-				57
+				71,
+				72,
+				73
 			],
 			"name":"Grp_Light_Tail_Right_0",
 			"rotation":[
@@ -565,7 +987,7 @@
 		},
 		{
 			"children":[
-				60
+				76
 			],
 			"name":"Grp_Wheel_Steering_0_0"
 		},
@@ -583,16 +1005,16 @@
 		},
 		{
 			"children":[
-				62,
-				63,
-				64
+				78,
+				79,
+				80
 			],
 			"name":"Grp_Wheel_Steering_Rotating_0_0"
 		},
 		{
 			"children":[
-				61,
-				65
+				77,
+				81
 			],
 			"name":"Grp_Wheel_0_0",
 			"translation":[
@@ -607,7 +1029,7 @@
 		},
 		{
 			"children":[
-				67
+				83
 			],
 			"name":"Grp_Wheel_Steering_0_1"
 		},
@@ -625,16 +1047,16 @@
 		},
 		{
 			"children":[
-				69,
-				70,
-				71
+				85,
+				86,
+				87
 			],
 			"name":"Grp_Wheel_Steering_Rotating_0_1"
 		},
 		{
 			"children":[
-				68,
-				72
+				84,
+				88
 			],
 			"name":"Grp_Wheel_0_1",
 			"translation":[
@@ -654,7 +1076,7 @@
 		},
 		{
 			"children":[
-				74
+				90
 			],
 			"name":"Grp_Wheel_Steering_1_0"
 		},
@@ -677,16 +1099,16 @@
 		},
 		{
 			"children":[
-				76,
-				77,
-				78
+				92,
+				93,
+				94
 			],
 			"name":"Grp_Wheel_Steering_Rotating_1_0"
 		},
 		{
 			"children":[
-				75,
-				79
+				91,
+				95
 			],
 			"name":"Grp_Wheel_1_0",
 			"translation":[
@@ -701,7 +1123,7 @@
 		},
 		{
 			"children":[
-				81
+				97
 			],
 			"name":"Grp_Wheel_Steering_1_1"
 		},
@@ -719,16 +1141,16 @@
 		},
 		{
 			"children":[
-				83,
-				84,
-				85
+				99,
+				100,
+				101
 			],
 			"name":"Grp_Wheel_Steering_Rotating_1_1"
 		},
 		{
 			"children":[
-				82,
-				86
+				98,
+				102
 			],
 			"name":"Grp_Wheel_1_1",
 			"translation":[
@@ -745,25 +1167,27 @@
 				20,
 				22,
 				24,
-				27,
-				30,
-				31,
+				28,
 				32,
-				33,
 				34,
-				37,
+				36,
+				38,
 				40,
-				43,
-				46,
-				49,
+				44,
+				48,
 				52,
-				55,
-				58,
-				59,
+				56,
+				60,
+				64,
+				65,
 				66,
-				73,
-				80,
-				87
+				70,
+				74,
+				75,
+				82,
+				89,
+				96,
+				103
 			],
 			"name":"Grp_Exterior_Dynamic"
 		},
@@ -795,16 +1219,16 @@
 		},
 		{
 			"children":[
-				89,
-				90,
-				91
+				105,
+				106,
+				107
 			],
 			"name":"Grp_Exterior_Static"
 		},
 		{
 			"children":[
-				88,
-				92
+				104,
+				108
 			],
 			"name":"Grp_Exterior"
 		},
@@ -827,21 +1251,21 @@
 		{
 			"name":"Grp_Mirror_Rearview_View_0",
 			"translation":[
-				0.012231956236064434,
-				0.00039464334258809686,
-				7.112632738426328e-05
+				0.012232165783643723,
+				0.0003946638898923993,
+				7.111357990652323e-05
 			]
 		},
 		{
 			"children":[
-				96,
-				97
+				112,
+				113
 			],
 			"name":"Grp_Mirror_Rearview_Joint_0",
 			"rotation":[
-				-0.05953497812151909,
+				-0.05953498184680939,
 				0.9875302314758301,
-				-0.00877019390463829,
+				-0.008770186454057693,
 				0.14547446370124817
 			],
 			"translation":[
@@ -852,8 +1276,8 @@
 		},
 		{
 			"children":[
-				95,
-				98
+				111,
+				114
 			],
 			"name":"Grp_Mirror_Rearview_Mounting_0",
 			"translation":[
@@ -877,8 +1301,8 @@
 		},
 		{
 			"children":[
-				100,
-				101
+				116,
+				117
 			],
 			"name":"Grp_Seat_0_0",
 			"translation":[
@@ -902,8 +1326,8 @@
 		},
 		{
 			"children":[
-				103,
-				104
+				119,
+				120
 			],
 			"name":"Grp_Seat_0_1",
 			"translation":[
@@ -940,8 +1364,8 @@
 		},
 		{
 			"children":[
-				107,
-				108
+				123,
+				124
 			],
 			"name":"Grp_Seat_1_1",
 			"translation":[
@@ -980,8 +1404,8 @@
 		},
 		{
 			"children":[
-				111,
-				112
+				127,
+				128
 			],
 			"name":"Grp_Steering_Wheel_0",
 			"rotation":[
@@ -998,14 +1422,14 @@
 		},
 		{
 			"children":[
-				94,
-				99,
-				102,
-				105,
-				106,
-				109,
 				110,
-				113
+				115,
+				118,
+				121,
+				122,
+				125,
+				126,
+				129
 			],
 			"name":"Grp_Interior_Dynamic"
 		},
@@ -1020,21 +1444,21 @@
 		},
 		{
 			"children":[
-				115
+				131
 			],
 			"name":"Grp_Interior_Static"
 		},
 		{
 			"children":[
-				114,
-				116
+				130,
+				132
 			],
 			"name":"Grp_Interior"
 		},
 		{
 			"children":[
-				93,
-				117
+				109,
+				133
 			],
 			"name":"Grp_Root"
 		}
@@ -1115,7 +1539,7 @@
 				0,
 				0
 			],
-			"name":"Light_Brake_Lens_Left",
+			"name":"Plastic_Red",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1132,90 +1556,10 @@
 			"doubleSided":true,
 			"emissiveFactor":[
 				1,
-				0.006000041961669922,
-				0
-			],
-			"name":"Light_Brake_Lens_Right",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.006000041961669922,
-					0,
-					0.4000000059604645
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.699999988079071
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				1,
-				0.10199999809265137,
-				0
-			],
-			"name":"Light_Indicator_Lens_Left_0",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.10199999809265137,
-					0,
-					0.4000000059604645
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.699999988079071
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				1,
-				0.10199999809265137,
-				0
-			],
-			"name":"Light_Indicator_Lens_Left_1",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.10199999809265137,
-					0,
-					0.4000000059604645
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.699999988079071
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				1,
 				0.10000000149011612,
 				0
 			],
-			"name":"Light_Indicator_Lens_Right_0",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.10000000149011612,
-					0,
-					0.4000000059604645
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.699999988079071
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				1,
-				0.10000000149011612,
-				0
-			],
-			"name":"Light_Indicator_Lens_Right_1",
+			"name":"Plastic_Orange",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1235,7 +1579,10 @@
 				1,
 				1
 			],
-			"name":"Light_Head_Lens_Left",
+			"emissiveTexture":{
+				"index":1
+			},
+			"name":"Light_High_Beam_Left",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1255,7 +1602,10 @@
 				1,
 				1
 			],
-			"name":"Light_Head_Lens_Right",
+			"emissiveTexture":{
+				"index":2
+			},
+			"name":"Light_High_Beam_Right",
 			"pbrMetallicRoughness":{
 				"baseColorFactor":[
 					1,
@@ -1268,43 +1618,10 @@
 			}
 		},
 		{
-			"alphaMode":"BLEND",
 			"doubleSided":true,
-			"emissiveFactor":[
-				1,
-				0.006000041961669922,
-				0
-			],
-			"name":"Light_Tail_Lens_Left",
+			"name":"Head_Light_Right",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.006000041961669922,
-					0,
-					0.4000000059604645
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.699999988079071
-			}
-		},
-		{
-			"alphaMode":"BLEND",
-			"doubleSided":true,
-			"emissiveFactor":[
-				1,
-				0.006000041961669922,
-				0
-			],
-			"name":"Light_Tail_Lens_Right",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.006000041961669922,
-					0,
-					0.4000000059604645
-				],
-				"metallicFactor":0,
-				"roughnessFactor":0.699999988079071
+				"roughnessFactor":0.20000000298023224
 			}
 		},
 		{
@@ -1607,7 +1924,7 @@
 						"NORMAL":64
 					},
 					"indices":65,
-					"material":7
+					"material":6
 				}
 			]
 		},
@@ -1633,7 +1950,7 @@
 						"NORMAL":70
 					},
 					"indices":71,
-					"material":8
+					"material":7
 				}
 			]
 		},
@@ -1659,7 +1976,7 @@
 						"NORMAL":76
 					},
 					"indices":77,
-					"material":9
+					"material":7
 				}
 			]
 		},
@@ -1685,7 +2002,7 @@
 						"NORMAL":82
 					},
 					"indices":83,
-					"material":10
+					"material":7
 				}
 			]
 		},
@@ -1711,7 +2028,7 @@
 						"NORMAL":88
 					},
 					"indices":89,
-					"material":11
+					"material":7
 				}
 			]
 		},
@@ -1738,7 +2055,7 @@
 						"TEXCOORD_0":95
 					},
 					"indices":96,
-					"material":12
+					"material":8
 				}
 			]
 		},
@@ -1766,7 +2083,7 @@
 						"TEXCOORD_0":103
 					},
 					"indices":104,
-					"material":13
+					"material":9
 				}
 			]
 		},
@@ -1780,7 +2097,7 @@
 						"TEXCOORD_0":107
 					},
 					"indices":108,
-					"material":3
+					"material":10
 				}
 			]
 		},
@@ -1793,7 +2110,7 @@
 						"NORMAL":110
 					},
 					"indices":111,
-					"material":14
+					"material":6
 				}
 			]
 		},
@@ -1819,7 +2136,7 @@
 						"NORMAL":116
 					},
 					"indices":117,
-					"material":15
+					"material":6
 				}
 			]
 		},
@@ -1846,7 +2163,7 @@
 						"TEXCOORD_0":123
 					},
 					"indices":124,
-					"material":16
+					"material":11
 				},
 				{
 					"attributes":{
@@ -1855,7 +2172,7 @@
 						"TEXCOORD_0":127
 					},
 					"indices":128,
-					"material":17
+					"material":12
 				}
 			]
 		},
@@ -1869,7 +2186,7 @@
 						"TEXCOORD_0":131
 					},
 					"indices":132,
-					"material":16
+					"material":11
 				}
 			]
 		},
@@ -1897,7 +2214,7 @@
 						"TEXCOORD_0":139
 					},
 					"indices":140,
-					"material":18
+					"material":13
 				}
 			]
 		},
@@ -1911,7 +2228,7 @@
 						"TEXCOORD_0":143
 					},
 					"indices":144,
-					"material":16
+					"material":11
 				},
 				{
 					"attributes":{
@@ -1920,7 +2237,7 @@
 						"TEXCOORD_0":147
 					},
 					"indices":148,
-					"material":17
+					"material":12
 				}
 			]
 		},
@@ -1934,7 +2251,7 @@
 						"TEXCOORD_0":151
 					},
 					"indices":152,
-					"material":16
+					"material":11
 				}
 			]
 		},
@@ -1962,7 +2279,7 @@
 						"TEXCOORD_0":159
 					},
 					"indices":160,
-					"material":18
+					"material":13
 				}
 			]
 		},
@@ -1976,7 +2293,7 @@
 						"TEXCOORD_0":163
 					},
 					"indices":164,
-					"material":16
+					"material":11
 				},
 				{
 					"attributes":{
@@ -1985,7 +2302,7 @@
 						"TEXCOORD_0":167
 					},
 					"indices":168,
-					"material":17
+					"material":12
 				}
 			]
 		},
@@ -1999,7 +2316,7 @@
 						"TEXCOORD_0":171
 					},
 					"indices":132,
-					"material":16
+					"material":11
 				}
 			]
 		},
@@ -2027,7 +2344,7 @@
 						"TEXCOORD_0":177
 					},
 					"indices":140,
-					"material":18
+					"material":13
 				}
 			]
 		},
@@ -2041,7 +2358,7 @@
 						"TEXCOORD_0":180
 					},
 					"indices":181,
-					"material":16
+					"material":11
 				},
 				{
 					"attributes":{
@@ -2050,7 +2367,7 @@
 						"TEXCOORD_0":184
 					},
 					"indices":185,
-					"material":17
+					"material":12
 				}
 			]
 		},
@@ -2064,7 +2381,7 @@
 						"TEXCOORD_0":188
 					},
 					"indices":152,
-					"material":16
+					"material":11
 				}
 			]
 		},
@@ -2092,7 +2409,7 @@
 						"TEXCOORD_0":194
 					},
 					"indices":195,
-					"material":18
+					"material":13
 				}
 			]
 		},
@@ -2171,7 +2488,7 @@
 						"TEXCOORD_0":218
 					},
 					"indices":219,
-					"material":19
+					"material":14
 				}
 			]
 		},
@@ -2185,7 +2502,7 @@
 						"TEXCOORD_0":222
 					},
 					"indices":223,
-					"material":19
+					"material":14
 				}
 			]
 		},
@@ -2199,7 +2516,7 @@
 						"TEXCOORD_0":226
 					},
 					"indices":227,
-					"material":19
+					"material":14
 				}
 			]
 		},
@@ -2213,7 +2530,7 @@
 						"TEXCOORD_0":230
 					},
 					"indices":231,
-					"material":19
+					"material":14
 				}
 			]
 		},
@@ -2227,7 +2544,7 @@
 						"TEXCOORD_0":234
 					},
 					"indices":235,
-					"material":19
+					"material":14
 				}
 			]
 		},
@@ -2241,7 +2558,7 @@
 						"TEXCOORD_0":238
 					},
 					"indices":239,
-					"material":19
+					"material":14
 				}
 			]
 		},
@@ -2269,7 +2586,7 @@
 						"TEXCOORD_0":246
 					},
 					"indices":247,
-					"material":20
+					"material":15
 				}
 			]
 		},
@@ -2292,6 +2609,14 @@
 		{
 			"sampler":0,
 			"source":0
+		},
+		{
+			"sampler":0,
+			"source":1
+		},
+		{
+			"sampler":0,
+			"source":1
 		}
 	],
 	"images":[
@@ -2299,6 +2624,11 @@
 			"mimeType":"image/png",
 			"name":"License_Plate",
 			"uri":"License_Plate.png"
+		},
+		{
+			"mimeType":"image/png",
+			"name":"Lens2",
+			"uri":"Lens2.png"
 		}
 	],
 	"accessors":[
