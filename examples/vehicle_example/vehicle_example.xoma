@@ -189,7 +189,7 @@
                 "g": 245,
                 "b": 230
             },
-            "textureUri": "Lens4.png"
+            "textureUri": "headlight_emissive.png"
         },
         {
             "assocNode": "Grp_Light_High_Beam_Right_0",
@@ -200,7 +200,7 @@
                 "g": 245,
                 "b": 230
             },
-            "textureUri": "Lens4.png"
+            "textureUri": "headlight_emissive.png"
         },
         {
             "assocNode": "Grp_Light_Low_Beam_Left_0",
