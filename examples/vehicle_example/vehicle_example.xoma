@@ -188,7 +188,8 @@
                 "r": 255,
                 "g": 245,
                 "b": 230
-            }
+            },
+            "textureUri": "Lens4.png"
         },
         {
             "assocNode": "Grp_Light_High_Beam_Right_0",
@@ -198,7 +199,8 @@
                 "r": 255,
                 "g": 245,
                 "b": 230
-            }
+            },
+            "textureUri": "Lens4.png"
         },
         {
             "assocNode": "Grp_Light_Low_Beam_Left_0",
