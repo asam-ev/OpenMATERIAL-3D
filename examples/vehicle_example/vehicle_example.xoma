@@ -210,7 +210,8 @@
                 "r": 255,
                 "g": 245,
                 "b": 230
-            }
+            },
+            "textureUri": "headlight_emissive.png"
         },
         {
             "assocNode": "Grp_Light_Low_Beam_Right_0",
@@ -220,7 +221,8 @@
                 "r": 255,
                 "g": 245,
                 "b": 230
-            }
+            },
+            "textureUri": "headlight_emissive.png"
         },
         {
             "assocNode": "Grp_Light_Indicator_Left_0",
