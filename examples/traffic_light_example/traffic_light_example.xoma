@@ -30,7 +30,7 @@
     "lightDefinitions": [
         {
             "node": "Grp_Bulb_0",
-            "outerConeAngle": 180,
+            "outerConeAngle": 3.14159,
             "luminousIntensity": 100000,
             "color": {
                 "r": 0,
@@ -40,7 +40,7 @@
         },
         {
             "node": "Grp_Bulb_1",
-            "outerConeAngle": 180,
+            "outerConeAngle": 3.14159,
             "luminousIntensity": 100000,
             "color": {
                 "r": 255,
@@ -50,7 +50,7 @@
         },
         {
             "node": "Grp_Bulb_2",
-            "outerConeAngle": 180,
+            "outerConeAngle": 3.14159,
             "luminousIntensity": 100000,
             "color": {
                 "r": 255,
