@@ -160,6 +160,8 @@ Traffic signs belong to traffic signals. They are indexed using a `<signal_idx>`
 .Grp_Sign_<signal_idx>
 image::Grp_Sign.svg[,600]
 
+The definition of the reference coordinate system for traffic signs is an exception to the general definition for objects, in order to ensure harmonization with other standards (e.g., ASAM OSI). 
+
 [#tab-Environment-Grp_Sign]
 .Grp_Sign
 [%header, cols="20, 80"]
@@ -187,6 +189,8 @@ Traffic lights belong to traffic signals. They show temporary changes in illumin
 [#fig-traffic-light]
 .Grp_Traffic_Light_<signal_idx>
 image::Grp_Traffic_Light.svg[,600]
+
+The definition of the reference coordinate system for traffic lights is an exception to the general definition for objects, in order to ensure harmonization with other standards (e.g., ASAM OSI). 
 
 [#tab-Environment-Grp_Traffic_Light]
 .Grp_Traffic_Light
