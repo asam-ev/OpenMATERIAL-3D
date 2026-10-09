@@ -133,7 +133,7 @@
                                     "number",
                                     "null"
                                 ],
-                                "description": "Polarized plane angle in rad. This is the angle between the plane containing the incident, exit, and normal vectors, and the plane of polarization. The plane of polarization contains the direction of propagation and the electric vector.",
+                                "description": "Polarized plane angle in rad. This is the angle between the plane of incidence and the plane of polarization. The plane of incidence contains the incident direction and the surface normal. The plane of polarization contains the direction of propagation and the electric vector.",
                                 "minimum": 0,
                                 "maximum": 3.141593
                             },
