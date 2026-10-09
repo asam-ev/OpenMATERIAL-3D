@@ -1,7 +1,8 @@
 {
+    "$schema": "https://raw.githubusercontent.com/asam-ev/OpenMATERIAL-3D/refs/tags/v1.1.0/schemas/asset_schema.json",
     "metadata": {
         "name": "aiSimArcher",
-        "description": "This is an example vehicle asset. It demonstrates how ASAM OpenMATERIAL 3D assets and their node structure are implemented by aiMotive. Updated to confirm to openMaterial3dVersion 1.1.0",
+        "description": "This is an example vehicle asset. It demonstrates how ASAM OpenMATERIAL 3D assets and their node structure are implemented by aiMotive. Updated to conform to openMaterial3dVersion 1.1.0",
         "uuid": "5c3a5c5f-097a-4696-9bb4-317f19f0e53a",
         "assetVersion": "1.1.0",
         "openMaterial3dVersion": "1.1.0",
@@ -40,7 +41,7 @@
         },
         "animated": false,
         "pbrMaterialWorkflow": "metallic",
-        "triangleCount": 147586,
+        "triangleCount": 147658,
         "meshCount": 101,
         "textureResolutions": ["2K"],
         "normalMapFormat": "OpenGL",
