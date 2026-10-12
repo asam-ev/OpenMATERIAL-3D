@@ -82,22 +82,22 @@
         {
             "node": "Grp_Light_Day_Left_0",
             "luminousIntensity": 400,
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.89,
+            "outerConeAngle": 1.047,
             "temperature": 4500
         },
         {
             "node": "Grp_Light_Day_Right_0",
             "luminousIntensity": 400,
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.89,
+            "outerConeAngle": 1.047,
             "temperature": 4500
         },
         {
             "node": "Grp_Light_Fog_Left_0",
             "luminousIntensity": 200,
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.89,
+            "outerConeAngle": 1.047,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -107,8 +107,8 @@
         {
             "node": "Grp_Light_Fog_Right_0",
             "luminousIntensity": 200,
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.89,
+            "outerConeAngle": 1.047,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -118,15 +118,15 @@
         {
             "node": "Grp_Light_High_Beam_Left_0",
             "luminousIntensity": 30000,
-            "innerConeAngle": 27,
-            "outerConeAngle": 30,
+            "innerConeAngle": 0.47,
+            "outerConeAngle": 0.52,
             "temperature": 6000
         },
         {
             "node": "Grp_Light_High_Beam_Right_0",
             "luminousIntensity": 30000,
-            "innerConeAngle": 27,
-            "outerConeAngle": 30,
+            "innerConeAngle": 0.47,
+            "outerConeAngle": 0.52,
             "temperature": 6000
         },
         {
@@ -186,36 +186,36 @@
         {
             "node": "Grp_Light_Low_Beam_Left_0",
             "luminousIntensity": 8000,
-            "innerConeAngle": 27,
-            "outerConeAngle": 30,
+            "innerConeAngle": 0.47,
+            "outerConeAngle": 0.52,
             "temperature": 6000
         },
         {
             "node": "Grp_Light_Low_Beam_Right_0",
             "luminousIntensity": 8000,
-            "innerConeAngle": 27,
-            "outerConeAngle": 30,
+            "innerConeAngle": 0.47,
+            "outerConeAngle": 0.52,
             "temperature": 6000
         },
         {
             "node": "Grp_Light_Reverse_Left_0",
             "luminousIntensity": 250,
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.89,
+            "outerConeAngle": 1.047,
             "temperature": 4800
         },
         {
             "node": "Grp_Light_Reverse_Right_0",
             "luminousIntensity": 250,
-            "innerConeAngle": 51,
-            "outerConeAngle": 60,
+            "innerConeAngle": 0.89,
+            "outerConeAngle": 1.047,
             "temperature": 4800
         },
         {
             "node": "Grp_Light_Tail_Left_0",
             "luminousIntensity": 4,
-            "innerConeAngle": 70,
-            "outerConeAngle": 80,
+            "innerConeAngle": 1.22,
+            "outerConeAngle": 1.4,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -225,8 +225,8 @@
         {
             "node": "Grp_Light_Tail_Right_0",
             "luminousIntensity": 4,
-            "innerConeAngle": 70,
-            "outerConeAngle": 80,
+            "innerConeAngle": 1.22,
+            "outerConeAngle": 1.4,
             "color": {
                 "r": 255,
                 "g": 10,
@@ -236,15 +236,15 @@
         {
             "node": "Grp_Light_Corner_Left_0",
             "luminousIntensity": 1400,
-            "innerConeAngle": 70,
-            "outerConeAngle": 80,
+            "innerConeAngle": 1.22,
+            "outerConeAngle": 1.4,
             "temperature": 5500
         },
         {
             "node": "Grp_Light_Corner_Right_0",
             "luminousIntensity": 1400,
-            "innerConeAngle": 70,
-            "outerConeAngle": 80,
+            "innerConeAngle": 1.22,
+            "outerConeAngle": 1.4,
             "temperature": 5500
         }
     ],
