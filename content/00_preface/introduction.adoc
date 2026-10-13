@@ -234,7 +234,7 @@ Notes, footnotes, and examples shall not contain requirements or any information
 
 The following deliverables are provided for {THIS_STANDARD}:
 
-* https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/index.html[ASAM OpenMATERIAL® 3D BS 1-1-0 Specification, <RELEASE_DATE>] (this document, contained in this site)
+* https://asam-ev.github.io/OpenMATERIAL-3D/asamopenmaterial/latest/specification/index.html[ASAM OpenMATERIAL® 3D BS 1-1-0 Specification, 2026-10-14] (this document, contained in this site)
 * https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/schemas[JSON schema files] for all JSON formats (contained in the {THIS_STANDARD} Github repository)
 * https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples[Example files] for all defined file formats (contained in the {THIS_STANDARD} Github repository) and further examples of
 ** a https://github.com/asam-ev/OpenMATERIAL-3D/tree/main/examples/vehicle_example[vehicle] (contained in the {THIS_STANDARD} Github repository)
