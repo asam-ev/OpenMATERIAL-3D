@@ -2,7 +2,7 @@
 :root-path: ./
 include::{root-path}_config.adoc[]
 //NOTE: All central attributes for Asciidoctor have to be defined in the _config.adoc AND in the antora.yml in the .antora folder in root
-= ASAM OpenMATERIAL 3D BS 1.1.0 Specification, <RELEASE_DATE>
+= ASAM OpenMATERIAL 3D BS 1.1.0 Specification, 2026-10-14
 // DO NOT USE THE ATTRIBUTE {THIS_STANDARD} in the document title, it will break with Antora build pipeline!
 
 // DO NOT CHANGE!!!
