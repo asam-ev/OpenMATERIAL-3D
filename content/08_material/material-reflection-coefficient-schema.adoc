@@ -149,7 +149,7 @@ Columns of the table:
 | 2 | number or null | `++[0, 1.570796]++` | Incident zenith angle relative to the surface normal, in rad.
 | 3 | number or null | `++[0, 1.570796]++` | Exit zenith angle relative to the surface normal, in rad.
 | 4 | number or null | `++[0, 6.283185]++` | Exit azimuth angle in rad. The value is relative to the incident azimuth angle. The incident azimuth angle is set to 0, because the incident ray is used as the reference.
-| 5 | number or null | `++[0, 3.141593]++` | Polarized plane angle in rad. This is the angle between the plane containing the incident, exit, and normal vectors, and the plane of polarization. The plane of polarization contains the direction of propagation and the electric vector.
+| 5 | number or null | `++[0, 3.141593]++` | Polarized plane angle in rad. This is the angle between the plane of incidence and the plane of polarization. The plane of incidence contains the incident direction and the surface normal. The plane of polarization contains the direction of propagation and the electric vector.
 | 6 | number or null | `++[0, 1]++` | Magnitude within the linearly polarized plane. The magnitude is given as an absolute value relative to an ideal reflector.
 | 7 | number or null | `++[-3.141592, 3.141592]++` | Phase within the linearly polarized plane. If the phase is not taken into account, it is null.
 |===
