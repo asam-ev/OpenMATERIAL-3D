@@ -46,9 +46,9 @@
         "textureResolutions": ["2K"],
         "normalMapFormat": "OpenGL",
         "boundingBox": {
-            "x": [-2.24787, 2.33381],
-            "y": [-0.96114, 0.96114],
-            "z": [0, 1.52817]   
+            "x": [-2.2908, 2.2908],
+            "y": [-0.9610, 0.9610],
+            "z": [0, 1.5286]
         }
     },
     "lightDefinitions": [
